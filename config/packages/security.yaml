@@ -24,7 +24,7 @@ security:
             security: false
         admin_secure_area:
             pattern: ^/admin
-            provider: app_admin_provider
+            provider: app_team_provider
             form_login:
                 login_path: admin_login
                 check_path: admin_login
@@ -36,10 +36,10 @@ security:
                 path: admin_logout
                 target: admin_logout
                 invalidate_session: true
-            custom_authentificator: App\Security\TeamAuthenticator
+            custom_authenticator: App\Security\TeamAuthentificatorAuthenticator
             entry_point: form_login
             
-             remember_me:
+            remember_me:
                 secret: '%kernel.secret%'
                 lifetime: 604800
                 path: /
@@ -47,18 +47,12 @@ security:
 
         main:
             lazy: true
-            provider: app_team_provider
-            custom_authenticator: App\Security\TeamAuthentificatorAuthenticator
-            logout:
-                path: app_logout
-                # where to redirect after logout
-                target: app_login
+            pattern: ^/
+            provider: app_user_provider
+        
+       
 
-            remember_me:
-                secret: '%kernel.secret%'
-                lifetime: 604800
-                path: /
-                always_remember_me: true
+       
 
             # activate different ways to authenticate
             # https://symfony.com/doc/current/security.html#the-firewall
@@ -74,8 +68,9 @@ security:
 
 
     access_control:
-        - { path: ^/admin, roles: PUBLIC_ACCESS }
-        # - { path: ^/profile, roles: ROLE_USER }
+        - { path: ^/admin/login, roles: PUBLIC_ACCESS }
+        - { path: ^/admin, roles: ROLE_ADMIN }
+   
 
 when@test:
     security:

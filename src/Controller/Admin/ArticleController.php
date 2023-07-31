@@ -104,6 +104,44 @@ class ArticleController extends AbstractController
         ]);
     }
 
+
+    // #[Route('/{id}/edit', name: 'app_article_edit', methods: ['GET', 'POST'])]
+    // public function edit(Request $request, Article $article, ArticleRepository $articleRepository, EntityManagerInterface $entityManager, FileUploaderService $file_uploader, $publicUploadDir, $deleteFolder): Response
+    // {
+    //     $old_article = $articleRepository->findBy(['id' => $article->getId()]);
+    //     $logo = $old_article[0]->getLogo();
+    //     // $now=Carbon::now();
+    //     $date = date('Y-m-d');
+    //     $format = 'Y-m-d';
+    //     $date = DateTime::createFromFormat($format, $date);
+
+    //     $form = $this->createForm(ArticleType::class, $article);
+    //     $form->handleRequest($request);
+    //     // $article->setCreatedDate($now);
+    //     $article->setDate($date);
+
+    //     if ($form->isSubmitted() && $form->isValid()) {
+    //         $file = $form['logo']->getData();
+    //         if ($file) {
+    //             if ($logo !== null)
+    //                 unlink($deleteFolder . $logo);
+    //             $this->upload($file, $article, $file_uploader, $publicUploadDir);
+    //         }
+    //         $entityManager->flush();
+
+    //         return $this->redirectToRoute('app_article_index', ['fk_category' => $article->getCategorie()->getId()], Response::HTTP_SEE_OTHER);
+    //     }
+
+    //     return $this->render('admin/article/edit.html.twig', [
+    //         'article' => $article,
+    //         'form' => $form,
+    //         'fk_category' => $article->getCategorie()->getId()
+    //     ]);
+    // }
+
+
+
+
     #[Route('/{id}', name: 'app_article_delete', methods: ['POST'])]
     public function delete(Request $request, Article $article, EntityManagerInterface $entityManager): Response
     {
