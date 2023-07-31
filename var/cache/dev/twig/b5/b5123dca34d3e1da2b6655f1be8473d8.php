@@ -120,7 +120,7 @@ class __TwigTemplate_8ad8664702b2b0edb4b9ffe5bdea6b63 extends Template
             <li class=\"nav-item\">
                 <a class=\"nav-link\" href=\"";
         // line 61
-        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_logout");
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("admin_logout");
         echo "\"><span>Déconnexion</span></a>
             </li>
 
@@ -215,7 +215,7 @@ class __TwigTemplate_8ad8664702b2b0edb4b9ffe5bdea6b63 extends Template
                 <a class=\"nav-link\" href=\"\"><span>Mon profil</span></a>
             </li>
             <li class=\"nav-item\">
-                <a class=\"nav-link\" href=\"{{ path('app_logout') }}\"><span>Déconnexion</span></a>
+                <a class=\"nav-link\" href=\"{{ path('admin_logout') }}\"><span>Déconnexion</span></a>
             </li>
 
             <li class=\"text-center d-none d-md-inline\">
