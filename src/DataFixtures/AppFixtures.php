@@ -47,8 +47,66 @@ class AppFixtures extends Fixture
         $team->setPassword($hashedPassword);
         $team->setNom('Lenom');
         $team->setPrenom('Leprenom');
+        $team->setRoles(['ROLE_ADMIN']);
         $manager->persist($team);
 
+        $manager->flush();
+    }
+
+    protected function usersFixtures($manager): void
+    {
+        for ($i = 1; $i <= 7; $i++) {
+            $user[$i] = new User;
+            $hashedPassword = $this->passwordHasher->hashPassword(
+                $user[$i],
+                'password'
+            );
+            $user[$i]->setEmail('user' . $i . '@users.com');
+            $user[$i]->setRoles(['ROLE_VISITOR']);
+            $user[$i]->setPassword($hashedPassword);
+            $user[$i]->setNom($this->faker->firstName());
+            $user[$i]->setPrenom($this->faker->lastName());
+            $manager->persist($user[$i]);
+        }
+        $manager->flush();
+    }
+
+    protected function categoriesFixtures($manager): void
+    {
+        for ($i = 1; $i <= 3; $i++) {
+            $categorie[$i] = new Categories;
+            $categorie[$i]->setNom($this->faker->firstName());
+            $manager->persist($categorie[$i]);
+        }
+        $manager->flush();
+    }
+
+    protected function articleFixtures($manager): void
+    {
+        for ($i = 1; $i <= 12; $i++) {
+            $article[$i] = new Article;
+            $article[$i]->setUser($this->getRandomReference('App\Entity\Team', $manager));
+            $article[$i]->setCategorie($this->getRandomReference('App\Entity\Categories', $manager));
+            $article[$i]->setTitre($this->faker->country());
+            $article[$i]->setContenu($this->faker->text());
+            $article[$i]->setDate($this->faker->datetime());
+            $article[$i]->setLogo('https://loremflickr.com/640/480/musclecar');
+            $manager->persist($article[$i]);
+        }
+        $manager->flush();
+    }
+
+    protected function commentairesFixtures($manager): void
+    {
+        for ($i = 1; $i <= 25; $i++) {
+            $commentaire[$i] = new Commentaires;
+            $commentaire[$i]->setAuteur($this->getRandomReference('App\Entity\User', $manager));
+            $commentaire[$i]->setArticle($this->getRandomReference('App\Entity\Article', $manager));
+            $commentaire[$i]->setContenu($this->faker->text());
+            $commentaire[$i]->setDate($this->faker->dateTime());
+            $commentaire[$i]->setStatus($this->faker->boolean());
+            $manager->persist($commentaire[$i]);
+        }
         $manager->flush();
     }
 

@@ -16,7 +16,7 @@ return [
     '_profiler_router' => [['token'], ['_controller' => 'web_profiler.controller.router::panelAction'], [], [['text', '/router'], ['variable', '/', '[^/]++', 'token', true], ['text', '/_profiler']], [], [], []],
     '_profiler_exception' => [['token'], ['_controller' => 'web_profiler.controller.exception_panel::body'], [], [['text', '/exception'], ['variable', '/', '[^/]++', 'token', true], ['text', '/_profiler']], [], [], []],
     '_profiler_exception_css' => [['token'], ['_controller' => 'web_profiler.controller.exception_panel::stylesheet'], [], [['text', '/exception.css'], ['variable', '/', '[^/]++', 'token', true], ['text', '/_profiler']], [], [], []],
-    'user_loginapp_account' => [[], ['_controller' => 'App\\Controller\\Account\\AccountController::index'], [], [['text', '/account']], [], [], []],
+    'app_account' => [[], ['_controller' => 'App\\Controller\\Account\\AccountController::index'], [], [['text', '/account/']], [], [], []],
     'user_login' => [[], ['_controller' => 'App\\Controller\\Account\\UserSecurityController::login'], [], [['text', '/account/login']], [], [], []],
     'app_logout' => [[], ['_controller' => 'App\\Controller\\Account\\UserSecurityController::logout'], [], [['text', '/account/logout']], [], [], []],
     'app_admin' => [[], ['_controller' => 'App\\Controller\\Admin\\AdminController::index'], [], [['text', '/admin/']], [], [], []],

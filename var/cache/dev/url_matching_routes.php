@@ -14,7 +14,7 @@ return [
         '/_profiler/phpinfo' => [[['_route' => '_profiler_phpinfo', '_controller' => 'web_profiler.controller.profiler::phpinfoAction'], null, null, null, false, false, null]],
         '/_profiler/xdebug' => [[['_route' => '_profiler_xdebug', '_controller' => 'web_profiler.controller.profiler::xdebugAction'], null, null, null, false, false, null]],
         '/_profiler/open' => [[['_route' => '_profiler_open_file', '_controller' => 'web_profiler.controller.profiler::openAction'], null, null, null, false, false, null]],
-        '/account' => [[['_route' => 'user_loginapp_account', '_controller' => 'App\\Controller\\Account\\AccountController::index'], null, null, null, false, false, null]],
+        '/account' => [[['_route' => 'app_account', '_controller' => 'App\\Controller\\Account\\AccountController::index'], null, null, null, true, false, null]],
         '/account/login' => [[['_route' => 'user_login', '_controller' => 'App\\Controller\\Account\\UserSecurityController::login'], null, null, null, false, false, null]],
         '/account/logout' => [[['_route' => 'app_logout', '_controller' => 'App\\Controller\\Account\\UserSecurityController::logout'], null, null, null, false, false, null]],
         '/admin' => [[['_route' => 'app_admin', '_controller' => 'App\\Controller\\Admin\\AdminController::index'], null, null, null, true, false, null]],
