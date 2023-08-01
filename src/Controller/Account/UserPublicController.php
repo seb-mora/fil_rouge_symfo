@@ -12,8 +12,8 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\PasswordHasher\Hasher\UserPasswordHasherInterface;
 use Symfony\Component\Routing\Annotation\Route;
 
-#[Route('public/user')]
-class UserController extends AbstractController
+#[Route('/public/user')]
+class UserPublicController extends AbstractController
 {
     #[Route('/', name: 'public_user_index', methods: ['GET'])]
     public function index(UserRepository $userRepository): Response
