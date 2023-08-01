@@ -90,7 +90,7 @@ class AppFixtures extends Fixture
             $article[$i]->setTitre($this->faker->country());
             $article[$i]->setContenu($this->faker->text());
             $article[$i]->setDate($this->faker->datetime());
-            $article[$i]->setLogo('https://loremflickr.com/640/480/musclecar');
+            $article[$i]->setLogo('https://loremflickr.com/640/480');
             $manager->persist($article[$i]);
         }
         $manager->flush();
