@@ -351,6 +351,10 @@
         <argument type="service" id=".service_locator.5NV8kkv.App\Controller\Account\AccountController"/>
       </call>
     </service>
+    <service id="App\Controller\Account\UserPublicController" class="App\Controller\Account\UserPublicController" autowire="true" autoconfigure="true">
+      <tag name="container.error" message="The autoloader expected class &quot;App\Controller\Account\UserPublicController&quot; to be defined in file &quot;C:\Users\Moras\Desktop\formationCDA\symfony\blog\my_project_directory\vendor\composer/../../src\Controller\Account\UserPublicController.php&quot;. The file was found but the class was not in it, the class name or namespace probably has a typo."/>
+      <tag name="container.error" message="Invalid service &quot;App\Controller\Account\UserPublicController&quot;: the autoloader expected class &quot;App\Controller\Account\UserPublicController&quot; to be defined in file &quot;C:\Users\Moras\Desktop\formationCDA\symfony\blog\my_project_directory\vendor\composer/../../src\Controller\Account\UserPublicController.php&quot;. The file was found but the class was not in it, the class name or namespace probably has a typo."/>
+    </service>
     <service id="App\Controller\Account\UserSecurityController" class="App\Controller\Account\UserSecurityController" public="true" autowire="true" autoconfigure="true">
       <tag name="controller.service_arguments"/>
       <tag name="container.service_subscriber"/>
@@ -5949,6 +5953,13 @@
         </argument>
         <argument>null</argument>
       </call>
+      <call method="add">
+        <argument type="service" id=".security.request_matcher.pi9A1bn"/>
+        <argument type="collection">
+          <argument>PUBLIC_ACCESS</argument>
+        </argument>
+        <argument>null</argument>
+      </call>
     </service>
     <service id="security.context_listener" class="Symfony\Component\Security\Http\Firewall\ContextListener">
       <tag name="monolog.logger" channel="security"/>
@@ -6986,6 +6997,14 @@
     <service id=".security.request_matcher.xEUmqYO" class="Symfony\Component\HttpFoundation\ChainRequestMatcher">
       <argument type="collection">
         <argument type="service" id=".security.request_matcher.isGpTSX"/>
+      </argument>
+    </service>
+    <service id=".security.request_matcher.91yaNq5" class="Symfony\Component\HttpFoundation\RequestMatcher\PathRequestMatcher">
+      <argument>^/public</argument>
+    </service>
+    <service id=".security.request_matcher.pi9A1bn" class="Symfony\Component\HttpFoundation\ChainRequestMatcher">
+      <argument type="collection">
+        <argument type="service" id=".security.request_matcher.91yaNq5"/>
       </argument>
     </service>
     <service id="security.command.user_password_hash" class="Symfony\Component\PasswordHasher\Command\UserPasswordHashCommand">

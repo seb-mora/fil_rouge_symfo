@@ -95,6 +95,7 @@ security:
         - { path: ^/admin, roles: ROLE_ADMIN }
         - { path: ^/account/login, roles: PUBLIC_ACCESS }
         - { path: ^/account, roles: ROLE_VISITOR }
+        - { path: ^/public, roles: PUBLIC_ACCESS }
 
 when@test:
     security:

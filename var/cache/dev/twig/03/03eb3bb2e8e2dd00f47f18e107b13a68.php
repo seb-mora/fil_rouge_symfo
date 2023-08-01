@@ -145,7 +145,7 @@ class __TwigTemplate_6e6b8f3e2012d1f531a432f25485f835 extends Template
         } else {
             // line 24
             echo "        <a href=\"";
-            echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_user_new");
+            echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("public_user_new");
             echo "\"> Créer un compte</a>
          <a href=\"";
             // line 25
@@ -247,7 +247,7 @@ class __TwigTemplate_6e6b8f3e2012d1f531a432f25485f835 extends Template
         <a href=\"\"> bonjour {{app.user.prenom}}</a>
       <a href=\"{{path('app_logout')}}\"> Déconnection</a>
         {% else %}
-        <a href=\"{{path('app_user_new')}}\"> Créer un compte</a>
+        <a href=\"{{path('public_user_new')}}\"> Créer un compte</a>
          <a href=\"{{path('user_login')}}\">Connection</a>
           <a href=\"{{path('admin_login')}}\">Administration</a>
         {% endif %}
