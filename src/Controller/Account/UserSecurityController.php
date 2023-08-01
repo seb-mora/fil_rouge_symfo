@@ -38,6 +38,6 @@ class UserSecurityController extends AbstractController
     #[Route(path: '/logout', name: 'app_logout')]
     public function logout(): Response
     {
-        return new RedirectResponse($this->urlGeneratorInterface->generate('account_login'));
+        return new RedirectResponse($this->urlGeneratorInterface->generate('user_login'));
     }
 }

@@ -30,6 +30,7 @@ class __TwigTemplate_6e6b8f3e2012d1f531a432f25485f835 extends Template
             'title' => [$this, 'block_title'],
             'haut' => [$this, 'block_haut'],
             'body' => [$this, 'block_body'],
+            'bas' => [$this, 'block_bas'],
         ];
     }
 
@@ -74,11 +75,17 @@ class __TwigTemplate_6e6b8f3e2012d1f531a432f25485f835 extends Template
             ";
         // line 33
         $this->displayBlock('body', $context, $blocks);
-        // line 34
-        echo "        </div>
+        // line 35
+        echo "
+        </div>
 
         <script src=\"https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js\" integrity=\"sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz\" crossorigin=\"anonymous\"></script>
 
+ ";
+        // line 40
+        $this->displayBlock('bas', $context, $blocks);
+        // line 45
+        echo "
     </body>
 
 </html>
@@ -127,15 +134,23 @@ class __TwigTemplate_6e6b8f3e2012d1f531a432f25485f835 extends Template
         // line 20
         if (twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 20, $this->source); })()), "user", [], "any", false, false, false, 20)) {
             // line 21
-            echo "        bonjour ";
+            echo "        <a href=\"\"> bonjour ";
             echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 21, $this->source); })()), "user", [], "any", false, false, false, 21), "prenom", [], "any", false, false, false, 21), "html", null, true);
-            echo "
-        Déconnection
+            echo "</a>
+      <a href=\"";
+            // line 22
+            echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_logout");
+            echo "\"> Déconnection</a>
         ";
         } else {
             // line 24
-            echo "        Créer un compte
-        Connection
+            echo "        <a href=\"";
+            echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_user_new");
+            echo "\"> Créer un compte</a>
+         <a href=\"";
+            // line 25
+            echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("user_login");
+            echo "\">Connection</a>
         ";
         }
         // line 27
@@ -160,6 +175,31 @@ class __TwigTemplate_6e6b8f3e2012d1f531a432f25485f835 extends Template
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "body"));
 
+        // line 34
+        echo "            ";
+        
+        $__internal_6f47bbe9983af81f1e7450e9a3e3768f->leave($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof);
+
+        
+        $__internal_5a27a8ba21ca79b61932376b2fa922d2->leave($__internal_5a27a8ba21ca79b61932376b2fa922d2_prof);
+
+    }
+
+    // line 40
+    public function block_bas($context, array $blocks = [])
+    {
+        $macros = $this->macros;
+        $__internal_5a27a8ba21ca79b61932376b2fa922d2 = $this->extensions["Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension"];
+        $__internal_5a27a8ba21ca79b61932376b2fa922d2->enter($__internal_5a27a8ba21ca79b61932376b2fa922d2_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "bas"));
+
+        $__internal_6f47bbe9983af81f1e7450e9a3e3768f = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
+        $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "bas"));
+
+        // line 41
+        echo "
+       bas de page  
+
+";
         
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->leave($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof);
 
@@ -175,7 +215,7 @@ class __TwigTemplate_6e6b8f3e2012d1f531a432f25485f835 extends Template
 
     public function getDebugInfo()
     {
-        return array (  154 => 33,  142 => 27,  137 => 24,  130 => 21,  128 => 20,  125 => 19,  115 => 18,  96 => 11,  78 => 34,  76 => 33,  71 => 30,  69 => 18,  63 => 14,  58 => 11,  46 => 1,);
+        return array (  199 => 41,  189 => 40,  179 => 34,  169 => 33,  157 => 27,  152 => 25,  147 => 24,  142 => 22,  137 => 21,  135 => 20,  132 => 19,  122 => 18,  103 => 11,  88 => 45,  86 => 40,  79 => 35,  77 => 33,  72 => 30,  70 => 18,  64 => 14,  59 => 11,  47 => 1,);
     }
 
     public function getSourceContext()
@@ -200,11 +240,11 @@ class __TwigTemplate_6e6b8f3e2012d1f531a432f25485f835 extends Template
  {% block haut %}
 
         {% if app.user %}
-        bonjour {{app.user.prenom}}
-        Déconnection
+        <a href=\"\"> bonjour {{app.user.prenom}}</a>
+      <a href=\"{{path('app_logout')}}\"> Déconnection</a>
         {% else %}
-        Créer un compte
-        Connection
+        <a href=\"{{path('app_user_new')}}\"> Créer un compte</a>
+         <a href=\"{{path('user_login')}}\">Connection</a>
         {% endif %}
         
 
@@ -212,10 +252,18 @@ class __TwigTemplate_6e6b8f3e2012d1f531a432f25485f835 extends Template
 
         <div class=\"container\">
     
-            {% block body %}{% endblock %}
+            {% block body %}
+            {% endblock %}
+
         </div>
 
         <script src=\"https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js\" integrity=\"sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz\" crossorigin=\"anonymous\"></script>
+
+ {% block bas %}
+
+       bas de page  
+
+{% endblock %}
 
     </body>
 
