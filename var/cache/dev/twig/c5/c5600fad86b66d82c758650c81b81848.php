@@ -32,8 +32,8 @@ class __TwigTemplate_1d9a7c347b3df70109be09f3f4bf8370 extends Template
 
     protected function doGetParent(array $context)
     {
-        // line 1
-        return "admin/base_admin.html.twig";
+        // line 2
+        return "base.html.twig";
     }
 
     protected function doDisplay(array $context, array $blocks = [])
@@ -45,7 +45,7 @@ class __TwigTemplate_1d9a7c347b3df70109be09f3f4bf8370 extends Template
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "home/index.html.twig"));
 
-        $this->parent = $this->loadTemplate("admin/base_admin.html.twig", "home/index.html.twig", 1);
+        $this->parent = $this->loadTemplate("base.html.twig", "home/index.html.twig", 2);
         $this->parent->display($context, array_merge($this->blocks, $blocks));
         
         $__internal_5a27a8ba21ca79b61932376b2fa922d2->leave($__internal_5a27a8ba21ca79b61932376b2fa922d2_prof);
@@ -93,10 +93,10 @@ class __TwigTemplate_1d9a7c347b3df70109be09f3f4bf8370 extends Template
 <div class=\"example-wrapper\">
     <h1>Hello ";
         // line 12
-        echo twig_escape_filter($this->env, (isset($context["controller_name"]) || array_key_exists("controller_name", $context) ? $context["controller_name"] : (function () { throw new RuntimeError('Variable "controller_name" does not exist.', 12, $this->source); })()), "html", null, true);
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 12, $this->source); })()), "user", [], "any", false, false, false, 12), "html", null, true);
         echo "! ✅</h1>
 
-    This friendly message is coming from:
+ home_index:
     <ul>
         <li>Your controller at <code><a href=\"";
         // line 16
@@ -129,13 +129,13 @@ class __TwigTemplate_1d9a7c347b3df70109be09f3f4bf8370 extends Template
 
     public function getDebugInfo()
     {
-        return array (  107 => 17,  103 => 16,  96 => 12,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
+        return array (  107 => 17,  103 => 16,  96 => 12,  88 => 6,  78 => 5,  59 => 3,  36 => 2,);
     }
 
     public function getSourceContext()
     {
-        return new Source("{% extends 'admin/base_admin.html.twig' %}
-
+        return new Source("{# {% extends 'admin/base_admin.html.twig' %} #}
+{% extends 'base.html.twig' %}
 {% block title %}Hello HomeController!{% endblock %}
 
 {% block body %}
@@ -145,9 +145,9 @@ class __TwigTemplate_1d9a7c347b3df70109be09f3f4bf8370 extends Template
 </style>
 
 <div class=\"example-wrapper\">
-    <h1>Hello {{ controller_name }}! ✅</h1>
+    <h1>Hello {{app.user }}! ✅</h1>
 
-    This friendly message is coming from:
+ home_index:
     <ul>
         <li>Your controller at <code><a href=\"{{ 'C:/Users/Moras/Desktop/formationCDA/symfony/blog/my_project_directory/src/Controller/HomeController.php'|file_link(0) }}\">src/Controller/HomeController.php</a></code></li>
         <li>Your template at <code><a href=\"{{ 'C:/Users/Moras/Desktop/formationCDA/symfony/blog/my_project_directory/templates/home/index.html.twig'|file_link(0) }}\">templates/home/index.html.twig</a></code></li>

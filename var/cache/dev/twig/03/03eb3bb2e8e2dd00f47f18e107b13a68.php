@@ -28,8 +28,7 @@ class __TwigTemplate_6e6b8f3e2012d1f531a432f25485f835 extends Template
 
         $this->blocks = [
             'title' => [$this, 'block_title'],
-            'stylesheets' => [$this, 'block_stylesheets'],
-            'javascripts' => [$this, 'block_javascripts'],
+            'haut' => [$this, 'block_haut'],
             'body' => [$this, 'block_body'],
         ];
     }
@@ -45,31 +44,45 @@ class __TwigTemplate_6e6b8f3e2012d1f531a432f25485f835 extends Template
 
         // line 1
         echo "<!DOCTYPE html>
-<html>
+<html lang=\"fr\">
+
     <head>
-        <meta charset=\"UTF-8\">
+
+        <meta charset=\"utf-8\">
+        <meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge\">
+        <meta name=\"viewport\" content=\"width=device-width, initial-scale=1, shrink-to-fit=no\">
+        <meta name=\"robots\" content=\"no-index, no-follow\">
+        <link rel=\"icon\" type=\"image/png\" href=\"/img/ico.png\" />
         <title>";
-        // line 5
+        // line 11
         $this->displayBlock('title', $context, $blocks);
         echo "</title>
-        <link rel=\"icon\" href=\"data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 128 128%22><text y=%221.2em%22 font-size=%2296%22>⚫️</text></svg>\">
-        ";
-        // line 7
-        $this->displayBlock('stylesheets', $context, $blocks);
-        // line 9
-        echo "
-        ";
-        // line 10
-        $this->displayBlock('javascripts', $context, $blocks);
-        // line 12
-        echo "    </head>
-    <body>
+        <link href=\"https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css\" rel=\"stylesheet\" integrity=\"sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM\" crossorigin=\"anonymous\">
         ";
         // line 14
+        echo "    </head>
+
+    <body class=\"bg-gradient-primary\">
+
+ ";
+        // line 18
+        $this->displayBlock('haut', $context, $blocks);
+        // line 30
+        echo "
+        <div class=\"container\">
+    
+            ";
+        // line 33
         $this->displayBlock('body', $context, $blocks);
-        // line 15
-        echo "    </body>
+        // line 34
+        echo "        </div>
+
+        <script src=\"https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js\" integrity=\"sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz\" crossorigin=\"anonymous\"></script>
+
+    </body>
+
 </html>
+
 ";
         
         $__internal_5a27a8ba21ca79b61932376b2fa922d2->leave($__internal_5a27a8ba21ca79b61932376b2fa922d2_prof);
@@ -79,7 +92,7 @@ class __TwigTemplate_6e6b8f3e2012d1f531a432f25485f835 extends Template
 
     }
 
-    // line 5
+    // line 11
     public function block_title($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -89,7 +102,7 @@ class __TwigTemplate_6e6b8f3e2012d1f531a432f25485f835 extends Template
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "title"));
 
-        echo "Welcome!";
+        echo "Administration legion.org";
         
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->leave($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof);
 
@@ -98,18 +111,37 @@ class __TwigTemplate_6e6b8f3e2012d1f531a432f25485f835 extends Template
 
     }
 
-    // line 7
-    public function block_stylesheets($context, array $blocks = [])
+    // line 18
+    public function block_haut($context, array $blocks = [])
     {
         $macros = $this->macros;
         $__internal_5a27a8ba21ca79b61932376b2fa922d2 = $this->extensions["Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension"];
-        $__internal_5a27a8ba21ca79b61932376b2fa922d2->enter($__internal_5a27a8ba21ca79b61932376b2fa922d2_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "stylesheets"));
+        $__internal_5a27a8ba21ca79b61932376b2fa922d2->enter($__internal_5a27a8ba21ca79b61932376b2fa922d2_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "haut"));
 
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
-        $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "stylesheets"));
+        $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "haut"));
 
-        // line 8
-        echo "        ";
+        // line 19
+        echo "
+        ";
+        // line 20
+        if (twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 20, $this->source); })()), "user", [], "any", false, false, false, 20)) {
+            // line 21
+            echo "        bonjour ";
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 21, $this->source); })()), "user", [], "any", false, false, false, 21), "prenom", [], "any", false, false, false, 21), "html", null, true);
+            echo "
+        Déconnection
+        ";
+        } else {
+            // line 24
+            echo "        Créer un compte
+        Connection
+        ";
+        }
+        // line 27
+        echo "        
+
+";
         
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->leave($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof);
 
@@ -118,27 +150,7 @@ class __TwigTemplate_6e6b8f3e2012d1f531a432f25485f835 extends Template
 
     }
 
-    // line 10
-    public function block_javascripts($context, array $blocks = [])
-    {
-        $macros = $this->macros;
-        $__internal_5a27a8ba21ca79b61932376b2fa922d2 = $this->extensions["Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension"];
-        $__internal_5a27a8ba21ca79b61932376b2fa922d2->enter($__internal_5a27a8ba21ca79b61932376b2fa922d2_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "javascripts"));
-
-        $__internal_6f47bbe9983af81f1e7450e9a3e3768f = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
-        $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "javascripts"));
-
-        // line 11
-        echo "        ";
-        
-        $__internal_6f47bbe9983af81f1e7450e9a3e3768f->leave($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof);
-
-        
-        $__internal_5a27a8ba21ca79b61932376b2fa922d2->leave($__internal_5a27a8ba21ca79b61932376b2fa922d2_prof);
-
-    }
-
-    // line 14
+    // line 33
     public function block_body($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -163,27 +175,52 @@ class __TwigTemplate_6e6b8f3e2012d1f531a432f25485f835 extends Template
 
     public function getDebugInfo()
     {
-        return array (  142 => 14,  132 => 11,  122 => 10,  112 => 8,  102 => 7,  83 => 5,  71 => 15,  69 => 14,  65 => 12,  63 => 10,  60 => 9,  58 => 7,  53 => 5,  47 => 1,);
+        return array (  154 => 33,  142 => 27,  137 => 24,  130 => 21,  128 => 20,  125 => 19,  115 => 18,  96 => 11,  78 => 34,  76 => 33,  71 => 30,  69 => 18,  63 => 14,  58 => 11,  46 => 1,);
     }
 
     public function getSourceContext()
     {
         return new Source("<!DOCTYPE html>
-<html>
-    <head>
-        <meta charset=\"UTF-8\">
-        <title>{% block title %}Welcome!{% endblock %}</title>
-        <link rel=\"icon\" href=\"data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 128 128%22><text y=%221.2em%22 font-size=%2296%22>⚫️</text></svg>\">
-        {% block stylesheets %}
-        {% endblock %}
+<html lang=\"fr\">
 
-        {% block javascripts %}
-        {% endblock %}
+    <head>
+
+        <meta charset=\"utf-8\">
+        <meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge\">
+        <meta name=\"viewport\" content=\"width=device-width, initial-scale=1, shrink-to-fit=no\">
+        <meta name=\"robots\" content=\"no-index, no-follow\">
+        <link rel=\"icon\" type=\"image/png\" href=\"/img/ico.png\" />
+        <title>{% block title %}Administration legion.org{% endblock %}</title>
+        <link href=\"https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css\" rel=\"stylesheet\" integrity=\"sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM\" crossorigin=\"anonymous\">
+        {# <link href=\"/assets/css/admin/admin.css\" rel=\"stylesheet\"> #}
     </head>
-    <body>
-        {% block body %}{% endblock %}
+
+    <body class=\"bg-gradient-primary\">
+
+ {% block haut %}
+
+        {% if app.user %}
+        bonjour {{app.user.prenom}}
+        Déconnection
+        {% else %}
+        Créer un compte
+        Connection
+        {% endif %}
+        
+
+{% endblock %}
+
+        <div class=\"container\">
+    
+            {% block body %}{% endblock %}
+        </div>
+
+        <script src=\"https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js\" integrity=\"sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz\" crossorigin=\"anonymous\"></script>
+
     </body>
+
 </html>
+
 ", "base.html.twig", "C:\\Users\\Moras\\Desktop\\formationCDA\\symfony\\blog\\my_project_directory\\templates\\base.html.twig");
     }
 }

@@ -93,17 +93,16 @@ class __TwigTemplate_5874775c85381784a4dfae3d3c436e9a extends Template
 <div class=\"example-wrapper\">
     <h1>Hello ";
         // line 12
-        echo twig_escape_filter($this->env, (isset($context["controller_name"]) || array_key_exists("controller_name", $context) ? $context["controller_name"] : (function () { throw new RuntimeError('Variable "controller_name" does not exist.', 12, $this->source); })()), "html", null, true);
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 12, $this->source); })()), "user", [], "any", false, false, false, 12), "prenom", [], "any", false, false, false, 12), "html", null, true);
         echo "! ✅</h1>
-
-    This friendly message is coming from:
+team_logué:
     <ul>
         <li>Your controller at <code><a href=\"";
-        // line 16
+        // line 15
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\CodeExtension']->getFileLink("C:/Users/Moras/Desktop/formationCDA/symfony/blog/my_project_directory/src/Controller/AdminController.php", 0), "html", null, true);
         echo "\">src/Controller/AdminController.php</a></code></li>
         <li>Your template at <code><a href=\"";
-        // line 17
+        // line 16
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\CodeExtension']->getFileLink("C:/Users/Moras/Desktop/formationCDA/symfony/blog/my_project_directory/templates/admin/index.html.twig", 0), "html", null, true);
         echo "\">templates/admin/index.html.twig</a></code></li>
     </ul>
@@ -129,7 +128,7 @@ class __TwigTemplate_5874775c85381784a4dfae3d3c436e9a extends Template
 
     public function getDebugInfo()
     {
-        return array (  107 => 17,  103 => 16,  96 => 12,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
+        return array (  106 => 16,  102 => 15,  96 => 12,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -145,9 +144,8 @@ class __TwigTemplate_5874775c85381784a4dfae3d3c436e9a extends Template
 </style>
 
 <div class=\"example-wrapper\">
-    <h1>Hello {{ controller_name }}! ✅</h1>
-
-    This friendly message is coming from:
+    <h1>Hello {{ app.user.prenom }}! ✅</h1>
+team_logué:
     <ul>
         <li>Your controller at <code><a href=\"{{ 'C:/Users/Moras/Desktop/formationCDA/symfony/blog/my_project_directory/src/Controller/AdminController.php'|file_link(0) }}\">src/Controller/AdminController.php</a></code></li>
         <li>Your template at <code><a href=\"{{ 'C:/Users/Moras/Desktop/formationCDA/symfony/blog/my_project_directory/templates/admin/index.html.twig'|file_link(0) }}\">templates/admin/index.html.twig</a></code></li>
