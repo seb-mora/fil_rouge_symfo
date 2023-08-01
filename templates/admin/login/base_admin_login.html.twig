@@ -16,7 +16,7 @@
     <body class="bg-gradient-primary">
 
  {% block haut %}
-        {% if app.user.prenom %}
+        {% if app.user %}
         bonjour {{app.user.prenom}}
         {% else %}
         Créer un compte

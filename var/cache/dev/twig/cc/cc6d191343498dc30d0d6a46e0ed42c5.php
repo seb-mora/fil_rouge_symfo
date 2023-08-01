@@ -122,7 +122,7 @@ class __TwigTemplate_247f2ed92ba580a2f89eb056c630c565 extends Template
 
         // line 19
         echo "        ";
-        if (twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 19, $this->source); })()), "user", [], "any", false, false, false, 19), "prenom", [], "any", false, false, false, 19)) {
+        if (twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 19, $this->source); })()), "user", [], "any", false, false, false, 19)) {
             // line 20
             echo "        bonjour ";
             echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 20, $this->source); })()), "user", [], "any", false, false, false, 20), "prenom", [], "any", false, false, false, 20), "html", null, true);
@@ -192,7 +192,7 @@ class __TwigTemplate_247f2ed92ba580a2f89eb056c630c565 extends Template
     <body class=\"bg-gradient-primary\">
 
  {% block haut %}
-        {% if app.user.prenom %}
+        {% if app.user %}
         bonjour {{app.user.prenom}}
         {% else %}
         Créer un compte

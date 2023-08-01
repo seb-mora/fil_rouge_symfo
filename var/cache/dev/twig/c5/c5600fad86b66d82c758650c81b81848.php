@@ -91,19 +91,20 @@ class __TwigTemplate_1d9a7c347b3df70109be09f3f4bf8370 extends Template
 </style>
 <div> </div>
 <div class=\"example-wrapper\">
-    <h1>Hello ";
-        // line 12
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 12, $this->source); })()), "user", [], "any", false, false, false, 12), "html", null, true);
-        echo "! ✅</h1>
-
- home_index:
+    ";
+        // line 13
+        echo "<img 
+     src=\"/assets/img/logo.png\" width=500 height=500>
+     <br>
+     <br>
+ home_index
     <ul>
         <li>Your controller at <code><a href=\"";
-        // line 16
+        // line 19
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\CodeExtension']->getFileLink("C:/Users/Moras/Desktop/formationCDA/symfony/blog/my_project_directory/src/Controller/HomeController.php", 0), "html", null, true);
         echo "\">src/Controller/HomeController.php</a></code></li>
         <li>Your template at <code><a href=\"";
-        // line 17
+        // line 20
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\CodeExtension']->getFileLink("C:/Users/Moras/Desktop/formationCDA/symfony/blog/my_project_directory/templates/home/index.html.twig", 0), "html", null, true);
         echo "\">templates/home/index.html.twig</a></code></li>
     </ul>
@@ -129,7 +130,7 @@ class __TwigTemplate_1d9a7c347b3df70109be09f3f4bf8370 extends Template
 
     public function getDebugInfo()
     {
-        return array (  107 => 17,  103 => 16,  96 => 12,  88 => 6,  78 => 5,  59 => 3,  36 => 2,);
+        return array (  108 => 20,  104 => 19,  96 => 13,  88 => 6,  78 => 5,  59 => 3,  36 => 2,);
     }
 
     public function getSourceContext()
@@ -145,9 +146,12 @@ class __TwigTemplate_1d9a7c347b3df70109be09f3f4bf8370 extends Template
 </style>
 <div> </div>
 <div class=\"example-wrapper\">
-    <h1>Hello {{app.user }}! ✅</h1>
-
- home_index:
+    {# <h1>Hello {{app.user }}! ✅</h1> #}
+<img 
+     src=\"/assets/img/logo.png\" width=500 height=500>
+     <br>
+     <br>
+ home_index
     <ul>
         <li>Your controller at <code><a href=\"{{ 'C:/Users/Moras/Desktop/formationCDA/symfony/blog/my_project_directory/src/Controller/HomeController.php'|file_link(0) }}\">src/Controller/HomeController.php</a></code></li>
         <li>Your template at <code><a href=\"{{ 'C:/Users/Moras/Desktop/formationCDA/symfony/blog/my_project_directory/templates/home/index.html.twig'|file_link(0) }}\">templates/home/index.html.twig</a></code></li>

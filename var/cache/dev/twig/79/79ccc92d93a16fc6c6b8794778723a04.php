@@ -118,9 +118,22 @@ class __TwigTemplate_17cc00df704df97621db9e89950131b4 extends Template
                                                 Me connecter
                                             </button>
                                         </form>
+                                        <br>
+
+        <a href=\"";
+        // line 46
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_user_new");
+        echo "\"> Créer un compte utilisateur</a>
+         <a href=\"";
+        // line 47
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("user_login");
+        echo "\">Connection utilisateur</a>
+
+      
+
                                         <hr>
                                         ";
-        // line 46
+        // line 53
         echo "                                    </div>
                                 </div>
                             </div>
@@ -150,7 +163,7 @@ class __TwigTemplate_17cc00df704df97621db9e89950131b4 extends Template
 
     public function getDebugInfo()
     {
-        return array (  124 => 46,  113 => 37,  96 => 23,  92 => 21,  86 => 19,  84 => 18,  68 => 4,  58 => 3,  35 => 1,);
+        return array (  137 => 53,  129 => 47,  125 => 46,  113 => 37,  96 => 23,  92 => 21,  86 => 19,  84 => 18,  68 => 4,  58 => 3,  35 => 1,);
     }
 
     public function getSourceContext()
@@ -198,6 +211,13 @@ class __TwigTemplate_17cc00df704df97621db9e89950131b4 extends Template
                                                 Me connecter
                                             </button>
                                         </form>
+                                        <br>
+
+        <a href=\"{{path('app_user_new')}}\"> Créer un compte utilisateur</a>
+         <a href=\"{{path('user_login')}}\">Connection utilisateur</a>
+
+      
+
                                         <hr>
                                         {# <a href=\"{{ path('app_forgot_password_request') }}\">Mot de passe oublié</a> #}
                                     </div>

@@ -56,8 +56,8 @@ security:
                 password_parameter: login[password]
                 enable_csrf: true
             logout:
-                path: user_logout
-                target: user_logout
+                path: app_logout
+                target: app_home
                 invalidate_session: true
             custom_authenticator: App\Security\UserAuthenticator
             entry_point: form_login

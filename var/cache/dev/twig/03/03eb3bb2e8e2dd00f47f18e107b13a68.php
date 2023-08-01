@@ -68,23 +68,23 @@ class __TwigTemplate_6e6b8f3e2012d1f531a432f25485f835 extends Template
  ";
         // line 18
         $this->displayBlock('haut', $context, $blocks);
-        // line 30
+        // line 31
         echo "
         <div class=\"container\">
     
             ";
-        // line 33
+        // line 34
         $this->displayBlock('body', $context, $blocks);
-        // line 35
+        // line 36
         echo "
         </div>
 
         <script src=\"https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js\" integrity=\"sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz\" crossorigin=\"anonymous\"></script>
 
  ";
-        // line 40
+        // line 41
         $this->displayBlock('bas', $context, $blocks);
-        // line 45
+        // line 46
         echo "
     </body>
 
@@ -151,9 +151,13 @@ class __TwigTemplate_6e6b8f3e2012d1f531a432f25485f835 extends Template
             // line 25
             echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("user_login");
             echo "\">Connection</a>
+          <a href=\"";
+            // line 26
+            echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("admin_login");
+            echo "\">Administration</a>
         ";
         }
-        // line 27
+        // line 28
         echo "        
 
 ";
@@ -165,7 +169,7 @@ class __TwigTemplate_6e6b8f3e2012d1f531a432f25485f835 extends Template
 
     }
 
-    // line 33
+    // line 34
     public function block_body($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -175,7 +179,7 @@ class __TwigTemplate_6e6b8f3e2012d1f531a432f25485f835 extends Template
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "body"));
 
-        // line 34
+        // line 35
         echo "            ";
         
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->leave($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof);
@@ -185,7 +189,7 @@ class __TwigTemplate_6e6b8f3e2012d1f531a432f25485f835 extends Template
 
     }
 
-    // line 40
+    // line 41
     public function block_bas($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -195,7 +199,7 @@ class __TwigTemplate_6e6b8f3e2012d1f531a432f25485f835 extends Template
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "bas"));
 
-        // line 41
+        // line 42
         echo "
        bas de page  
 
@@ -215,7 +219,7 @@ class __TwigTemplate_6e6b8f3e2012d1f531a432f25485f835 extends Template
 
     public function getDebugInfo()
     {
-        return array (  199 => 41,  189 => 40,  179 => 34,  169 => 33,  157 => 27,  152 => 25,  147 => 24,  142 => 22,  137 => 21,  135 => 20,  132 => 19,  122 => 18,  103 => 11,  88 => 45,  86 => 40,  79 => 35,  77 => 33,  72 => 30,  70 => 18,  64 => 14,  59 => 11,  47 => 1,);
+        return array (  203 => 42,  193 => 41,  183 => 35,  173 => 34,  161 => 28,  156 => 26,  152 => 25,  147 => 24,  142 => 22,  137 => 21,  135 => 20,  132 => 19,  122 => 18,  103 => 11,  88 => 46,  86 => 41,  79 => 36,  77 => 34,  72 => 31,  70 => 18,  64 => 14,  59 => 11,  47 => 1,);
     }
 
     public function getSourceContext()
@@ -245,6 +249,7 @@ class __TwigTemplate_6e6b8f3e2012d1f531a432f25485f835 extends Template
         {% else %}
         <a href=\"{{path('app_user_new')}}\"> Créer un compte</a>
          <a href=\"{{path('user_login')}}\">Connection</a>
+          <a href=\"{{path('admin_login')}}\">Administration</a>
         {% endif %}
         
 

@@ -36,8 +36,7 @@ class UserSecurityController extends AbstractController
     }
 
     #[Route(path: '/logout', name: 'app_logout')]
-    public function logout(): Response
+    public function logout(): void
     {
-        return new RedirectResponse($this->urlGeneratorInterface->generate('app_home'));
     }
 }
