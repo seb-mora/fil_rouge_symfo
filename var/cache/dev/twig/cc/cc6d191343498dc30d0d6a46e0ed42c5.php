@@ -28,6 +28,7 @@ class __TwigTemplate_247f2ed92ba580a2f89eb056c630c565 extends Template
 
         $this->blocks = [
             'title' => [$this, 'block_title'],
+            'haut' => [$this, 'block_haut'],
             'body' => [$this, 'block_body'],
         ];
     }
@@ -61,11 +62,18 @@ class __TwigTemplate_247f2ed92ba580a2f89eb056c630c565 extends Template
     </head>
 
     <body class=\"bg-gradient-primary\">
-        <div class=\"container\">
-            ";
+
+ ";
         // line 18
+        $this->displayBlock('haut', $context, $blocks);
+        // line 26
+        echo "
+        <div class=\"container\">
+    
+            ";
+        // line 29
         $this->displayBlock('body', $context, $blocks);
-        // line 19
+        // line 30
         echo "        </div>
 
         <script src=\"https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js\" integrity=\"sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz\" crossorigin=\"anonymous\"></script>
@@ -103,6 +111,40 @@ class __TwigTemplate_247f2ed92ba580a2f89eb056c630c565 extends Template
     }
 
     // line 18
+    public function block_haut($context, array $blocks = [])
+    {
+        $macros = $this->macros;
+        $__internal_5a27a8ba21ca79b61932376b2fa922d2 = $this->extensions["Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension"];
+        $__internal_5a27a8ba21ca79b61932376b2fa922d2->enter($__internal_5a27a8ba21ca79b61932376b2fa922d2_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "haut"));
+
+        $__internal_6f47bbe9983af81f1e7450e9a3e3768f = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
+        $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "haut"));
+
+        // line 19
+        echo "        ";
+        if (twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 19, $this->source); })()), "user", [], "any", false, false, false, 19), "prenom", [], "any", false, false, false, 19)) {
+            // line 20
+            echo "        bonjour ";
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 20, $this->source); })()), "user", [], "any", false, false, false, 20), "prenom", [], "any", false, false, false, 20), "html", null, true);
+            echo "
+        ";
+        } else {
+            // line 22
+            echo "        Créer un compte
+        ";
+        }
+        // line 24
+        echo "        
+        ";
+        
+        $__internal_6f47bbe9983af81f1e7450e9a3e3768f->leave($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof);
+
+        
+        $__internal_5a27a8ba21ca79b61932376b2fa922d2->leave($__internal_5a27a8ba21ca79b61932376b2fa922d2_prof);
+
+    }
+
+    // line 29
     public function block_body($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -127,7 +169,7 @@ class __TwigTemplate_247f2ed92ba580a2f89eb056c630c565 extends Template
 
     public function getDebugInfo()
     {
-        return array (  106 => 18,  87 => 11,  69 => 19,  67 => 18,  57 => 11,  45 => 1,);
+        return array (  148 => 29,  137 => 24,  133 => 22,  127 => 20,  124 => 19,  114 => 18,  95 => 11,  77 => 30,  75 => 29,  70 => 26,  68 => 18,  58 => 11,  46 => 1,);
     }
 
     public function getSourceContext()
@@ -148,7 +190,18 @@ class __TwigTemplate_247f2ed92ba580a2f89eb056c630c565 extends Template
     </head>
 
     <body class=\"bg-gradient-primary\">
+
+ {% block haut %}
+        {% if app.user.prenom %}
+        bonjour {{app.user.prenom}}
+        {% else %}
+        Créer un compte
+        {% endif %}
+        
+        {% endblock %}
+
         <div class=\"container\">
+    
             {% block body %}{% endblock %}
         </div>
 
