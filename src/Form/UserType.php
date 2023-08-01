@@ -8,6 +8,8 @@ use Symfony\Component\Form\CallbackTransformer;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
+use Symfony\Component\Form\Extension\Core\Type\PasswordType;
+use Symfony\Component\Form\Extension\Core\Type\RepeatedType;
 
 class UserType extends AbstractType
 {
@@ -25,7 +27,17 @@ class UserType extends AbstractType
                 'label' => 'Role',
                 'required' => is_null($builder->getData()->getId()) ? true : false,
             ])
-            ->add('password');
+            ->add('password', RepeatedType::class, [
+                'type' => PasswordType::class,
+                'invalid_message' => 'mots de passe différents',
+                'options' => ['attr' => [
+                    'class' => 'password-field',
+                    'autocomplete' => 'new-password'
+                ]],
+                'required' => is_null($builder->getData()->getId()) ? true : false,
+                'first_options' => ['label' => 'Mot de passe'],
+                'second_options' => ['label' => 'Confirmer mot de passe']
+            ]);
 
         $builder->get('roles')
             ->addModelTransformer(new CallbackTransformer(
