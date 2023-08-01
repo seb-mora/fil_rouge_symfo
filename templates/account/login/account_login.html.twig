@@ -11,7 +11,7 @@
                                 <div class="col-lg-6 card-block-text">
                                     <div class="p-5">
                                         <div class="text-center">
-                                            <h1 class="h4 text-gray-900 mb-4">Connection</h1>
+                                            <h1 class="h4 text-gray-900 mb-4">Connection utilisateur</h1>
                                         </div>
 
                                         <form method="post">
@@ -41,6 +41,10 @@
                                                 Me connecter
                                             </button>
                                         </form>
+                                  <br>
+                                  <a href="{{path('public_user_new')}}"> Créer un compte utilisateur</a>
+                                <br>
+                          <a href="{{path('admin_login')}}">Administration</a>
                                         <hr>
                                         {# <a href="{{ path('app_forgot_password_request') }}">Mot de passe oublié</a> #}
                                     </div>

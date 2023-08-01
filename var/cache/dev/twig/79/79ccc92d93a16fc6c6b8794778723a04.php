@@ -65,7 +65,12 @@ class __TwigTemplate_17cc00df704df97621db9e89950131b4 extends Template
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "body"));
 
         // line 4
-        echo "
+        echo "<style>
+
+.row {
+    background-color : #6b0606;
+}
+</style>
     <div class=\"row justify-content-center\">
                 <div class=\"col-xl-10 col-lg-12 col-md-9\">
                     <div class=\"card o-hidden border-0 shadow-lg my-5\">
@@ -75,25 +80,25 @@ class __TwigTemplate_17cc00df704df97621db9e89950131b4 extends Template
                                 <div class=\"col-lg-6 card-block-text\">
                                     <div class=\"p-5\">
                                         <div class=\"text-center\">
-                                            <h1 class=\"h4 text-gray-900 mb-4\">Administration Légion</h1>
+                                            <h1 class=\"h4 text-gray-900 mb-4\">Administration</h1>
                                         </div>
 
                                         <form method=\"post\">
                                             ";
-        // line 18
-        if ((isset($context["error"]) || array_key_exists("error", $context) ? $context["error"] : (function () { throw new RuntimeError('Variable "error" does not exist.', 18, $this->source); })())) {
-            // line 19
+        // line 23
+        if ((isset($context["error"]) || array_key_exists("error", $context) ? $context["error"] : (function () { throw new RuntimeError('Variable "error" does not exist.', 23, $this->source); })())) {
+            // line 24
             echo "                                                <div class=\"alert alert-danger\">";
-            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\TranslationExtension']->trans(twig_get_attribute($this->env, $this->source, (isset($context["error"]) || array_key_exists("error", $context) ? $context["error"] : (function () { throw new RuntimeError('Variable "error" does not exist.', 19, $this->source); })()), "messageKey", [], "any", false, false, false, 19), twig_get_attribute($this->env, $this->source, (isset($context["error"]) || array_key_exists("error", $context) ? $context["error"] : (function () { throw new RuntimeError('Variable "error" does not exist.', 19, $this->source); })()), "messageData", [], "any", false, false, false, 19), "security"), "html", null, true);
+            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\TranslationExtension']->trans(twig_get_attribute($this->env, $this->source, (isset($context["error"]) || array_key_exists("error", $context) ? $context["error"] : (function () { throw new RuntimeError('Variable "error" does not exist.', 24, $this->source); })()), "messageKey", [], "any", false, false, false, 24), twig_get_attribute($this->env, $this->source, (isset($context["error"]) || array_key_exists("error", $context) ? $context["error"] : (function () { throw new RuntimeError('Variable "error" does not exist.', 24, $this->source); })()), "messageData", [], "any", false, false, false, 24), "security"), "html", null, true);
             echo "</div>
                                             ";
         }
-        // line 21
+        // line 26
         echo "
                                             <div class=\"form-group\">
                                                 <input type=\"email\" class=\"form-control form-control-user\" aria-describedby=\"emailHelp\" placeholder=\"Votre email ...\" value=\"";
-        // line 23
-        echo twig_escape_filter($this->env, (isset($context["last_username"]) || array_key_exists("last_username", $context) ? $context["last_username"] : (function () { throw new RuntimeError('Variable "last_username" does not exist.', 23, $this->source); })()), "html", null, true);
+        // line 28
+        echo twig_escape_filter($this->env, (isset($context["last_username"]) || array_key_exists("last_username", $context) ? $context["last_username"] : (function () { throw new RuntimeError('Variable "last_username" does not exist.', 28, $this->source); })()), "html", null, true);
         echo "\" name=\"email\" id=\"inputEmail\">
                                             </div>
                                             <div class=\"form-group\">
@@ -109,7 +114,7 @@ class __TwigTemplate_17cc00df704df97621db9e89950131b4 extends Template
 
                                             <input type=\"hidden\" name=\"_csrf_token\"
                                                 value=\"";
-        // line 37
+        // line 42
         echo twig_escape_filter($this->env, $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderCsrfToken("authenticate"), "html", null, true);
         echo "\"
                                             >
@@ -119,21 +124,18 @@ class __TwigTemplate_17cc00df704df97621db9e89950131b4 extends Template
                                             </button>
                                         </form>
                                         <br>
-
-        <a href=\"";
-        // line 46
-        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_user_new");
-        echo "\"> Créer un compte utilisateur</a>
-         <a href=\"";
-        // line 47
+                                    <a href=\"";
+        // line 50
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("user_login");
         echo "\">Connection utilisateur</a>
-
-      
-
+                                  <br>
+                                 <a href=\"";
+        // line 52
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("public_user_new");
+        echo "\"> Créer un compte utilisateur</a>
                                         <hr>
                                         ";
-        // line 53
+        // line 55
         echo "                                    </div>
                                 </div>
                             </div>
@@ -163,7 +165,7 @@ class __TwigTemplate_17cc00df704df97621db9e89950131b4 extends Template
 
     public function getDebugInfo()
     {
-        return array (  137 => 53,  129 => 47,  125 => 46,  113 => 37,  96 => 23,  92 => 21,  86 => 19,  84 => 18,  68 => 4,  58 => 3,  35 => 1,);
+        return array (  139 => 55,  134 => 52,  129 => 50,  118 => 42,  101 => 28,  97 => 26,  91 => 24,  89 => 23,  68 => 4,  58 => 3,  35 => 1,);
     }
 
     public function getSourceContext()
@@ -171,7 +173,12 @@ class __TwigTemplate_17cc00df704df97621db9e89950131b4 extends Template
         return new Source("{% extends 'admin/login/base_admin_login.html.twig' %}
 
 {% block body %}
+<style>
 
+.row {
+    background-color : #6b0606;
+}
+</style>
     <div class=\"row justify-content-center\">
                 <div class=\"col-xl-10 col-lg-12 col-md-9\">
                     <div class=\"card o-hidden border-0 shadow-lg my-5\">
@@ -181,7 +188,7 @@ class __TwigTemplate_17cc00df704df97621db9e89950131b4 extends Template
                                 <div class=\"col-lg-6 card-block-text\">
                                     <div class=\"p-5\">
                                         <div class=\"text-center\">
-                                            <h1 class=\"h4 text-gray-900 mb-4\">Administration Légion</h1>
+                                            <h1 class=\"h4 text-gray-900 mb-4\">Administration</h1>
                                         </div>
 
                                         <form method=\"post\">
@@ -212,12 +219,9 @@ class __TwigTemplate_17cc00df704df97621db9e89950131b4 extends Template
                                             </button>
                                         </form>
                                         <br>
-
-        <a href=\"{{path('app_user_new')}}\"> Créer un compte utilisateur</a>
-         <a href=\"{{path('user_login')}}\">Connection utilisateur</a>
-
-      
-
+                                    <a href=\"{{path('user_login')}}\">Connection utilisateur</a>
+                                  <br>
+                                 <a href=\"{{path('public_user_new')}}\"> Créer un compte utilisateur</a>
                                         <hr>
                                         {# <a href=\"{{ path('app_forgot_password_request') }}\">Mot de passe oublié</a> #}
                                     </div>

@@ -134,9 +134,9 @@ class __TwigTemplate_6e6b8f3e2012d1f531a432f25485f835 extends Template
         // line 20
         if (twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 20, $this->source); })()), "user", [], "any", false, false, false, 20)) {
             // line 21
-            echo "        <a href=\"\"> bonjour ";
+            echo "        bonjour ";
             echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 21, $this->source); })()), "user", [], "any", false, false, false, 21), "prenom", [], "any", false, false, false, 21), "html", null, true);
-            echo "</a>
+            echo "
       <a href=\"";
             // line 22
             echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_logout");
@@ -244,7 +244,7 @@ class __TwigTemplate_6e6b8f3e2012d1f531a432f25485f835 extends Template
  {% block haut %}
 
         {% if app.user %}
-        <a href=\"\"> bonjour {{app.user.prenom}}</a>
+        bonjour {{app.user.prenom}}
       <a href=\"{{path('app_logout')}}\"> Déconnection</a>
         {% else %}
         <a href=\"{{path('public_user_new')}}\"> Créer un compte</a>

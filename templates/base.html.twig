@@ -18,7 +18,7 @@
  {% block haut %}
 
         {% if app.user %}
-        <a href=""> bonjour {{app.user.prenom}}</a>
+        bonjour {{app.user.prenom}}
       <a href="{{path('app_logout')}}"> Déconnection</a>
         {% else %}
         <a href="{{path('public_user_new')}}"> Créer un compte</a>

@@ -39,6 +39,8 @@ class UserPublicController extends AbstractController
             );
             $user->setPassword($hashedPassword);
 
+            $user->setRoles(["ROLE_VISITOR"]);
+
             $entityManager->persist($user);
             $entityManager->flush();
 
