@@ -1,0 +1,42 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Article index{% endblock %}
+
+{% block body %}
+    <h1>Article index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+               <th>Logo</th>
+                <th>Titre</th>
+                <th>Contenu</th>
+                <th>Auteur</th>
+                <th>Catégorie</th>
+                <th>Date</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for article in articles %}
+            <tr>
+                 <td>{% if article.logo !='' %}
+                <img src={{ article.logo }} height="50" width="50">
+                {% endif %}</td>
+                <td>{{ article.titre }}</td>
+                <td> <a href="{{ path('app_article_show', {'id': article.id}) }}">
+                {{ article.contenu }} </a></td>
+                <td>{{ article.user }}</td>
+                 <td>{{ article.categorie }}</td>
+                <td>{{ article.date ? article.date|date('Y-m-d H:i:s') : '' }}</td>   
+                </span>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="5">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+ 
+{% endblock %}

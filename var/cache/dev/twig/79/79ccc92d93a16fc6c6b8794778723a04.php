@@ -98,7 +98,7 @@ class __TwigTemplate_17cc00df704df97621db9e89950131b4 extends Template
                                             <div class=\"form-group\">
                                                 <input type=\"email\" class=\"form-control form-control-user\" aria-describedby=\"emailHelp\" placeholder=\"Votre email ...\" value=\"";
         // line 28
-        echo twig_escape_filter($this->env, (isset($context["params"]) || array_key_exists("params", $context) ? $context["params"] : (function () { throw new RuntimeError('Variable "params" does not exist.', 28, $this->source); })()), "html", null, true);
+        echo twig_escape_filter($this->env, (isset($context["last_username"]) || array_key_exists("last_username", $context) ? $context["last_username"] : (function () { throw new RuntimeError('Variable "last_username" does not exist.', 28, $this->source); })()), "html", null, true);
         echo "\" name=\"email\" id=\"inputEmail\">
                                             </div>
                                             <div class=\"form-group\">
@@ -197,7 +197,7 @@ class __TwigTemplate_17cc00df704df97621db9e89950131b4 extends Template
                                             {% endif %}
 
                                             <div class=\"form-group\">
-                                                <input type=\"email\" class=\"form-control form-control-user\" aria-describedby=\"emailHelp\" placeholder=\"Votre email ...\" value=\"{{ params }}\" name=\"email\" id=\"inputEmail\">
+                                                <input type=\"email\" class=\"form-control form-control-user\" aria-describedby=\"emailHelp\" placeholder=\"Votre email ...\" value=\"{{ last_username }}\" name=\"email\" id=\"inputEmail\">
                                             </div>
                                             <div class=\"form-group\">
                                                 <input type=\"password\" class=\"form-control form-control-user\"
