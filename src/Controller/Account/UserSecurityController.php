@@ -25,7 +25,7 @@ class UserSecurityController extends AbstractController
     {
 
         if ($this->getUser()) {
-            return $this->redirectToRoute('app_account');
+            return $this->redirectToRoute('app_home');
         }
 
         // get the login error if there is one

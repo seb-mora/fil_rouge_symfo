@@ -65,7 +65,7 @@ class __TwigTemplate_1d9a7c347b3df70109be09f3f4bf8370 extends Template
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "title"));
 
-        echo "Hello HomeController!";
+        echo "Sebfony";
         
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->leave($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof);
 
@@ -91,9 +91,11 @@ class __TwigTemplate_1d9a7c347b3df70109be09f3f4bf8370 extends Template
 </style>
 <div> </div>
 <div class=\"example-wrapper\">
-    ";
-        // line 13
-        echo "<img 
+    <h1>Hello ";
+        // line 12
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 12, $this->source); })()), "user", [], "any", false, false, false, 12), "html", null, true);
+        echo "! ✅</h1>
+<img 
      src=\"/assets/img/logo.png\" width=500 height=500>
      <br>
      <br>
@@ -130,14 +132,14 @@ class __TwigTemplate_1d9a7c347b3df70109be09f3f4bf8370 extends Template
 
     public function getDebugInfo()
     {
-        return array (  108 => 20,  104 => 19,  96 => 13,  88 => 6,  78 => 5,  59 => 3,  36 => 2,);
+        return array (  110 => 20,  106 => 19,  96 => 12,  88 => 6,  78 => 5,  59 => 3,  36 => 2,);
     }
 
     public function getSourceContext()
     {
         return new Source("{# {% extends 'admin/base_admin.html.twig' %} #}
 {% extends 'base.html.twig' %}
-{% block title %}Hello HomeController!{% endblock %}
+{% block title %}Sebfony{% endblock %}
 
 {% block body %}
 <style>
@@ -146,7 +148,7 @@ class __TwigTemplate_1d9a7c347b3df70109be09f3f4bf8370 extends Template
 </style>
 <div> </div>
 <div class=\"example-wrapper\">
-    {# <h1>Hello {{app.user }}! ✅</h1> #}
+    <h1>Hello {{app.user }}! ✅</h1>
 <img 
      src=\"/assets/img/logo.png\" width=500 height=500>
      <br>

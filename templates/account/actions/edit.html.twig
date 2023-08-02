@@ -8,7 +8,9 @@
 
     {{ include('account/actions/_form.html.twig', {'button_label': 'Update'}) }}
 
-    <a href="{{ path('app_commentaires_show') }}">Retour accueil</a>
+    <a href="{{ path('app_account')}}">Retour accueil</a>
+ {# <a href="{{ path('app_commentaires_show', {'id': app.user.id}) }}">Retour accueil</a> #}
+   
 
     {{ include('admin/user/_delete_form.html.twig') }}
 {% endblock %}

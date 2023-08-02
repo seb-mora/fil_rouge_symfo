@@ -4,6 +4,8 @@ namespace App\Controller\Account;
 
 use App\Entity\User;
 use App\Form\UserType;
+use App\Repository\ArticleRepository;
+use App\Repository\CategoriesRepository;
 use App\Repository\UserRepository;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
@@ -15,11 +17,11 @@ use Symfony\Component\Routing\Annotation\Route;
 #[Route('/public/user')]
 class UserPublicController extends AbstractController
 {
-    #[Route('/', name: 'public_user_index', methods: ['GET'])]
-    public function index(UserRepository $userRepository): Response
+    #[Route('/', name: 'public_article_index', methods: ['GET'])]
+    public function index(ArticleRepository $articleRepository): Response
     {
-        return $this->render('admin/user/index.html.twig', [
-            'users' => $userRepository->findAll(),
+        return $this->render('account/actions/index.html.twig', [
+            'categ' => $articleRepository->findAll(),
         ]);
     }
 
