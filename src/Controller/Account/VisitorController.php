@@ -85,44 +85,44 @@ class VisitorController extends AbstractController
     //     ]);
     // }
 
-    #[Route('/{id}/edit', name: 'visitor_user_edit', methods: ['GET', 'POST'])]
-    public function edit(Request $request, User $user, EntityManagerInterface $entityManager, UserPasswordHasherInterface $userPasswordHasherInterface): Response
-    {
-        $form = $this->createForm(UserType::class, $user);
-        $form->handleRequest($request);
+    // #[Route('/{id}/edit', name: 'visitor_user_edit', methods: ['GET', 'POST'])]
+    // public function edit(Request $request, User $user, EntityManagerInterface $entityManager, UserPasswordHasherInterface $userPasswordHasherInterface): Response
+    // {
+    //     $form = $this->createForm(UserType::class, $user);
+    //     $form->handleRequest($request);
 
-        if ($form->isSubmitted() && $form->isValid()) {
+    //     if ($form->isSubmitted() && $form->isValid()) {
 
-            $brutPassword = $user->getPassword();
-            $hashedPassword = $userPasswordHasherInterface->hashPassword(
-                $user,
-                $brutPassword
-            );
-            $user->setPassword($hashedPassword);
+    //         $brutPassword = $user->getPassword();
+    //         $hashedPassword = $userPasswordHasherInterface->hashPassword(
+    //             $user,
+    //             $brutPassword
+    //         );
+    //         $user->setPassword($hashedPassword);
 
-            $user->setRoles(["ROLE_VISITOR"]);
+    //         $user->setRoles(["ROLE_VISITOR"]);
 
-            $entityManager->persist($user);
+    //         $entityManager->persist($user);
 
-            $entityManager->flush();
+    //         $entityManager->flush();
 
-            return $this->redirectToRoute('app_account');
-        }
+    //         return $this->redirectToRoute('app_account');
+    //     }
 
-        return $this->render('account/actions/edit.html.twig', [
-            'user' => $user,
-            'form' => $form,
-        ]);
-    }
+    //     return $this->render('account/actions/edit.html.twig', [
+    //         'user' => $user,
+    //         'form' => $form,
+    //     ]);
+    // }
 
-    #[Route('/{id}', name: 'visitor_user_delete', methods: ['POST'])]
-    public function delete(Request $request, User $user, EntityManagerInterface $entityManager): Response
-    {
-        if ($this->isCsrfTokenValid('delete' . $user->getId(), $request->request->get('_token'))) {
-            $entityManager->remove($user);
-            $entityManager->flush();
-        }
+    // #[Route('/{id}', name: 'visitor_user_delete', methods: ['POST'])]
+    // public function delete(Request $request, User $user, EntityManagerInterface $entityManager): Response
+    // {
+    //     if ($this->isCsrfTokenValid('delete' . $user->getId(), $request->request->get('_token'))) {
+    //         $entityManager->remove($user);
+    //         $entityManager->flush();
+    //     }
 
-        return $this->redirectToRoute('app_user_index', [], Response::HTTP_SEE_OTHER);
-    }
+    //     return $this->redirectToRoute('app_user_index', [], Response::HTTP_SEE_OTHER);
+    // }
 }

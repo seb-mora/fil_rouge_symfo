@@ -1,4 +1,4 @@
-{% extends 'base.html.twig' %}
+{% extends 'account/baseAccount.html.twig' %}
 
 {% block title %}Hello {{ app.user.prenom }}{% endblock %}
 
@@ -10,15 +10,19 @@
 
 <div class="example-wrapper">
     
- {% if app.user %}
+ <br>
+     <br>
       
      <h1>Hello {{ app.user.prenom }}! ✅</h1>
+     <br>
+     <br>
 
 <a href="{{ path('app_account_commentaires', {'id': app.user.id}) }}">Voir les commentaires</a>
-
+ <br>
+     <br>
        
-
-        {% endif %}
+<a href="{{ path('public_user_edit', {'id': app.user.id}) }}">Editer le profil</a>
+      
 <br>
 <br>
 <br>

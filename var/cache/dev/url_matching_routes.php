@@ -96,10 +96,6 @@ return [
                 .'|/visitor/user/(?'
                     .'|artice/([^/]++)(*:609)'
                     .'|categorie/([^/]++)(*:635)'
-                    .'|([^/]++)(?'
-                        .'|/edit(*:659)'
-                        .'|(*:667)'
-                    .')'
                 .')'
             .')/?$}sDu',
     ],
@@ -132,10 +128,8 @@ return [
         560 => [[['_route' => 'public_user_edit', '_controller' => 'App\\Controller\\Account\\UserPublicController::edit'], ['id'], ['GET' => 0, 'POST' => 1], null, false, false, null]],
         568 => [[['_route' => 'public_user_delete', '_controller' => 'App\\Controller\\Account\\UserPublicController::delete'], ['id'], ['POST' => 0], null, false, true, null]],
         609 => [[['_route' => 'visitor_article_show', '_controller' => 'App\\Controller\\Account\\VisitorController::showArt'], ['id'], ['GET' => 0], null, false, true, null]],
-        635 => [[['_route' => 'visitor_categorie_show', '_controller' => 'App\\Controller\\Account\\VisitorController::showCat'], ['id'], ['GET' => 0], null, false, true, null]],
-        659 => [[['_route' => 'visitor_user_edit', '_controller' => 'App\\Controller\\Account\\VisitorController::edit'], ['id'], ['GET' => 0, 'POST' => 1], null, false, false, null]],
-        667 => [
-            [['_route' => 'visitor_user_delete', '_controller' => 'App\\Controller\\Account\\VisitorController::delete'], ['id'], ['POST' => 0], null, false, true, null],
+        635 => [
+            [['_route' => 'visitor_categorie_show', '_controller' => 'App\\Controller\\Account\\VisitorController::showCat'], ['id'], ['GET' => 0], null, false, true, null],
             [null, null, null, null, false, false, 0],
         ],
     ],

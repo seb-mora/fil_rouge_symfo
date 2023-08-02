@@ -7,11 +7,13 @@
 
 {% block body %}
     <h1>Commentaires</h1>
+    <a href="{{ path('app_account') }}">Retour à l'accueil</a>
 <br>
     <table class="table">
         <tbody>
          {% for commentaire in commentaires %}
     {# TODO Montrer titre de l'article sur laquel le commentaire est laissé #}
+
 
               <tr>
                 <th></th>
