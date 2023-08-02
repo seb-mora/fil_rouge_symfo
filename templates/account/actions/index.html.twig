@@ -5,6 +5,28 @@
 {% block body %}
     <h1>Bienvenu</h1>
 
+<table class="table">
+        <thead>
+            <tr>
+                <th>Catégories</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for categorie in categories %}
+            <tr>
+                <td>{{ categorie.nom }}</td> 
+                <td>
+                    <a href="{{ path('visitor_categorie_show', {'id': categorie.id}) }}">Voir les articles</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="5">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
     <table class="table">
         <thead>
             <tr>
@@ -33,7 +55,7 @@
                 <td>{{ article.categorie }}</td>
                    <td>{{ article.user }}</td>
                 <td>
-                    <a href="{{ path('app_article_show', {'id': article.id}) }}">LIRE</a>
+                    <a href="{{ path('visitor_article_show', {'id': article.id}) }}">LIRE</a>
                 </td>
             </tr>
         {% else %}
@@ -44,5 +66,4 @@
         </tbody>
     </table>
 
-    <a href="{{ path('app_article_new') }}">Create new</a>
 {% endblock %}

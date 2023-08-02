@@ -1,0 +1,34 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Article{% endblock %}
+
+{% block categories %}{% endblock %}
+
+{% block body %}
+<br>
+<br>
+    <a href="{{ path('app_home') }}">Revenir à l'accueil</a>
+    <h1>{{ article.titre }}</h1>
+
+    <table class="table">
+        <tbody>
+       
+            <tr>
+           
+                <td>{{ article.contenu }}</td>
+            </tr>
+        
+            <tr>
+             
+                <td><img src={{ article.logo }}></td>
+            </tr>
+                <tr>
+               
+                <td>{{ article.date ? article.date|date('Y-m-d H:i:s') : '' }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+
+
+{% endblock %}

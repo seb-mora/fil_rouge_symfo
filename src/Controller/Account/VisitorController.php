@@ -4,15 +4,17 @@ namespace App\Controller\Account;
 
 use App\Entity\User;
 use App\Form\UserType;
+use App\Entity\Article;
+use App\Entity\Categories;
+use App\Repository\UserRepository;
 use App\Repository\ArticleRepository;
 use App\Repository\CategoriesRepository;
-use App\Repository\UserRepository;
 use Doctrine\ORM\EntityManagerInterface;
-use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
-use Symfony\Component\PasswordHasher\Hasher\UserPasswordHasherInterface;
 use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\PasswordHasher\Hasher\UserPasswordHasherInterface;
 
 #[Route('/visitor/user')]
 class VisitorController extends AbstractController
@@ -22,6 +24,22 @@ class VisitorController extends AbstractController
     {
         return $this->render('account/actions/index.html.twig', [
             'categ' => $articleRepository->findAll(),
+        ]);
+    }
+
+    #[Route('/artice/{id}', name: 'visitor_article_show', methods: ['GET'])]
+    public function showArt(Article $article): Response
+    {
+        return $this->render('account/actions/show.html.twig', [
+            'article' => $article,
+        ]);
+    }
+
+    #[Route('/categorie/{id}', name: 'visitor_categorie_show', methods: ['GET'])]
+    public function showCat(ArticleRepository $articleRepository, $id): Response
+    {
+        return $this->render('account/actions/showCat.html.twig', [
+            'articles' => $articleRepository->findBy(['categorie' => $id]),
         ]);
     }
 

@@ -7,6 +7,9 @@ Symfony\Component\DependencyInjection\Compiler\ResolveChildDefinitionsPass: Reso
 Symfony\Component\DependencyInjection\Compiler\ResolveChildDefinitionsPass: Resolving inheritance for ".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\Account\UserSecurityController" (parent: .abstract.instanceof.App\Controller\Account\UserSecurityController).
 Symfony\Component\DependencyInjection\Compiler\ResolveChildDefinitionsPass: Resolving inheritance for ".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\Account\UserSecurityController" (parent: .instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\Account\UserSecurityController).
 Symfony\Component\DependencyInjection\Compiler\ResolveChildDefinitionsPass: Resolving inheritance for "App\Controller\Account\UserSecurityController" (parent: .instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\Account\UserSecurityController).
+Symfony\Component\DependencyInjection\Compiler\ResolveChildDefinitionsPass: Resolving inheritance for ".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\Account\VisitorController" (parent: .abstract.instanceof.App\Controller\Account\VisitorController).
+Symfony\Component\DependencyInjection\Compiler\ResolveChildDefinitionsPass: Resolving inheritance for ".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\Account\VisitorController" (parent: .instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\Account\VisitorController).
+Symfony\Component\DependencyInjection\Compiler\ResolveChildDefinitionsPass: Resolving inheritance for "App\Controller\Account\VisitorController" (parent: .instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\Account\VisitorController).
 Symfony\Component\DependencyInjection\Compiler\ResolveChildDefinitionsPass: Resolving inheritance for ".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\Admin\AdminController" (parent: .abstract.instanceof.App\Controller\Admin\AdminController).
 Symfony\Component\DependencyInjection\Compiler\ResolveChildDefinitionsPass: Resolving inheritance for ".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\Admin\AdminController" (parent: .instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\Admin\AdminController).
 Symfony\Component\DependencyInjection\Compiler\ResolveChildDefinitionsPass: Resolving inheritance for "App\Controller\Admin\AdminController" (parent: .instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\Admin\AdminController).
@@ -347,7 +350,7 @@ Symfony\Component\DependencyInjection\Compiler\RemovePrivateAliasesPass: Removed
 Symfony\Component\DependencyInjection\Compiler\RemovePrivateAliasesPass: Removed service ".service_locator.WV27cT9"; reason: private alias.
 Symfony\Component\DependencyInjection\Compiler\RemovePrivateAliasesPass: Removed service ".service_locator.JVxQd1Z"; reason: private alias.
 Symfony\Component\DependencyInjection\Compiler\RemovePrivateAliasesPass: Removed service ".service_locator.hw72IKE"; reason: private alias.
-Symfony\Component\DependencyInjection\Compiler\RemovePrivateAliasesPass: Removed service ".service_locator.nQfqsdR"; reason: private alias.
+Symfony\Component\DependencyInjection\Compiler\RemovePrivateAliasesPass: Removed service ".service_locator.mA.wy9p"; reason: private alias.
 Symfony\Component\DependencyInjection\Compiler\RemovePrivateAliasesPass: Removed service ".service_locator.BFrsqsn"; reason: private alias.
 Symfony\Component\DependencyInjection\Compiler\RemovePrivateAliasesPass: Removed service ".service_locator.pQLL1ki"; reason: private alias.
 Symfony\Component\DependencyInjection\Compiler\RemovePrivateAliasesPass: Removed service ".service_locator.jij13qc"; reason: private alias.
@@ -379,8 +382,8 @@ Symfony\Component\DependencyInjection\Compiler\RemovePrivateAliasesPass: Removed
 Symfony\Component\DependencyInjection\Compiler\RemovePrivateAliasesPass: Removed service ".service_locator.VvYLe1b"; reason: private alias.
 Symfony\Component\DependencyInjection\Compiler\RemovePrivateAliasesPass: Removed service ".service_locator.ICTRhpx"; reason: private alias.
 Symfony\Component\DependencyInjection\Compiler\RemovePrivateAliasesPass: Removed service ".service_locator.7NIAq8D"; reason: private alias.
-Symfony\Component\DependencyInjection\Compiler\RemovePrivateAliasesPass: Removed service ".service_locator.eIPMQwM"; reason: private alias.
 Symfony\Component\DependencyInjection\Compiler\RemovePrivateAliasesPass: Removed service ".service_locator.s.PmVJl"; reason: private alias.
+Symfony\Component\DependencyInjection\Compiler\RemovePrivateAliasesPass: Removed service ".service_locator.eIPMQwM"; reason: private alias.
 Symfony\Component\DependencyInjection\Compiler\RemovePrivateAliasesPass: Removed service ".service_locator.AZx11EC"; reason: private alias.
 Symfony\Component\DependencyInjection\Compiler\RemovePrivateAliasesPass: Removed service ".service_locator.ct6Q_Tx"; reason: private alias.
 Symfony\Component\DependencyInjection\Compiler\RemovePrivateAliasesPass: Removed service ".service_locator.otOFunJ"; reason: private alias.
@@ -395,6 +398,7 @@ Symfony\Component\DependencyInjection\Compiler\RemovePrivateAliasesPass: Removed
 Symfony\Component\DependencyInjection\Compiler\RemovePrivateAliasesPass: Removed service ".service_locator.YcNEvuP"; reason: private alias.
 Symfony\Component\DependencyInjection\Compiler\RemovePrivateAliasesPass: Removed service ".service_locator.025Wi8b"; reason: private alias.
 Symfony\Component\DependencyInjection\Compiler\RemovePrivateAliasesPass: Removed service ".service_locator.EmZ4cZI"; reason: private alias.
+Symfony\Component\DependencyInjection\Compiler\RemovePrivateAliasesPass: Removed service ".service_locator.L8ycvPc"; reason: private alias.
 Symfony\Component\DependencyInjection\Compiler\RemovePrivateAliasesPass: Removed service ".service_locator.OT8xVRp"; reason: private alias.
 Symfony\Component\DependencyInjection\Compiler\RemovePrivateAliasesPass: Removed service ".service_locator.OGsHwtU"; reason: private alias.
 Symfony\Component\DependencyInjection\Compiler\RemovePrivateAliasesPass: Removed service ".service_locator.dGUCsbe"; reason: private alias.
@@ -638,6 +642,9 @@ Symfony\Component\DependencyInjection\Compiler\RemoveAbstractDefinitionsPass: Re
 Symfony\Component\DependencyInjection\Compiler\RemoveAbstractDefinitionsPass: Removed service ".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\Account\UserSecurityController"; reason: abstract.
 Symfony\Component\DependencyInjection\Compiler\RemoveAbstractDefinitionsPass: Removed service ".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\Account\UserSecurityController"; reason: abstract.
 Symfony\Component\DependencyInjection\Compiler\RemoveAbstractDefinitionsPass: Removed service ".abstract.instanceof.App\Controller\Account\UserSecurityController"; reason: abstract.
+Symfony\Component\DependencyInjection\Compiler\RemoveAbstractDefinitionsPass: Removed service ".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\Account\VisitorController"; reason: abstract.
+Symfony\Component\DependencyInjection\Compiler\RemoveAbstractDefinitionsPass: Removed service ".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\Account\VisitorController"; reason: abstract.
+Symfony\Component\DependencyInjection\Compiler\RemoveAbstractDefinitionsPass: Removed service ".abstract.instanceof.App\Controller\Account\VisitorController"; reason: abstract.
 Symfony\Component\DependencyInjection\Compiler\RemoveAbstractDefinitionsPass: Removed service ".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\Admin\AdminController"; reason: abstract.
 Symfony\Component\DependencyInjection\Compiler\RemoveAbstractDefinitionsPass: Removed service ".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\Admin\AdminController"; reason: abstract.
 Symfony\Component\DependencyInjection\Compiler\RemoveAbstractDefinitionsPass: Removed service ".abstract.instanceof.App\Controller\Admin\AdminController"; reason: abstract.
@@ -798,6 +805,7 @@ Symfony\Component\DependencyInjection\Compiler\RemoveUnusedDefinitionsPass: Remo
 Symfony\Component\DependencyInjection\Compiler\InlineServiceDefinitionsPass: Inlined service ".service_locator.5NV8kkv.App\Controller\Account\AccountController" to "App\Controller\Account\AccountController".
 Symfony\Component\DependencyInjection\Compiler\InlineServiceDefinitionsPass: Inlined service ".service_locator.5NV8kkv.App\Controller\Account\UserPublicController" to "App\Controller\Account\UserPublicController".
 Symfony\Component\DependencyInjection\Compiler\InlineServiceDefinitionsPass: Inlined service ".service_locator.5NV8kkv.App\Controller\Account\UserSecurityController" to "App\Controller\Account\UserSecurityController".
+Symfony\Component\DependencyInjection\Compiler\InlineServiceDefinitionsPass: Inlined service ".service_locator.5NV8kkv.App\Controller\Account\VisitorController" to "App\Controller\Account\VisitorController".
 Symfony\Component\DependencyInjection\Compiler\InlineServiceDefinitionsPass: Inlined service ".service_locator.5NV8kkv.App\Controller\Admin\AdminController" to "App\Controller\Admin\AdminController".
 Symfony\Component\DependencyInjection\Compiler\InlineServiceDefinitionsPass: Inlined service ".service_locator.MOviaWu.App\Controller\Admin\ArticleController" to "App\Controller\Admin\ArticleController".
 Symfony\Component\DependencyInjection\Compiler\InlineServiceDefinitionsPass: Inlined service ".service_locator.5NV8kkv.App\Controller\Admin\CategoriesController" to "App\Controller\Admin\CategoriesController".
