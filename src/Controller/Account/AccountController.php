@@ -39,4 +39,23 @@ class AccountController extends AbstractController
 
         return $this->redirectToRoute('app_account_commentaires', [], Response::HTTP_SEE_OTHER);
     }
+
+    #[Route('/edit', name: 'public_user_edit', methods: ['GET', 'POST'])]
+    public function edit(Request $request, EntityManagerInterface $entityManager): Response
+    {
+        $user = $this->getUser();
+        $form = $this->createForm(UserType::class, $user);
+        $form->handleRequest($request);
+
+        if ($form->isSubmitted() && $form->isValid()) {
+            $entityManager->flush();
+
+            return $this->redirectToRoute('app_account', [], Response::HTTP_SEE_OTHER);
+        }
+
+        return $this->render('account/actions/edit.html.twig', [
+            'user' => $user,
+            'form' => $form,
+        ]);
+    }
 }

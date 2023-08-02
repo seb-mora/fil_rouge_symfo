@@ -17,6 +17,7 @@ return [
         '/account' => [[['_route' => 'app_account', '_controller' => 'App\\Controller\\Account\\AccountController::index'], null, null, null, true, false, null]],
         '/public/user' => [[['_route' => 'public_article_index', '_controller' => 'App\\Controller\\Account\\UserPublicController::index'], null, ['GET' => 0], null, true, false, null]],
         '/public/user/new' => [[['_route' => 'public_user_new', '_controller' => 'App\\Controller\\Account\\UserPublicController::new'], null, ['GET' => 0, 'POST' => 1], null, false, false, null]],
+        '/public/user/edit' => [[['_route' => 'public_user_edit', '_controller' => 'App\\Controller\\Account\\UserPublicController::edit'], null, ['GET' => 0, 'POST' => 1], null, false, false, null]],
         '/account/logout' => [[['_route' => 'app_logout', '_controller' => 'App\\Controller\\Account\\UserSecurityController::logout'], null, null, null, false, false, null]],
         '/visitor/user' => [[['_route' => 'visitor_article_index', '_controller' => 'App\\Controller\\Account\\VisitorController::index'], null, ['GET' => 0], null, true, false, null]],
         '/visitor/user/new' => [[['_route' => 'visitor_user_new', '_controller' => 'App\\Controller\\Account\\VisitorController::new'], null, ['GET' => 0, 'POST' => 1], null, false, false, null]],
@@ -89,13 +90,10 @@ return [
                         .')'
                     .')'
                 .')'
-                .'|/public/user/([^/]++)(?'
-                    .'|/edit(*:560)'
-                    .'|(*:568)'
-                .')'
+                .'|/public/user/([^/]++)(*:552)'
                 .'|/visitor/user/(?'
-                    .'|artice/([^/]++)(*:609)'
-                    .'|categorie/([^/]++)(*:635)'
+                    .'|artice/([^/]++)(*:592)'
+                    .'|categorie/([^/]++)(*:618)'
                 .')'
             .')/?$}sDu',
     ],
@@ -125,10 +123,9 @@ return [
         499 => [[['_route' => 'app_user_show', '_controller' => 'App\\Controller\\Admin\\UserController::show'], ['id'], ['GET' => 0], null, false, true, null]],
         512 => [[['_route' => 'app_user_edit', '_controller' => 'App\\Controller\\Admin\\UserController::edit'], ['id'], ['GET' => 0, 'POST' => 1], null, false, false, null]],
         520 => [[['_route' => 'app_user_delete', '_controller' => 'App\\Controller\\Admin\\UserController::delete'], ['id'], ['POST' => 0], null, false, true, null]],
-        560 => [[['_route' => 'public_user_edit', '_controller' => 'App\\Controller\\Account\\UserPublicController::edit'], ['id'], ['GET' => 0, 'POST' => 1], null, false, false, null]],
-        568 => [[['_route' => 'public_user_delete', '_controller' => 'App\\Controller\\Account\\UserPublicController::delete'], ['id'], ['POST' => 0], null, false, true, null]],
-        609 => [[['_route' => 'visitor_article_show', '_controller' => 'App\\Controller\\Account\\VisitorController::showArt'], ['id'], ['GET' => 0], null, false, true, null]],
-        635 => [
+        552 => [[['_route' => 'public_user_delete', '_controller' => 'App\\Controller\\Account\\UserPublicController::delete'], ['id'], ['POST' => 0], null, false, true, null]],
+        592 => [[['_route' => 'visitor_article_show', '_controller' => 'App\\Controller\\Account\\VisitorController::showArt'], ['id'], ['GET' => 0], null, false, true, null]],
+        618 => [
             [['_route' => 'visitor_categorie_show', '_controller' => 'App\\Controller\\Account\\VisitorController::showCat'], ['id'], ['GET' => 0], null, false, true, null],
             [null, null, null, null, false, false, 0],
         ],

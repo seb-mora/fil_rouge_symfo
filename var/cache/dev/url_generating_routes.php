@@ -20,7 +20,7 @@ return [
     'app_account_commentaires' => [['id'], ['_controller' => 'App\\Controller\\Account\\AccountController::userCommentaires'], [], [['variable', '/', '[^/]++', 'id', true], ['text', '/account/commentaires']], [], [], []],
     'public_article_index' => [[], ['_controller' => 'App\\Controller\\Account\\UserPublicController::index'], [], [['text', '/public/user/']], [], [], []],
     'public_user_new' => [[], ['_controller' => 'App\\Controller\\Account\\UserPublicController::new'], [], [['text', '/public/user/new']], [], [], []],
-    'public_user_edit' => [['id'], ['_controller' => 'App\\Controller\\Account\\UserPublicController::edit'], [], [['text', '/edit'], ['variable', '/', '[^/]++', 'id', true], ['text', '/public/user']], [], [], []],
+    'public_user_edit' => [[], ['_controller' => 'App\\Controller\\Account\\UserPublicController::edit'], [], [['text', '/public/user/edit']], [], [], []],
     'public_user_delete' => [['id'], ['_controller' => 'App\\Controller\\Account\\UserPublicController::delete'], [], [['variable', '/', '[^/]++', 'id', true], ['text', '/public/user']], [], [], []],
     'user_login' => [['params'], ['params' => null, '_controller' => 'App\\Controller\\Account\\UserSecurityController::login'], [], [['variable', '/', '[^/]++', 'params', true], ['text', '/account/login']], [], [], []],
     'app_logout' => [[], ['_controller' => 'App\\Controller\\Account\\UserSecurityController::logout'], [], [['text', '/account/logout']], [], [], []],
