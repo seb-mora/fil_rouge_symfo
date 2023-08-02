@@ -5,23 +5,37 @@
 
 {% block body %}
     <h1>Commentaires</h1>
-
+<br>
     <table class="table">
         <tbody>
          {% for commentaire in commentaires %}
     {# TODO Montrer titre de l'article sur laquel le commentaire est laissé #}
+
+              <tr>
+                <th></th>
+                <td></td>
+                <td></td>
+        </tr>
+        
+            <tr>
+            
+                <th>Article</th>
+                <td>{{ commentaire.article.titre }}</td>
+                <td>{{ commentaire.date ? commentaire.date|date('Y-m-d H:i:s') : '' }}</td>
+       
             <tr>
                 <th>Contenu</th>
                 <td>{{ commentaire.contenu }}</td>
+                <td>Supprimer</td>
             </tr>
-            <tr>
-                <th>Date</th>
-                <td>{{ commentaire.date ? commentaire.date|date('Y-m-d H:i:s') : '' }}</td>
-            </tr>
+     
+          
+         
              {% else %}
             <tr>
                 <td colspan="5">no records found</td>
             </tr>
+           
         {% endfor %}
         </tbody>
     </table>
