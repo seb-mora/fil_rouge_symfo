@@ -16,7 +16,7 @@ class HomeController extends AbstractController
         //     'controller_name' => 'HomeController',
         // ]);
 
-        return $this->render('account/visitor/article/index.html.twig', [
+        return $this->render('visitor/article/index.html.twig', [
             'articles' => $articleRepository->findAll(),
         ]);
     }

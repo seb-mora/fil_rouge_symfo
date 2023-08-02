@@ -123,7 +123,10 @@ class __TwigTemplate_17cc00df704df97621db9e89950131b4 extends Template
                                                 Me connecter
                                             </button>
                                         </form>
-                                        <br>
+                                        <br><a href=\"";
+        // line 49
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_home");
+        echo "\">retour à l'accueil</a> <br>
                                     <a href=\"";
         // line 50
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("user_login");
@@ -165,7 +168,7 @@ class __TwigTemplate_17cc00df704df97621db9e89950131b4 extends Template
 
     public function getDebugInfo()
     {
-        return array (  139 => 55,  134 => 52,  129 => 50,  118 => 42,  101 => 28,  97 => 26,  91 => 24,  89 => 23,  68 => 4,  58 => 3,  35 => 1,);
+        return array (  142 => 55,  137 => 52,  132 => 50,  128 => 49,  118 => 42,  101 => 28,  97 => 26,  91 => 24,  89 => 23,  68 => 4,  58 => 3,  35 => 1,);
     }
 
     public function getSourceContext()
@@ -218,7 +221,7 @@ class __TwigTemplate_17cc00df704df97621db9e89950131b4 extends Template
                                                 Me connecter
                                             </button>
                                         </form>
-                                        <br>
+                                        <br><a href=\"{{ path('app_home') }}\">retour à l'accueil</a> <br>
                                     <a href=\"{{path('user_login')}}\">Connection utilisateur</a>
                                   <br>
                                  <a href=\"{{path('public_user_new')}}\"> Créer un compte utilisateur</a>
