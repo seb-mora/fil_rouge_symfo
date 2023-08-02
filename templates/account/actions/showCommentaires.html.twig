@@ -1,4 +1,6 @@
 {# {% extends 'admin/base_admin.html.twig' %} #}
+
+
 {% extends 'base.html.twig' %}
 
 {% block title %}Commentaires{% endblock %}
@@ -26,10 +28,10 @@
             <tr>
                 <th>Contenu</th>
                 <td>{{ commentaire.contenu }}</td>
-                <td>Supprimer</td>
+                <td><a href="{{ path('app_commentaires_delete', {'id': commentaire.id}) }}">SUPPRIMER</a></td>
             </tr>
      
-          
+          {# TODO supprimer commentaire #}
          
              {% else %}
             <tr>
@@ -39,6 +41,9 @@
         {% endfor %}
         </tbody>
     </table>
+     <input type="hidden" name="_csrf_token"
+                                                value="{{ csrf_token('authenticate') }}"
+                                            >
 
     {# <a href="{{ path('app_commentaires_index') }}">back to list</a>
 

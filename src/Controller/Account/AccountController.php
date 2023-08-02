@@ -2,10 +2,13 @@
 
 namespace App\Controller\Account;
 
+use App\Entity\Commentaires;
+use Doctrine\ORM\EntityManagerInterface;
 use App\Repository\CommentairesRepository;
-use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
 #[Route('/account')]
 class AccountController extends AbstractController
@@ -24,5 +27,16 @@ class AccountController extends AbstractController
         return $this->render('account/actions/showCommentaires.html.twig', [
             'commentaires' => $commentairesRepository->findBy(['auteur' => $id]),
         ]);
+    }
+
+    #[Route('/commentaires/delete/{id}', name: 'app_commentaires_delete', methods: ['POST'])]
+    public function userDeleteCommentaires(Request $request, Commentaires $commentaire, EntityManagerInterface $entityManager): Response
+    {
+        if ($this->isCsrfTokenValid('delete' . $commentaire->getId(), $request->request->get('_token'))) {
+            $entityManager->remove($commentaire);
+            $entityManager->flush();
+        }
+
+        return $this->redirectToRoute('app_account_commentaires', [], Response::HTTP_SEE_OTHER);
     }
 }

@@ -506,7 +506,7 @@
     </service>
     <service id="argument_resolver.service" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\ServiceValueResolver">
       <tag priority="-50" name="Symfony\Component\HttpKernel\Controller\ArgumentResolver\ServiceValueResolver">controller.argument_value_resolver</tag>
-      <argument type="service" id=".service_locator.4EzGLjx"/>
+      <argument type="service" id=".service_locator.879bq.P"/>
     </service>
     <service id="argument_resolver.default" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\DefaultValueResolver">
       <tag priority="-100" name="Symfony\Component\HttpKernel\Controller\ArgumentResolver\DefaultValueResolver">controller.argument_value_resolver</tag>
@@ -3076,7 +3076,7 @@
     </service>
     <service id="argument_resolver.not_tagged_controller" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\NotTaggedControllerValueResolver">
       <tag name="controller.argument_value_resolver" priority="-200"/>
-      <argument type="service" id=".service_locator.4EzGLjx"/>
+      <argument type="service" id=".service_locator.879bq.P"/>
     </service>
     <service id="debug.log_processor" class="Symfony\Bridge\Monolog\Processor\DebugProcessor">
       <argument type="service" id="request_stack"/>
@@ -7738,6 +7738,13 @@
         <argument key="commentairesRepository" type="service_closure" id="App\Repository\CommentairesRepository"/>
       </argument>
     </service>
+    <service id=".service_locator.kxstp_I" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator"/>
+      <argument type="collection">
+        <argument key="commentaire" type="service_closure" id=".errored..service_locator.kxstp_I.App\Entity\Commentaires"/>
+        <argument key="entityManager" type="service_closure" id="doctrine.orm.default_entity_manager"/>
+      </argument>
+    </service>
     <service id=".service_locator.b12wXHr" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
@@ -7856,13 +7863,6 @@
         <argument key="commentaire" type="service_closure" id=".errored..service_locator.HBWOX4X.App\Entity\Commentaires"/>
       </argument>
     </service>
-    <service id=".service_locator.kxstp_I" class="Symfony\Component\DependencyInjection\ServiceLocator">
-      <tag name="container.service_locator"/>
-      <argument type="collection">
-        <argument key="commentaire" type="service_closure" id=".errored..service_locator.kxstp_I.App\Entity\Commentaires"/>
-        <argument key="entityManager" type="service_closure" id="doctrine.orm.default_entity_manager"/>
-      </argument>
-    </service>
     <service id=".service_locator.nAmwTrk" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
@@ -7901,10 +7901,11 @@
         <argument key="categoriesRepository" type="service_closure" id="App\Repository\CategoriesRepository"/>
       </argument>
     </service>
-    <service id=".service_locator.4EzGLjx" class="Symfony\Component\DependencyInjection\ServiceLocator">
+    <service id=".service_locator.879bq.P" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
         <argument key="App\Controller\Account\AccountController::userCommentaires" type="service_closure" id=".service_locator.MxB7ylD"/>
+        <argument key="App\Controller\Account\AccountController::userDeleteCommentaires" type="service_closure" id=".service_locator.kxstp_I"/>
         <argument key="App\Controller\Account\UserPublicController::delete" type="service_closure" id=".service_locator.rvMNZGh"/>
         <argument key="App\Controller\Account\UserPublicController::edit" type="service_closure" id=".service_locator.f2za39I"/>
         <argument key="App\Controller\Account\UserPublicController::index" type="service_closure" id=".service_locator.b12wXHr"/>
@@ -7949,6 +7950,7 @@
         <argument key="kernel::loadRoutes" type="service_closure" id=".service_locator.y4_Zrx."/>
         <argument key="kernel::registerContainerConfiguration" type="service_closure" id=".service_locator.y4_Zrx."/>
         <argument key="App\Controller\Account\AccountController:userCommentaires" type="service_closure" id=".service_locator.MxB7ylD"/>
+        <argument key="App\Controller\Account\AccountController:userDeleteCommentaires" type="service_closure" id=".service_locator.kxstp_I"/>
         <argument key="App\Controller\Account\UserPublicController:delete" type="service_closure" id=".service_locator.rvMNZGh"/>
         <argument key="App\Controller\Account\UserPublicController:edit" type="service_closure" id=".service_locator.f2za39I"/>
         <argument key="App\Controller\Account\UserPublicController:index" type="service_closure" id=".service_locator.b12wXHr"/>
@@ -9328,6 +9330,9 @@
     <service id=".errored..service_locator.y4_Zrx..Symfony\Component\Config\Loader\LoaderInterface" class="Symfony\Component\Config\Loader\LoaderInterface">
       <tag name="container.error" message="Cannot autowire service &quot;.service_locator.y4_Zrx.&quot;: it needs an instance of &quot;Symfony\Component\Config\Loader\LoaderInterface&quot; but this type has been excluded from autowiring."/>
     </service>
+    <service id=".errored..service_locator.kxstp_I.App\Entity\Commentaires" class="App\Entity\Commentaires">
+      <tag name="container.error" message="Cannot autowire service &quot;.service_locator.kxstp_I&quot;: it needs an instance of &quot;App\Entity\Commentaires&quot; but this type has been excluded in &quot;config/services.yaml&quot;."/>
+    </service>
     <service id=".errored..service_locator.f2za39I.App\Entity\User" class="App\Entity\User">
       <tag name="container.error" message="Cannot autowire service &quot;.service_locator.f2za39I&quot;: it needs an instance of &quot;App\Entity\User&quot; but this type has been excluded in &quot;config/services.yaml&quot;."/>
     </service>
@@ -9354,9 +9359,6 @@
     </service>
     <service id=".errored..service_locator.HBWOX4X.App\Entity\Commentaires" class="App\Entity\Commentaires">
       <tag name="container.error" message="Cannot autowire service &quot;.service_locator.HBWOX4X&quot;: it needs an instance of &quot;App\Entity\Commentaires&quot; but this type has been excluded in &quot;config/services.yaml&quot;."/>
-    </service>
-    <service id=".errored..service_locator.kxstp_I.App\Entity\Commentaires" class="App\Entity\Commentaires">
-      <tag name="container.error" message="Cannot autowire service &quot;.service_locator.kxstp_I&quot;: it needs an instance of &quot;App\Entity\Commentaires&quot; but this type has been excluded in &quot;config/services.yaml&quot;."/>
     </service>
     <service id=".errored..service_locator.zgeOBW8.App\Entity\Team" class="App\Entity\Team">
       <tag name="container.error" message="Cannot autowire service &quot;.service_locator.zgeOBW8&quot;: it needs an instance of &quot;App\Entity\Team&quot; but this type has been excluded in &quot;config/services.yaml&quot;."/>
@@ -10350,7 +10352,7 @@
     <service id="Psr\Log\LoggerInterface" alias="monolog.logger"/>
     <service id="container.env_var_processors_locator" alias=".service_locator.7nzbL4K" public="true"/>
     <service id="twig.loader.filesystem" alias="twig.loader.native_filesystem"/>
-    <service id="argument_resolver.controller_locator" alias=".service_locator.4EzGLjx"/>
+    <service id="argument_resolver.controller_locator" alias=".service_locator.879bq.P"/>
     <service id="doctrine.id_generator_locator" alias=".service_locator.KLVvNIq"/>
     <service id="twig.loader" alias="twig.loader.native_filesystem"/>
     <service id="Psr\Log\LoggerInterface $requestLogger" alias="monolog.logger.request"/>
@@ -10378,7 +10380,7 @@
     <service id=".service_locator.WV27cT9" alias=".service_locator.WWwIP5t"/>
     <service id=".service_locator.JVxQd1Z" alias=".service_locator.W6uTidP"/>
     <service id=".service_locator.hw72IKE" alias=".service_locator.7ZF768O"/>
-    <service id=".service_locator.ePIrs1L" alias=".service_locator.4EzGLjx"/>
+    <service id=".service_locator.lWjzO1y" alias=".service_locator.879bq.P"/>
     <service id=".service_locator.BFrsqsn" alias=".service_locator.F9PKc.7"/>
     <service id=".service_locator.pQLL1ki" alias=".service_locator.asyYv2B"/>
     <service id=".service_locator.jij13qc" alias=".service_locator.PBToVFE"/>
@@ -10407,6 +10409,7 @@
     <service id="security.event_dispatcher.main" alias="debug.security.event_dispatcher.main"/>
     <service id=".service_locator.gFlme_s" alias=".service_locator.y4_Zrx."/>
     <service id=".service_locator.3wNqw8g" alias=".service_locator.MxB7ylD"/>
+    <service id=".service_locator.7X5rI3N" alias=".service_locator.kxstp_I"/>
     <service id=".service_locator.XqClUT3" alias=".service_locator.b12wXHr"/>
     <service id=".service_locator.RSyySC6" alias=".service_locator.siLTv8S"/>
     <service id=".service_locator.VvYLe1b" alias=".service_locator.f2za39I"/>
@@ -10422,7 +10425,6 @@
     <service id=".service_locator.bTx13YG" alias=".service_locator.i60bMqk"/>
     <service id=".service_locator.y61UWdC" alias=".service_locator.8IzX0f9"/>
     <service id=".service_locator.QwL1uur" alias=".service_locator.HBWOX4X"/>
-    <service id=".service_locator.7X5rI3N" alias=".service_locator.kxstp_I"/>
     <service id=".service_locator.4RLV2vu" alias=".service_locator.nAmwTrk"/>
     <service id=".service_locator.cRRfbYz" alias=".service_locator.zgeOBW8"/>
     <service id=".service_locator.YcNEvuP" alias=".service_locator.7ZF768O"/>
