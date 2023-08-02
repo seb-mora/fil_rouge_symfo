@@ -446,6 +446,10 @@
     <service id="App\Form\TeamType" class="App\Form\TeamType" autowire="true" autoconfigure="true">
       <tag name="form.type"/>
     </service>
+    <service id="App\Form\UserEditType" class="App\Form\UserEditType" autowire="true" autoconfigure="true">
+      <tag name="container.error" message="The autoloader expected class &quot;App\Form\UserEditType&quot; to be defined in file &quot;C:\Users\Moras\Desktop\formationCDA\symfony\blog\my_project_directory\vendor\composer/../../src\Form\UserEditType.php&quot;. The file was found but the class was not in it, the class name or namespace probably has a typo."/>
+      <tag name="container.error" message="Invalid service &quot;App\Form\UserEditType&quot;: the autoloader expected class &quot;App\Form\UserEditType&quot; to be defined in file &quot;C:\Users\Moras\Desktop\formationCDA\symfony\blog\my_project_directory\vendor\composer/../../src\Form\UserEditType.php&quot;. The file was found but the class was not in it, the class name or namespace probably has a typo."/>
+    </service>
     <service id="App\Form\UserType" class="App\Form\UserType" autowire="true" autoconfigure="true">
       <tag name="form.type"/>
     </service>
@@ -506,7 +510,7 @@
     </service>
     <service id="argument_resolver.service" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\ServiceValueResolver">
       <tag priority="-50" name="Symfony\Component\HttpKernel\Controller\ArgumentResolver\ServiceValueResolver">controller.argument_value_resolver</tag>
-      <argument type="service" id=".service_locator.3Dp6.yO"/>
+      <argument type="service" id=".service_locator.JzW5KdR"/>
     </service>
     <service id="argument_resolver.default" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\DefaultValueResolver">
       <tag priority="-100" name="Symfony\Component\HttpKernel\Controller\ArgumentResolver\DefaultValueResolver">controller.argument_value_resolver</tag>
@@ -3076,7 +3080,7 @@
     </service>
     <service id="argument_resolver.not_tagged_controller" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\NotTaggedControllerValueResolver">
       <tag name="controller.argument_value_resolver" priority="-200"/>
-      <argument type="service" id=".service_locator.3Dp6.yO"/>
+      <argument type="service" id=".service_locator.JzW5KdR"/>
     </service>
     <service id="debug.log_processor" class="Symfony\Bridge\Monolog\Processor\DebugProcessor">
       <argument type="service" id="request_stack"/>
@@ -7893,14 +7897,13 @@
         <argument key="categoriesRepository" type="service_closure" id="App\Repository\CategoriesRepository"/>
       </argument>
     </service>
-    <service id=".service_locator.3Dp6.yO" class="Symfony\Component\DependencyInjection\ServiceLocator">
+    <service id=".service_locator.JzW5KdR" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
         <argument key="App\Controller\Account\AccountController::edit" type="service_closure" id=".service_locator.CsMkqUa"/>
         <argument key="App\Controller\Account\AccountController::userCommentaires" type="service_closure" id=".service_locator.MxB7ylD"/>
         <argument key="App\Controller\Account\AccountController::userDeleteCommentaires" type="service_closure" id=".service_locator.kxstp_I"/>
         <argument key="App\Controller\Account\UserPublicController::delete" type="service_closure" id=".service_locator.rvMNZGh"/>
-        <argument key="App\Controller\Account\UserPublicController::edit" type="service_closure" id=".service_locator.CsMkqUa"/>
         <argument key="App\Controller\Account\UserPublicController::index" type="service_closure" id=".service_locator.b12wXHr"/>
         <argument key="App\Controller\Account\UserPublicController::new" type="service_closure" id=".service_locator.siLTv8S"/>
         <argument key="App\Controller\Account\UserSecurityController::login" type="service_closure" id=".service_locator.rSTd.nA"/>
@@ -7944,7 +7947,6 @@
         <argument key="App\Controller\Account\AccountController:userCommentaires" type="service_closure" id=".service_locator.MxB7ylD"/>
         <argument key="App\Controller\Account\AccountController:userDeleteCommentaires" type="service_closure" id=".service_locator.kxstp_I"/>
         <argument key="App\Controller\Account\UserPublicController:delete" type="service_closure" id=".service_locator.rvMNZGh"/>
-        <argument key="App\Controller\Account\UserPublicController:edit" type="service_closure" id=".service_locator.CsMkqUa"/>
         <argument key="App\Controller\Account\UserPublicController:index" type="service_closure" id=".service_locator.b12wXHr"/>
         <argument key="App\Controller\Account\UserPublicController:new" type="service_closure" id=".service_locator.siLTv8S"/>
         <argument key="App\Controller\Account\UserSecurityController:login" type="service_closure" id=".service_locator.rSTd.nA"/>
@@ -10339,7 +10341,7 @@
     <service id="Psr\Log\LoggerInterface" alias="monolog.logger"/>
     <service id="container.env_var_processors_locator" alias=".service_locator.7nzbL4K" public="true"/>
     <service id="twig.loader.filesystem" alias="twig.loader.native_filesystem"/>
-    <service id="argument_resolver.controller_locator" alias=".service_locator.3Dp6.yO"/>
+    <service id="argument_resolver.controller_locator" alias=".service_locator.JzW5KdR"/>
     <service id="doctrine.id_generator_locator" alias=".service_locator.KLVvNIq"/>
     <service id="twig.loader" alias="twig.loader.native_filesystem"/>
     <service id="Psr\Log\LoggerInterface $requestLogger" alias="monolog.logger.request"/>
@@ -10366,7 +10368,7 @@
     <service id=".service_locator.WV27cT9" alias=".service_locator.WWwIP5t"/>
     <service id=".service_locator.JVxQd1Z" alias=".service_locator.W6uTidP"/>
     <service id=".service_locator.hw72IKE" alias=".service_locator.7ZF768O"/>
-    <service id=".service_locator.YYqwBRA" alias=".service_locator.3Dp6.yO"/>
+    <service id=".service_locator.94nVfSO" alias=".service_locator.JzW5KdR"/>
     <service id=".service_locator.BFrsqsn" alias=".service_locator.F9PKc.7"/>
     <service id=".service_locator.pQLL1ki" alias=".service_locator.asyYv2B"/>
     <service id=".service_locator.jij13qc" alias=".service_locator.PBToVFE"/>

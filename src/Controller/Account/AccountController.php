@@ -2,12 +2,18 @@
 
 namespace App\Controller\Account;
 
+use App\Form\UserType;
+use App\Form\UserEditType;
 use App\Entity\Commentaires;
+use Symfony\Component\Form\FormEvent;
+use Symfony\Component\Form\FormEvents;
 use Doctrine\ORM\EntityManagerInterface;
 use App\Repository\CommentairesRepository;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Component\Form\Extension\Core\Type\PasswordType;
+use Symfony\Component\Form\Extension\Core\Type\RepeatedType;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
 #[Route('/account')]
@@ -44,7 +50,21 @@ class AccountController extends AbstractController
     public function edit(Request $request, EntityManagerInterface $entityManager): Response
     {
         $user = $this->getUser();
-        $form = $this->createForm(UserType::class, $user);
+        $form = $this->createForm(UserEditType::class, $user);
+
+        // $form->add('password', RepeatedType::class, [
+        //     'type' => PasswordType::class,
+        //     'invalid_message' => 'mots de passe différents',
+        //     'options' => ['attr' => [
+        //         'class' => 'password-field',
+        //         'autocomplete' => 'new-password'
+        //     ]],
+        //     'required' => false,
+        //     'first_options' => ['label' => 'Mot de passe'],
+        //     'second_options' => ['label' => 'Confirmer mot de passe']
+        // ]);
+
+
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {

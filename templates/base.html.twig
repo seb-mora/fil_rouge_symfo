@@ -22,7 +22,7 @@
 
         {# /public/user/{id}/edit #}
         {# path('app_article_show', {'id': article.id}) #}
-        <a href="{{path('public_user_edit', {'id':app.user.id})}}"> Profil</a>
+        {# <a href="{{path('public_user_edit', {'id':app.user.id})}}"> Profil</a> #}
       <a href="{{path('app_logout')}}"> Déconnection</a>
         {% else %}
         <a href="{{path('public_user_new')}}"> Créer un compte</a>
