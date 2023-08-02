@@ -19,7 +19,9 @@
 
         {% if app.user %}
         bonjour {{app.user.prenom}} 
-        <a href="{{path('app_account')}}"> Profil</a>
+
+        {# /public/user/{id}/edit #}
+        <a href="{{path('public_user_edit')}}"> Profil</a>
       <a href="{{path('app_logout')}}"> Déconnection</a>
         {% else %}
         <a href="{{path('public_user_new')}}"> Créer un compte</a>
