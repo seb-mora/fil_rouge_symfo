@@ -447,8 +447,7 @@
       <tag name="form.type"/>
     </service>
     <service id="App\Form\UserEditType" class="App\Form\UserEditType" autowire="true" autoconfigure="true">
-      <tag name="container.error" message="The autoloader expected class &quot;App\Form\UserEditType&quot; to be defined in file &quot;C:\Users\Moras\Desktop\formationCDA\symfony\blog\my_project_directory\vendor\composer/../../src\Form\UserEditType.php&quot;. The file was found but the class was not in it, the class name or namespace probably has a typo."/>
-      <tag name="container.error" message="Invalid service &quot;App\Form\UserEditType&quot;: the autoloader expected class &quot;App\Form\UserEditType&quot; to be defined in file &quot;C:\Users\Moras\Desktop\formationCDA\symfony\blog\my_project_directory\vendor\composer/../../src\Form\UserEditType.php&quot;. The file was found but the class was not in it, the class name or namespace probably has a typo."/>
+      <tag name="form.type"/>
     </service>
     <service id="App\Form\UserType" class="App\Form\UserType" autowire="true" autoconfigure="true">
       <tag name="form.type"/>
@@ -1381,6 +1380,7 @@
         <argument>App\Form\CategoriesType</argument>
         <argument>App\Form\CommentairesType</argument>
         <argument>App\Form\TeamType</argument>
+        <argument>App\Form\UserEditType</argument>
         <argument>App\Form\UserType</argument>
         <argument>Symfony\Component\Form\Extension\Core\Type\FormType</argument>
         <argument>Symfony\Component\Form\Extension\Core\Type\ChoiceType</argument>
@@ -3558,7 +3558,7 @@
       <argument type="service" id="form.registry"/>
     </service>
     <service id="form.extension" class="Symfony\Component\Form\Extension\DependencyInjection\DependencyInjectionExtension">
-      <argument type="service" id=".service_locator.asyYv2B"/>
+      <argument type="service" id=".service_locator.t0S5Ye5"/>
       <argument type="collection">
         <argument key="Symfony\Component\Form\Extension\Core\Type\FormType" type="iterator">
           <argument type="service" id="form.type_extension.form.transformation_failure_handling"/>
@@ -7350,6 +7350,8 @@
     <service id=".abstract.instanceof.App\Form\CommentairesType" class="App\Form\CommentairesType" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Symfony\Component\Form\FormTypeInterface.0.App\Form\TeamType" class="App\Form\TeamType" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Form\TeamType" class="App\Form\TeamType" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Component\Form\FormTypeInterface.0.App\Form\UserEditType" class="App\Form\UserEditType" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Form\UserEditType" class="App\Form\UserEditType" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Symfony\Component\Form\FormTypeInterface.0.App\Form\UserType" class="App\Form\UserType" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Form\UserType" class="App\Form\UserType" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\ArticleRepository" class="App\Repository\ArticleRepository" autowire="true" abstract="true"/>
@@ -8139,13 +8141,14 @@
       <argument type="service" id="argument_resolver.query_parameter_value_resolver"/>
       <argument type="service" id="debug.stopwatch"/>
     </service>
-    <service id=".service_locator.asyYv2B" class="Symfony\Component\DependencyInjection\ServiceLocator">
+    <service id=".service_locator.t0S5Ye5" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
         <argument key="App\Form\ArticleType" type="service_closure" id="App\Form\ArticleType"/>
         <argument key="App\Form\CategoriesType" type="service_closure" id="App\Form\CategoriesType"/>
         <argument key="App\Form\CommentairesType" type="service_closure" id="App\Form\CommentairesType"/>
         <argument key="App\Form\TeamType" type="service_closure" id="App\Form\TeamType"/>
+        <argument key="App\Form\UserEditType" type="service_closure" id="App\Form\UserEditType"/>
         <argument key="App\Form\UserType" type="service_closure" id="App\Form\UserType"/>
         <argument key="Symfony\Bridge\Doctrine\Form\Type\EntityType" type="service_closure" id="form.type.entity"/>
         <argument key="Symfony\Component\Form\Extension\Core\Type\ChoiceType" type="service_closure" id="form.type.choice"/>
@@ -10370,7 +10373,7 @@
     <service id=".service_locator.hw72IKE" alias=".service_locator.7ZF768O"/>
     <service id=".service_locator.94nVfSO" alias=".service_locator.JzW5KdR"/>
     <service id=".service_locator.BFrsqsn" alias=".service_locator.F9PKc.7"/>
-    <service id=".service_locator.pQLL1ki" alias=".service_locator.asyYv2B"/>
+    <service id=".service_locator.WuiQ24Y" alias=".service_locator.t0S5Ye5"/>
     <service id=".service_locator.jij13qc" alias=".service_locator.PBToVFE"/>
     <service id=".service_locator.O24_MAy" alias=".service_locator.yY.p4P7"/>
     <service id=".service_locator.urKcUwz" alias=".service_locator.5NV8kkv"/>

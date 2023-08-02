@@ -51,7 +51,6 @@ class AccountController extends AbstractController
     {
         $user = $this->getUser();
         $form = $this->createForm(UserEditType::class, $user);
-
         // $form->add('password', RepeatedType::class, [
         //     'type' => PasswordType::class,
         //     'invalid_message' => 'mots de passe différents',
@@ -63,8 +62,6 @@ class AccountController extends AbstractController
         //     'first_options' => ['label' => 'Mot de passe'],
         //     'second_options' => ['label' => 'Confirmer mot de passe']
         // ]);
-
-
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
