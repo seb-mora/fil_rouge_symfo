@@ -20,9 +20,10 @@ class UserSecurityController extends AbstractController
     }
 
 
-    #[Route(path: '/login', name: 'user_login')]
-    public function login(AuthenticationUtils $authenticationUtils): Response
+    #[Route(path: '/login/{params?}', name: 'user_login')]
+    public function login(AuthenticationUtils $authenticationUtils, $params): Response
     {
+
         if ($this->getUser()) {
             return $this->redirectToRoute('app_account');
         }
@@ -30,7 +31,8 @@ class UserSecurityController extends AbstractController
         // get the login error if there is one
         $error = $authenticationUtils->getLastAuthenticationError();
         // last username entered by the user
-        $lastUsername = $authenticationUtils->getLastUsername();
+        $lastUsername = ($params == null) ? $authenticationUtils->getLastUsername() : $params;
+
         // $lastUsername = $params;
         return $this->render('account/login/account_login.html.twig', ['params' => $lastUsername, 'error' => $error]);
     }

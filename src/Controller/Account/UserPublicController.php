@@ -44,9 +44,9 @@ class UserPublicController extends AbstractController
             $entityManager->persist($user);
             $entityManager->flush();
 
-            return $this->render('account/login/account_login.html.twig', ['params' => $user->getEmail(), 'error' => []]);
+            // return $this->render('account/login/account_login.html.twig', ['params' => $user->getEmail(), 'error' => []]);
 
-            // return $this->redirectToRoute('user_login', ['params' => $user->getEmail()], Response::HTTP_SEE_OTHER);
+            return $this->redirectToRoute('user_login', ['params' => $user->getEmail()]);
         }
 
         return $this->render('account/create/new.html.twig', [
@@ -55,13 +55,13 @@ class UserPublicController extends AbstractController
         ]);
     }
 
-    #[Route('/{id}', name: 'public_user_show', methods: ['GET'])]
-    public function show(User $user): Response
-    {
-        return $this->render('admin/user/show.html.twig', [
-            'user' => $user,
-        ]);
-    }
+    // #[Route('/{id}', name: 'public_user_show', methods: ['GET'])]
+    // public function show(User $user): Response
+    // {
+    //     return $this->render('admin/user/show.html.twig', [
+    //         'user' => $user,
+    //     ]);
+    // }
 
     #[Route('/{id}/edit', name: 'public_user_edit', methods: ['GET', 'POST'])]
     public function edit(Request $request, User $user, EntityManagerInterface $entityManager): Response
