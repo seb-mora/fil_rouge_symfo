@@ -1,0 +1,14 @@
+{# {% extends 'base.html.twig' %} #}
+{% extends 'account/create/base_create.html.twig'%}
+
+{% block title %}Modifications profil{% endblock %}
+
+{% block body %}
+    <h1>Modification du profil</h1>
+
+    {{ include('account/actions/_form.html.twig', {'button_label': 'Update'}) }}
+
+    <a href="{{ path('app_commentaires_show') }}">Retour accueil</a>
+
+    {{ include('admin/user/_delete_form.html.twig') }}
+{% endblock %}

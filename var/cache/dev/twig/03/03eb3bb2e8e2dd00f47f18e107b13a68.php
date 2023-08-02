@@ -68,23 +68,23 @@ class __TwigTemplate_6e6b8f3e2012d1f531a432f25485f835 extends Template
  ";
         // line 18
         $this->displayBlock('haut', $context, $blocks);
-        // line 32
+        // line 35
         echo "
         <div class=\"container\">
     
             ";
-        // line 35
+        // line 38
         $this->displayBlock('body', $context, $blocks);
-        // line 37
+        // line 40
         echo "
         </div>
 
         <script src=\"https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js\" integrity=\"sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz\" crossorigin=\"anonymous\"></script>
 
  ";
-        // line 42
+        // line 45
         $this->displayBlock('bas', $context, $blocks);
-        // line 47
+        // line 50
         echo "
     </body>
 
@@ -137,31 +137,35 @@ class __TwigTemplate_6e6b8f3e2012d1f531a432f25485f835 extends Template
             echo "        bonjour ";
             echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 21, $this->source); })()), "user", [], "any", false, false, false, 21), "prenom", [], "any", false, false, false, 21), "html", null, true);
             echo " 
-        <a href=\"";
-            // line 22
-            echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_account");
+
+        ";
+            // line 24
+            echo "        ";
+            // line 25
+            echo "        <a href=\"";
+            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("public_user_edit", ["id" => twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 25, $this->source); })()), "user", [], "any", false, false, false, 25), "id", [], "any", false, false, false, 25)]), "html", null, true);
             echo "\"> Profil</a>
       <a href=\"";
-            // line 23
+            // line 26
             echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_logout");
             echo "\"> Déconnection</a>
         ";
         } else {
-            // line 25
+            // line 28
             echo "        <a href=\"";
             echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("public_user_new");
             echo "\"> Créer un compte</a>
          <a href=\"";
-            // line 26
+            // line 29
             echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("user_login");
             echo "\">Connection</a>
           <a href=\"";
-            // line 27
+            // line 30
             echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("admin_login");
             echo "\">Administration</a>
         ";
         }
-        // line 29
+        // line 32
         echo "        
 
 ";
@@ -173,7 +177,7 @@ class __TwigTemplate_6e6b8f3e2012d1f531a432f25485f835 extends Template
 
     }
 
-    // line 35
+    // line 38
     public function block_body($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -183,7 +187,7 @@ class __TwigTemplate_6e6b8f3e2012d1f531a432f25485f835 extends Template
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "body"));
 
-        // line 36
+        // line 39
         echo "            ";
         
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->leave($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof);
@@ -193,7 +197,7 @@ class __TwigTemplate_6e6b8f3e2012d1f531a432f25485f835 extends Template
 
     }
 
-    // line 42
+    // line 45
     public function block_bas($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -203,7 +207,7 @@ class __TwigTemplate_6e6b8f3e2012d1f531a432f25485f835 extends Template
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "bas"));
 
-        // line 43
+        // line 46
         echo "
        bas de page  
 
@@ -223,7 +227,7 @@ class __TwigTemplate_6e6b8f3e2012d1f531a432f25485f835 extends Template
 
     public function getDebugInfo()
     {
-        return array (  207 => 43,  197 => 42,  187 => 36,  177 => 35,  165 => 29,  160 => 27,  156 => 26,  151 => 25,  146 => 23,  142 => 22,  137 => 21,  135 => 20,  132 => 19,  122 => 18,  103 => 11,  88 => 47,  86 => 42,  79 => 37,  77 => 35,  72 => 32,  70 => 18,  64 => 14,  59 => 11,  47 => 1,);
+        return array (  211 => 46,  201 => 45,  191 => 39,  181 => 38,  169 => 32,  164 => 30,  160 => 29,  155 => 28,  150 => 26,  145 => 25,  143 => 24,  137 => 21,  135 => 20,  132 => 19,  122 => 18,  103 => 11,  88 => 50,  86 => 45,  79 => 40,  77 => 38,  72 => 35,  70 => 18,  64 => 14,  59 => 11,  47 => 1,);
     }
 
     public function getSourceContext()
@@ -249,7 +253,10 @@ class __TwigTemplate_6e6b8f3e2012d1f531a432f25485f835 extends Template
 
         {% if app.user %}
         bonjour {{app.user.prenom}} 
-        <a href=\"{{path('app_account')}}\"> Profil</a>
+
+        {# /public/user/{id}/edit #}
+        {# path('app_article_show', {'id': article.id}) #}
+        <a href=\"{{path('public_user_edit', {'id':app.user.id})}}\"> Profil</a>
       <a href=\"{{path('app_logout')}}\"> Déconnection</a>
         {% else %}
         <a href=\"{{path('public_user_new')}}\"> Créer un compte</a>

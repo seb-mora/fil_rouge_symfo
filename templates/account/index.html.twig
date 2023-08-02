@@ -9,8 +9,19 @@
 </style>
 
 <div class="example-wrapper">
-    <h1>Hello {{ app.user.prenom }}! ✅</h1>
+    
+ {% if app.user %}
+      
+     <h1>Hello {{ app.user.prenom }}! ✅</h1>
+Voici tes commentaires :
 
+       
+
+        {% endif %}
+<br>
+<br>
+<br>
+<br>
    account_index:
     <ul>
         <li>Your controller at <code><a href="{{ 'C:/Users/Moras/Desktop/formationCDA/symfony/blog/my_project_directory/src/Controller/AccountController.php'|file_link(0) }}">src/Controller/AccountController.php</a></code></li>

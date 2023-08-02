@@ -43,8 +43,11 @@
         Bonjour {{app.user.prenom}}, la forme ? 
      
         {% else %}
-   <a href="{{ path('app_home') }}">retour à l'accueil</a>
+    <button><a href="{{ path('app_home') }}">retour à l'accueil</a></button>
         {% endif %}
+     
+
+             <button><a href="{{path('app_logout')}}"> Déconnection</a></button>
 
  
                 </nav>

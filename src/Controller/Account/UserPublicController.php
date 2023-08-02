@@ -64,18 +64,30 @@ class UserPublicController extends AbstractController
     // }
 
     #[Route('/{id}/edit', name: 'public_user_edit', methods: ['GET', 'POST'])]
-    public function edit(Request $request, User $user, EntityManagerInterface $entityManager): Response
+    public function edit(Request $request, User $user, EntityManagerInterface $entityManager, UserPasswordHasherInterface $userPasswordHasherInterface): Response
     {
         $form = $this->createForm(UserType::class, $user);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
+
+            $brutPassword = $user->getPassword();
+            $hashedPassword = $userPasswordHasherInterface->hashPassword(
+                $user,
+                $brutPassword
+            );
+            $user->setPassword($hashedPassword);
+
+            $user->setRoles(["ROLE_VISITOR"]);
+
+            $entityManager->persist($user);
+
             $entityManager->flush();
 
-            return $this->redirectToRoute('app_user_index', [], Response::HTTP_SEE_OTHER);
+            return $this->redirectToRoute('app_account');
         }
 
-        return $this->render('admin/user/edit.html.twig', [
+        return $this->render('account/actions/edit.html.twig', [
             'user' => $user,
             'form' => $form,
         ]);
