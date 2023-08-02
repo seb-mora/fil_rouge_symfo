@@ -17,6 +17,7 @@ return [
     '_profiler_exception' => [['token'], ['_controller' => 'web_profiler.controller.exception_panel::body'], [], [['text', '/exception'], ['variable', '/', '[^/]++', 'token', true], ['text', '/_profiler']], [], [], []],
     '_profiler_exception_css' => [['token'], ['_controller' => 'web_profiler.controller.exception_panel::stylesheet'], [], [['text', '/exception.css'], ['variable', '/', '[^/]++', 'token', true], ['text', '/_profiler']], [], [], []],
     'app_account' => [[], ['_controller' => 'App\\Controller\\Account\\AccountController::index'], [], [['text', '/account/']], [], [], []],
+    'app_account_commentaires' => [['id'], ['_controller' => 'App\\Controller\\Account\\AccountController::userCommentaires'], [], [['variable', '/', '[^/]++', 'id', true], ['text', '/account/commentaires']], [], [], []],
     'public_article_index' => [[], ['_controller' => 'App\\Controller\\Account\\UserPublicController::index'], [], [['text', '/public/user/']], [], [], []],
     'public_user_new' => [[], ['_controller' => 'App\\Controller\\Account\\UserPublicController::new'], [], [['text', '/public/user/new']], [], [], []],
     'public_user_edit' => [['id'], ['_controller' => 'App\\Controller\\Account\\UserPublicController::edit'], [], [['text', '/edit'], ['variable', '/', '[^/]++', 'id', true], ['text', '/public/user']], [], [], []],

@@ -48,7 +48,7 @@ class UserPublicController extends AbstractController
 
             // return $this->render('account/login/account_login.html.twig', ['params' => $user->getEmail(), 'error' => []]);
 
-            return $this->redirectToRoute('user_login', ['params' => $user->getEmail()]);
+            return $this->redirectToRoute('user_login');
         }
 
         return $this->render('account/create/new.html.twig', [
