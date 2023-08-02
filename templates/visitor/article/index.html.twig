@@ -1,34 +1,23 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Sebfony{% endblock %}
+{% block title %}Accueil{% endblock %}
 
 {% block body %}
-    <h1>accueil</h1>
+    <h1>Bienvenue</h1>
 
-    <table class="table">
+<table class="table">
         <thead>
             <tr>
-               <th>Logo</th>
-                <th>Titre</th>
-                <th>Contenu</th>
-                <th>Auteur</th>
-                <th>Catégorie</th>
-                <th>Date</th>
+                <th>CATEGORIES</th>
             </tr>
         </thead>
         <tbody>
-        {% for article in articles %}
+        {% for categorie in categories %}
             <tr>
-                 <td>{% if article.logo !='' %}
-                <img src={{ article.logo }} height="50" width="50">
-                {% endif %}</td>
-                <td>{{ article.titre }}</td>
-                <td> <a href="{{ path('app_article_show', {'id': article.id}) }}">
-                {{ article.contenu }} </a></td>
-                <td>{{ article.user }}</td>
-                 <td>{{ article.categorie }}</td>
-                <td>{{ article.date ? article.date|date('Y-m-d H:i:s') : '' }}</td>   
-                </span>
+                <td>{{ categorie.nom }}</td> 
+                <td>
+                    <a href="{{ path('visitor_categorie_show', {'id': categorie.id}) }}">Voir les articles correspondants</a>
+                </td>
             </tr>
         {% else %}
             <tr>
@@ -38,5 +27,43 @@
         </tbody>
     </table>
 
- 
+    <table class="table">
+        <thead>
+            <tr>
+            <th>ARTICLES</th>
+                <th>Titre</th>
+                <th>Contenu</th>
+               
+             
+                <th>Date</th>
+                <th>Catégorie</th>
+                   <th>Auteur</th>
+
+            </tr>
+        </thead>
+        <tbody>
+        {% for article in articles %}
+            <tr>
+              <td>{% if article.logo !='' %}
+                <img src={{ article.logo }} height="50" width="50">
+                {% endif %}</td>
+                <td>{{ article.titre }}</td>
+                <td>{{ article.contenu }}</td>
+              
+             
+                <td>{{ article.date ? article.date|date('Y-m-d H:i:s') : '' }}</td>
+                <td>{{ article.categorie }}</td>
+                   <td>{{ article.user }}</td>
+                <td>
+                    <a href="{{ path('visitor_article_show', {'id': article.id}) }}">LIRE</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="5">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
 {% endblock %}

@@ -9,10 +9,7 @@
     <table class="table">
         <tbody>
          {% for commentaire in commentaires %}
-            <tr>
-                <th>Id</th>
-                <td>{{ commentaire.id }}</td>
-            </tr>
+    {# TODO Montrer titre de l'article sur laquel le commentaire est laissé #}
             <tr>
                 <th>Contenu</th>
                 <td>{{ commentaire.contenu }}</td>

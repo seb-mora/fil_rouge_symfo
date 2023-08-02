@@ -9,6 +9,7 @@ use App\Entity\Categories;
 use App\Repository\UserRepository;
 use App\Repository\ArticleRepository;
 use App\Repository\CategoriesRepository;
+use App\Repository\CommentairesRepository;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -28,17 +29,18 @@ class VisitorController extends AbstractController
     }
 
     #[Route('/artice/{id}', name: 'visitor_article_show', methods: ['GET'])]
-    public function showArt(Article $article): Response
+    public function showArt(Article $article, CommentairesRepository $commentairesRepository, $id): Response
     {
-        return $this->render('account/actions/show.html.twig', [
+        return $this->render('visitor/article/show.html.twig', [
             'article' => $article,
+            'commentaires' => $commentairesRepository->findBy(['article' => $id])
         ]);
     }
 
     #[Route('/categorie/{id}', name: 'visitor_categorie_show', methods: ['GET'])]
     public function showCat(ArticleRepository $articleRepository, $id): Response
     {
-        return $this->render('account/actions/showCat.html.twig', [
+        return $this->render('visitor/showCat.html.twig', [
             'articles' => $articleRepository->findBy(['categorie' => $id]),
         ]);
     }
