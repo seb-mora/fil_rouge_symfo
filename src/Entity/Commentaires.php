@@ -16,11 +16,11 @@ class Commentaires
 
     #[ORM\ManyToOne(inversedBy: 'commentaires')]
     #[ORM\JoinColumn(nullable: false)]
-    private ?user $auteur = null;
+    private ?User $auteur = null;
 
     #[ORM\ManyToOne(inversedBy: 'commentaires')]
     #[ORM\JoinColumn(nullable: false)]
-    private ?article $article = null;
+    private ?Article $article = null;
 
     #[ORM\Column(type: Types::TEXT)]
     private ?string $contenu = null;

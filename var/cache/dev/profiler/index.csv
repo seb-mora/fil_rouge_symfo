@@ -379,3 +379,7 @@ a87836,127.0.0.1,GET,http://127.0.0.1:8000/account/commentaires/1,1690997903,,50
 86431d,127.0.0.1,GET,http://127.0.0.1:8000/account/commentaires/1,1690997906,,500
 362c6b,127.0.0.1,GET,http://127.0.0.1:8000/account/commentaires/1,1690997911,209431,500
 209431,127.0.0.1,GET,http://127.0.0.1:8000/account/commentaires/1,1690997911,,500
+1869cd,127.0.0.1,GET,http://127.0.0.1:8000/account/,1690998267,,200
+733dce,127.0.0.1,GET,http://127.0.0.1:8000/account/commentaires/1,1690998268,405b02,500
+405b02,127.0.0.1,GET,http://127.0.0.1:8000/account/commentaires/1,1690998269,,500
+071d43,127.0.0.1,GET,http://127.0.0.1:8000/account/commentaires/1,1690998625,,200
