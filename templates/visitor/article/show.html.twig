@@ -1,66 +1,53 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}{{ article.titre }}{% endblock %}
+{% block title %} Sebfony - {{ article.titre }} {% endblock %}
 
-{% block categories %}{% endblock %}
+{% block categories %}
+{% endblock %}
 
 {% block body %}
-<br>
-<br>
-    <a href="{{ path('app_home') }}">Revenir à l'accueil</a>
-    <h1>{{ article.titre }}</h1>
 
+<br>
+<br>
+<a href="{{ path('app_home') }}"> Revenir à l'accueil </a>
+<h1> {{ article.titre }} </h1>
+<br>
     <table class="table">
         <tbody>
-       
             <tr>
-           
-                <td>{{ article.contenu }}</td>
+                <td> {{ article.contenu }} </td>
             </tr>
-        
+            <tr>  
+                <td> <img src={{ article.logo }}> </td>
+            </tr>
             <tr>
-             
-                <td><img src={{ article.logo }}></td>
-            </tr>
-                <tr>
-               
-                <td>{{ article.date ? article.date|date('Y-m-d H:i:s') : '' }}</td>
+                <td>{{ article.date ? article.date|date('d-m-Y H:i:s') : '' }}</td>
             </tr>
         </tbody>
     </table>
 
- <table class="table">
+    <table class="table">
         <thead>
             <tr>
-            <th>Commentaires</th>
-              
-             
-                 <th>Auteur</th>
+                <th>Commentaires</th>
+                <th>Auteur</th>
                 <th>Date</th>
-       
-                  
-
             </tr>
         </thead>
+        <br>
         <tbody>
-        {% for commentaire in commentaires %}
-            <tr>
- 
-                <td>{{ commentaire.contenu }}</td>
-                      <td>{{ commentaire.auteur.nom}} <br>{{ commentaire.auteur.prenom }}</td>
-                <td>{{commentaire.date ? commentaire.date|date('Y-m-d H:i:s') : '' }}</td>
-              
-                {# <td>
-                    <a href="{{ path('visitor_article_show', {'id': article.id}) }}">LIRE</a>
-                </td> #}
-            </tr>
-        {% else %}
-            <tr>
-                <td colspan="5">no records found</td>
-            </tr>
-        {% endfor %}
+            {% for commentaire in commentaires %}
+                <tr>
+                    <td> {{ commentaire.contenu }} </td>
+                    <td> {{ commentaire.auteur ? commentaire.auteur : "Anonyme"}} </td>
+                    <td> {{commentaire.date ? commentaire.date|date('d-m-Y H:i:s') : '' }} </td>
+                </tr>
+            {% else %}
+                <tr>
+                    <td colspan="5">no records found</td>
+                </tr>
+            {% endfor %}
         </tbody>
     </table>
-
 
 {% endblock %}

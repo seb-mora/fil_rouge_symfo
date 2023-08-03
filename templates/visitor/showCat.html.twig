@@ -1,53 +1,49 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Article{% endblock %}
+{% block title %} Sebfony - les catégories {% endblock %}
 
-{% block categories %}{% endblock %}
+{% block categories %}
+{% endblock %}
 
 {% block body %}
+
 <br>
 <br>
-    <a href="{{ path('app_home') }}">Revenir à l'accueil</a>
-    {# <h1>{{ article.titre }}</h1> #}
-
-   <table class="table">
-        <thead>
-            <tr>
-            <th>Logo</th>
-                <th>Titre</th>
-                <th>Contenu</th>
-               
-             
-                <th>Date</th>
-                <th>Catégorie</th>
-                   <th>Auteur</th>
-
-            </tr>
-        </thead>
-        <tbody>
-        {% for article in articles %}
-            <tr>
-              <td>{% if article.logo !='' %}
-                <img src={{ article.logo }} height="50" width="50">
-                {% endif %}</td>
-                <td>{{ article.titre }}</td>
-                <td>{{ article.contenu }}</td>
-              
-             
-                <td>{{ article.date ? article.date|date('Y-m-d H:i:s') : '' }}</td>
-                <td>{{ article.categorie }}</td>
-                   <td>{{ article.user }}</td>
-                <td>
-                    <a href="{{ path('visitor_article_show', {'id': article.id}) }}">LIRE</a>
-                </td>
-            </tr>
-        {% else %}
-            <tr>
-                <td colspan="5">no records found</td>
-            </tr>
-        {% endfor %}
-        </tbody>
-    </table>
-
+    <a href="{{ path('app_home') }}"> Revenir à l'accueil </a>
+    <h1>Catégories</h1>
+    <br>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th></th>
+                    <th>Titre</th>
+                    <th>Contenu</th>
+                    <th>Date</th>
+                    <th>Catégorie</th>
+                    <th>Auteur</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for article in articles %}
+                <tr>
+                    <td> {% if article.logo !='' %}
+                        <img src={{ article.logo }} height="50" width="50">
+                        {% endif %}
+                    </td>
+                    <td> {{ article.titre }} </td>
+                    <td> {{ article.contenu }} </td>
+                    <td> {{ article.date ? article.date|date('d-m-Y H:i:s') : '' }} </td>
+                    <td> {{ article.categorie }} </td>
+                    <td> {{ article.user }} </td>
+                    <td> <a href="{{ path('visitor_article_show', {'id': article.id}) }}"> Lire l'article </a> </td>
+                </tr>
+                {% else %}
+                <tr>
+                    <td colspan="5"> Aucun articé créé </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
 
 {% endblock %}

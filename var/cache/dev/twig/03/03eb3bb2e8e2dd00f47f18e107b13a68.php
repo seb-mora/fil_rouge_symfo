@@ -46,48 +46,36 @@ class __TwigTemplate_6e6b8f3e2012d1f531a432f25485f835 extends Template
         // line 1
         echo "<!DOCTYPE html>
 <html lang=\"fr\">
-
     <head>
-
         <meta charset=\"utf-8\">
         <meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge\">
         <meta name=\"viewport\" content=\"width=device-width, initial-scale=1, shrink-to-fit=no\">
         <meta name=\"robots\" content=\"no-index, no-follow\">
         <link rel=\"icon\" type=\"image/png\" href=\"/img/ico.png\" />
         <title>";
-        // line 11
+        // line 9
         $this->displayBlock('title', $context, $blocks);
         echo "</title>
         <link href=\"https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css\" rel=\"stylesheet\" integrity=\"sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM\" crossorigin=\"anonymous\">
-        ";
-        // line 14
-        echo "    </head>
+    </head>
 
     <body class=\"bg-gradient-primary\">
-
- ";
-        // line 18
+        ";
+        // line 14
         $this->displayBlock('haut', $context, $blocks);
-        // line 35
-        echo "
-        <div class=\"container\">
-    
-            ";
-        // line 38
+        // line 24
+        echo "    <div class=\"container\">
+        ";
+        // line 25
         $this->displayBlock('body', $context, $blocks);
-        // line 40
-        echo "
-        </div>
-
-        <script src=\"https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js\" integrity=\"sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz\" crossorigin=\"anonymous\"></script>
-
- ";
-        // line 45
+        // line 27
+        echo "    </div>
+    <script src=\"https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js\" integrity=\"sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz\" crossorigin=\"anonymous\"></script>
+        ";
+        // line 29
         $this->displayBlock('bas', $context, $blocks);
-        // line 50
-        echo "
-    </body>
-
+        // line 31
+        echo "    </body>
 </html>
 
 ";
@@ -99,7 +87,7 @@ class __TwigTemplate_6e6b8f3e2012d1f531a432f25485f835 extends Template
 
     }
 
-    // line 11
+    // line 9
     public function block_title($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -118,7 +106,7 @@ class __TwigTemplate_6e6b8f3e2012d1f531a432f25485f835 extends Template
 
     }
 
-    // line 18
+    // line 14
     public function block_haut($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -128,46 +116,35 @@ class __TwigTemplate_6e6b8f3e2012d1f531a432f25485f835 extends Template
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "haut"));
 
-        // line 19
-        echo "
-        ";
-        // line 20
-        if (twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 20, $this->source); })()), "user", [], "any", false, false, false, 20)) {
-            // line 21
-            echo "        bonjour ";
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 21, $this->source); })()), "user", [], "any", false, false, false, 21), "prenom", [], "any", false, false, false, 21), "html", null, true);
+        // line 15
+        echo "            ";
+        if (twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 15, $this->source); })()), "user", [], "any", false, false, false, 15)) {
+            // line 16
+            echo "                bonjour ";
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 16, $this->source); })()), "user", [], "any", false, false, false, 16), "prenom", [], "any", false, false, false, 16), "html", null, true);
             echo " 
-
-        ";
-            // line 24
-            echo "        ";
-            // line 25
-            echo "        ";
-            // line 26
-            echo "     <button>  <a href=\"";
+                    &nbsp; &nbsp; &nbsp; &nbsp;<button> <a href=\"";
+            // line 17
             echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_logout");
-            echo "\"> Déconnection</a></button>
-        ";
+            echo "\"> Déconnection</a> </button>
+            ";
         } else {
-            // line 28
-            echo "     <button>    <a href=\"";
+            // line 19
+            echo "                    &nbsp; &nbsp; &nbsp; &nbsp;<button> <a href=\"";
             echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("public_user_new");
-            echo "\"> Créer un compte</a></button>
-     <button>     <a href=\"";
-            // line 29
+            echo "\"> Créer un compte</a> </button>
+                    &nbsp; &nbsp; &nbsp; &nbsp; <button> <a href=\"";
+            // line 20
             echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("user_login");
-            echo "\">Connection</a></button>
-     <button>      <a href=\"";
-            // line 30
+            echo "\">Connection</a> </button>
+                    &nbsp; &nbsp; &nbsp; &nbsp;<button> <a href=\"";
+            // line 21
             echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("admin_login");
-            echo "\">Administration</a></button>
-        ";
+            echo "\">Administration</a> </button>
+            ";
         }
-        // line 32
-        echo "       ";
-        // line 33
-        echo "
-";
+        // line 23
+        echo "        ";
         
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->leave($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof);
 
@@ -176,7 +153,7 @@ class __TwigTemplate_6e6b8f3e2012d1f531a432f25485f835 extends Template
 
     }
 
-    // line 38
+    // line 25
     public function block_body($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -186,8 +163,8 @@ class __TwigTemplate_6e6b8f3e2012d1f531a432f25485f835 extends Template
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "body"));
 
-        // line 39
-        echo "            ";
+        // line 26
+        echo "        ";
         
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->leave($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof);
 
@@ -196,7 +173,7 @@ class __TwigTemplate_6e6b8f3e2012d1f531a432f25485f835 extends Template
 
     }
 
-    // line 45
+    // line 29
     public function block_bas($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -206,11 +183,8 @@ class __TwigTemplate_6e6b8f3e2012d1f531a432f25485f835 extends Template
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "bas"));
 
-        // line 46
-        echo "
-       bas de page  
-
-";
+        // line 30
+        echo "        ";
         
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->leave($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof);
 
@@ -226,16 +200,14 @@ class __TwigTemplate_6e6b8f3e2012d1f531a432f25485f835 extends Template
 
     public function getDebugInfo()
     {
-        return array (  210 => 46,  200 => 45,  190 => 39,  180 => 38,  169 => 33,  167 => 32,  162 => 30,  158 => 29,  153 => 28,  147 => 26,  145 => 25,  143 => 24,  137 => 21,  135 => 20,  132 => 19,  122 => 18,  103 => 11,  88 => 50,  86 => 45,  79 => 40,  77 => 38,  72 => 35,  70 => 18,  64 => 14,  59 => 11,  47 => 1,);
+        return array (  187 => 30,  177 => 29,  167 => 26,  157 => 25,  147 => 23,  142 => 21,  138 => 20,  133 => 19,  128 => 17,  123 => 16,  120 => 15,  110 => 14,  91 => 9,  78 => 31,  76 => 29,  72 => 27,  70 => 25,  67 => 24,  65 => 14,  57 => 9,  47 => 1,);
     }
 
     public function getSourceContext()
     {
         return new Source("<!DOCTYPE html>
 <html lang=\"fr\">
-
     <head>
-
         <meta charset=\"utf-8\">
         <meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge\">
         <meta name=\"viewport\" content=\"width=device-width, initial-scale=1, shrink-to-fit=no\">
@@ -243,46 +215,27 @@ class __TwigTemplate_6e6b8f3e2012d1f531a432f25485f835 extends Template
         <link rel=\"icon\" type=\"image/png\" href=\"/img/ico.png\" />
         <title>{% block title %}Administration legion.org{% endblock %}</title>
         <link href=\"https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css\" rel=\"stylesheet\" integrity=\"sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM\" crossorigin=\"anonymous\">
-        {# <link href=\"/assets/css/admin/admin.css\" rel=\"stylesheet\"> #}
     </head>
 
     <body class=\"bg-gradient-primary\">
-
- {% block haut %}
-
-        {% if app.user %}
-        bonjour {{app.user.prenom}} 
-
-        {# /public/user/{id}/edit #}
-        {# path('app_article_show', {'id': article.id}) #}
-        {# <a href=\"{{path('public_user_edit', {'id':app.user.id})}}\"> Profil</a> #}
-     <button>  <a href=\"{{path('app_logout')}}\"> Déconnection</a></button>
-        {% else %}
-     <button>    <a href=\"{{path('public_user_new')}}\"> Créer un compte</a></button>
-     <button>     <a href=\"{{path('user_login')}}\">Connection</a></button>
-     <button>      <a href=\"{{path('admin_login')}}\">Administration</a></button>
-        {% endif %}
-       {# TODO mettre les boutons à chaque vue  #}
-
-{% endblock %}
-
-        <div class=\"container\">
-    
-            {% block body %}
-            {% endblock %}
-
-        </div>
-
-        <script src=\"https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js\" integrity=\"sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz\" crossorigin=\"anonymous\"></script>
-
- {% block bas %}
-
-       bas de page  
-
-{% endblock %}
-
+        {% block haut %}
+            {% if app.user %}
+                bonjour {{app.user.prenom}} 
+                    &nbsp; &nbsp; &nbsp; &nbsp;<button> <a href=\"{{path('app_logout')}}\"> Déconnection</a> </button>
+            {% else %}
+                    &nbsp; &nbsp; &nbsp; &nbsp;<button> <a href=\"{{path('public_user_new')}}\"> Créer un compte</a> </button>
+                    &nbsp; &nbsp; &nbsp; &nbsp; <button> <a href=\"{{path('user_login')}}\">Connection</a> </button>
+                    &nbsp; &nbsp; &nbsp; &nbsp;<button> <a href=\"{{path('admin_login')}}\">Administration</a> </button>
+            {% endif %}
+        {% endblock %}
+    <div class=\"container\">
+        {% block body %}
+        {% endblock %}
+    </div>
+    <script src=\"https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js\" integrity=\"sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz\" crossorigin=\"anonymous\"></script>
+        {% block bas %}
+        {% endblock %}
     </body>
-
 </html>
 
 ", "base.html.twig", "C:\\Users\\Moras\\Desktop\\formationCDA\\symfony\\blog\\my_project_directory\\templates\\base.html.twig");

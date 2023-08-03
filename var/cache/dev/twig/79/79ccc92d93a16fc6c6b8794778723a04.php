@@ -65,87 +65,79 @@ class __TwigTemplate_17cc00df704df97621db9e89950131b4 extends Template
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "body"));
 
         // line 4
-        echo "<style>
-
-.row {
-    background-color : #6b0606;
-}
-</style>
+        echo "
     <div class=\"row justify-content-center\">
-                <div class=\"col-xl-10 col-lg-12 col-md-9\">
-                    <div class=\"card o-hidden border-0 shadow-lg my-5\">
-                        <div class=\"card-body\">
-                            <div class=\"row\">
-                                <div class=\"col-lg-6 d-none d-lg-block bg-login-image\"></div>
-                                <div class=\"col-lg-6 card-block-text\">
-                                    <div class=\"p-5\">
-                                        <div class=\"text-center\">
-                                            <h1 class=\"h4 text-gray-900 mb-4\">Administration</h1>
+        <div class=\"col-xl-10 col-lg-12 col-md-9\">
+            <div class=\"card o-hidden border-0 shadow-lg my-5\">
+                <div class=\"card-body\">
+                    <div class=\"row\">
+                        <div class=\"col-lg-6 d-none d-lg-block bg-login-image\"></div>
+                        <div class=\"col-lg-6 card-block-text\">
+                            <div class=\"p-5\">
+                                <div class=\"text-center\">
+                                    <h1 class=\"h4 text-gray-900 mb-4\">Administration</h1>
+                                    <hr>
+                                </div>
+
+                                <form method=\"post\">
+                                     ";
+        // line 19
+        if ((isset($context["error"]) || array_key_exists("error", $context) ? $context["error"] : (function () { throw new RuntimeError('Variable "error" does not exist.', 19, $this->source); })())) {
+            // line 20
+            echo "                                        <div class=\"alert alert-danger\"> ";
+            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\TranslationExtension']->trans(twig_get_attribute($this->env, $this->source, (isset($context["error"]) || array_key_exists("error", $context) ? $context["error"] : (function () { throw new RuntimeError('Variable "error" does not exist.', 20, $this->source); })()), "messageKey", [], "any", false, false, false, 20), twig_get_attribute($this->env, $this->source, (isset($context["error"]) || array_key_exists("error", $context) ? $context["error"] : (function () { throw new RuntimeError('Variable "error" does not exist.', 20, $this->source); })()), "messageData", [], "any", false, false, false, 20), "security"), "html", null, true);
+            echo " </div>
+                                    ";
+        }
+        // line 22
+        echo "                                        <div class=\"form-group\">
+                                            <input type=\"email\" class=\"form-control form-control-user\" aria-describedby=\"emailHelp\" placeholder=\"Votre email ...\" value=\"";
+        // line 23
+        echo twig_escape_filter($this->env, (isset($context["last_username"]) || array_key_exists("last_username", $context) ? $context["last_username"] : (function () { throw new RuntimeError('Variable "last_username" does not exist.', 23, $this->source); })()), "html", null, true);
+        echo "\" name=\"email\" id=\"inputEmail\">
+                                        </div>
+                                        <div class=\"form-group\">
+                                            <input type=\"password\" class=\"form-control form-control-user\" id=\"exampleInputPassword\" placeholder=\"Mot de passe\" name=\"password\" id=\"inputPassword\">
+                                        </div>
+                                        <div class=\"form-group\">
+                                            <div class=\"custom-control custom-checkbox small\">
+                                                <input type=\"checkbox\" class=\"custom-control-input\" id=\"customCheck\">
+                                                <label class=\"custom-control-label\" for=\"customCheck\"> Se souvenir de moi </label>
+                                            </div>
                                         </div>
 
-                                        <form method=\"post\">
-                                            ";
-        // line 23
-        if ((isset($context["error"]) || array_key_exists("error", $context) ? $context["error"] : (function () { throw new RuntimeError('Variable "error" does not exist.', 23, $this->source); })())) {
-            // line 24
-            echo "                                                <div class=\"alert alert-danger\">";
-            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\TranslationExtension']->trans(twig_get_attribute($this->env, $this->source, (isset($context["error"]) || array_key_exists("error", $context) ? $context["error"] : (function () { throw new RuntimeError('Variable "error" does not exist.', 24, $this->source); })()), "messageKey", [], "any", false, false, false, 24), twig_get_attribute($this->env, $this->source, (isset($context["error"]) || array_key_exists("error", $context) ? $context["error"] : (function () { throw new RuntimeError('Variable "error" does not exist.', 24, $this->source); })()), "messageData", [], "any", false, false, false, 24), "security"), "html", null, true);
-            echo "</div>
-                                            ";
-        }
-        // line 26
-        echo "
-                                            <div class=\"form-group\">
-                                                <input type=\"email\" class=\"form-control form-control-user\" aria-describedby=\"emailHelp\" placeholder=\"Votre email ...\" value=\"";
-        // line 28
-        echo twig_escape_filter($this->env, (isset($context["last_username"]) || array_key_exists("last_username", $context) ? $context["last_username"] : (function () { throw new RuntimeError('Variable "last_username" does not exist.', 28, $this->source); })()), "html", null, true);
-        echo "\" name=\"email\" id=\"inputEmail\">
-                                            </div>
-                                            <div class=\"form-group\">
-                                                <input type=\"password\" class=\"form-control form-control-user\"
-                                                    id=\"exampleInputPassword\" placeholder=\"Mot de passe\" name=\"password\" id=\"inputPassword\">
-                                            </div>
-                                            <div class=\"form-group\">
-                                                <div class=\"custom-control custom-checkbox small\">
-                                                    <input type=\"checkbox\" class=\"custom-control-input\" id=\"customCheck\">
-                                                    <label class=\"custom-control-label\" for=\"customCheck\">Se souvenir de moi</label>
-                                                </div>
-                                            </div>
-
-                                            <input type=\"hidden\" name=\"_csrf_token\"
-                                                value=\"";
-        // line 42
+                                        <input type=\"hidden\" name=\"_csrf_token\" value=\"";
+        // line 35
         echo twig_escape_filter($this->env, $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderCsrfToken("authenticate"), "html", null, true);
-        echo "\"
-                                            >
+        echo "\">
 
-                                            <button class=\"btn btn-primary btn-user btn-block\" type=\"submit\">
-                                                Me connecter
-                                            </button>
-                                        </form>
-                                        <br><a href=\"";
-        // line 49
+                                        <button class=\"btn btn-primary btn-user btn-block\" type=\"submit\">
+                                            Me connecter
+                                        </button>
+                                </form>
+                                <br>
+                                <br>
+                                <a href=\"";
+        // line 43
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_home");
-        echo "\">retour à l'accueil</a> <br>
-                                    <a href=\"";
-        // line 50
+        echo "\"> Retour à l'accueil </a>
+                                <br>
+                                <a href=\"";
+        // line 45
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("user_login");
-        echo "\">Connection utilisateur</a>
-                                  <br>
-                                 <a href=\"";
-        // line 52
+        echo "\"> Connection utilisateur </a>
+                                <br>
+                                <a href=\"";
+        // line 47
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("public_user_new");
-        echo "\"> Créer un compte utilisateur</a>
-                                        <hr>
-                                        ";
-        // line 55
-        echo "                                    </div>
-                                </div>
+        echo "\"> Créer un compte utilisateur </a>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
+        </div>
+    </div>
 
 ";
         
@@ -168,7 +160,7 @@ class __TwigTemplate_17cc00df704df97621db9e89950131b4 extends Template
 
     public function getDebugInfo()
     {
-        return array (  142 => 55,  137 => 52,  132 => 50,  128 => 49,  118 => 42,  101 => 28,  97 => 26,  91 => 24,  89 => 23,  68 => 4,  58 => 3,  35 => 1,);
+        return array (  132 => 47,  127 => 45,  122 => 43,  111 => 35,  96 => 23,  93 => 22,  87 => 20,  85 => 19,  68 => 4,  58 => 3,  35 => 1,);
     }
 
     public function getSourceContext()
@@ -176,64 +168,57 @@ class __TwigTemplate_17cc00df704df97621db9e89950131b4 extends Template
         return new Source("{% extends 'admin/login/base_admin_login.html.twig' %}
 
 {% block body %}
-<style>
 
-.row {
-    background-color : #6b0606;
-}
-</style>
     <div class=\"row justify-content-center\">
-                <div class=\"col-xl-10 col-lg-12 col-md-9\">
-                    <div class=\"card o-hidden border-0 shadow-lg my-5\">
-                        <div class=\"card-body\">
-                            <div class=\"row\">
-                                <div class=\"col-lg-6 d-none d-lg-block bg-login-image\"></div>
-                                <div class=\"col-lg-6 card-block-text\">
-                                    <div class=\"p-5\">
-                                        <div class=\"text-center\">
-                                            <h1 class=\"h4 text-gray-900 mb-4\">Administration</h1>
+        <div class=\"col-xl-10 col-lg-12 col-md-9\">
+            <div class=\"card o-hidden border-0 shadow-lg my-5\">
+                <div class=\"card-body\">
+                    <div class=\"row\">
+                        <div class=\"col-lg-6 d-none d-lg-block bg-login-image\"></div>
+                        <div class=\"col-lg-6 card-block-text\">
+                            <div class=\"p-5\">
+                                <div class=\"text-center\">
+                                    <h1 class=\"h4 text-gray-900 mb-4\">Administration</h1>
+                                    <hr>
+                                </div>
+
+                                <form method=\"post\">
+                                     {% if error %}
+                                        <div class=\"alert alert-danger\"> {{ error.messageKey|trans(error.messageData, 'security') }} </div>
+                                    {% endif %}
+                                        <div class=\"form-group\">
+                                            <input type=\"email\" class=\"form-control form-control-user\" aria-describedby=\"emailHelp\" placeholder=\"Votre email ...\" value=\"{{ last_username }}\" name=\"email\" id=\"inputEmail\">
+                                        </div>
+                                        <div class=\"form-group\">
+                                            <input type=\"password\" class=\"form-control form-control-user\" id=\"exampleInputPassword\" placeholder=\"Mot de passe\" name=\"password\" id=\"inputPassword\">
+                                        </div>
+                                        <div class=\"form-group\">
+                                            <div class=\"custom-control custom-checkbox small\">
+                                                <input type=\"checkbox\" class=\"custom-control-input\" id=\"customCheck\">
+                                                <label class=\"custom-control-label\" for=\"customCheck\"> Se souvenir de moi </label>
+                                            </div>
                                         </div>
 
-                                        <form method=\"post\">
-                                            {% if error %}
-                                                <div class=\"alert alert-danger\">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
-                                            {% endif %}
+                                        <input type=\"hidden\" name=\"_csrf_token\" value=\"{{ csrf_token('authenticate') }}\">
 
-                                            <div class=\"form-group\">
-                                                <input type=\"email\" class=\"form-control form-control-user\" aria-describedby=\"emailHelp\" placeholder=\"Votre email ...\" value=\"{{ last_username }}\" name=\"email\" id=\"inputEmail\">
-                                            </div>
-                                            <div class=\"form-group\">
-                                                <input type=\"password\" class=\"form-control form-control-user\"
-                                                    id=\"exampleInputPassword\" placeholder=\"Mot de passe\" name=\"password\" id=\"inputPassword\">
-                                            </div>
-                                            <div class=\"form-group\">
-                                                <div class=\"custom-control custom-checkbox small\">
-                                                    <input type=\"checkbox\" class=\"custom-control-input\" id=\"customCheck\">
-                                                    <label class=\"custom-control-label\" for=\"customCheck\">Se souvenir de moi</label>
-                                                </div>
-                                            </div>
-
-                                            <input type=\"hidden\" name=\"_csrf_token\"
-                                                value=\"{{ csrf_token('authenticate') }}\"
-                                            >
-
-                                            <button class=\"btn btn-primary btn-user btn-block\" type=\"submit\">
-                                                Me connecter
-                                            </button>
-                                        </form>
-                                        <br><a href=\"{{ path('app_home') }}\">retour à l'accueil</a> <br>
-                                    <a href=\"{{path('user_login')}}\">Connection utilisateur</a>
-                                  <br>
-                                 <a href=\"{{path('public_user_new')}}\"> Créer un compte utilisateur</a>
-                                        <hr>
-                                        {# <a href=\"{{ path('app_forgot_password_request') }}\">Mot de passe oublié</a> #}
-                                    </div>
-                                </div>
+                                        <button class=\"btn btn-primary btn-user btn-block\" type=\"submit\">
+                                            Me connecter
+                                        </button>
+                                </form>
+                                <br>
+                                <br>
+                                <a href=\"{{ path('app_home') }}\"> Retour à l'accueil </a>
+                                <br>
+                                <a href=\"{{path('user_login')}}\"> Connection utilisateur </a>
+                                <br>
+                                <a href=\"{{path('public_user_new')}}\"> Créer un compte utilisateur </a>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
+        </div>
+    </div>
 
 {% endblock %}", "admin/login/admin_login.html.twig", "C:\\Users\\Moras\\Desktop\\formationCDA\\symfony\\blog\\my_project_directory\\templates\\admin\\login\\admin_login.html.twig");
     }
