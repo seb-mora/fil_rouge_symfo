@@ -53,14 +53,15 @@ class UserPublicController extends AbstractController
         ]);
     }
 
-    #[Route('/delete/{id}', name: 'app_commentaires_delete', methods: ['POST'])]
+    #[Route('/delete/{id}', name: 'user_commentaires_delete', methods: ['POST'])]
     public function deleteCom(Request $request, Commentaires $commentaire, EntityManagerInterface $entityManager): Response
     {
+        $user = $this->getUser();
         if ($this->isCsrfTokenValid('delete' . $commentaire->getId(), $request->request->get('_token'))) {
             $entityManager->remove($commentaire);
             $entityManager->flush();
         }
 
-        return $this->redirectToRoute('app_account_commentaires', [], Response::HTTP_SEE_OTHER);
+        return $this->redirectToRoute('app_account_commentaires', ['id' => $commentaire->getAuteur()->getId()], Response::HTTP_SEE_OTHER);
     }
 }

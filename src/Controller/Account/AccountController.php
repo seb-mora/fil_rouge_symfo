@@ -10,6 +10,8 @@ use Symfony\Component\Form\FormEvent;
 use Symfony\Component\Form\FormEvents;
 use Doctrine\ORM\EntityManagerInterface;
 use App\Repository\CommentairesRepository;
+use App\Repository\ArticleRepository;
+use App\Repository\CategoriesRepository;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
@@ -22,10 +24,12 @@ use Symfony\Component\PasswordHasher\Hasher\UserPasswordHasherInterface;
 class AccountController extends AbstractController
 {
     #[Route('/', name: 'app_account')]
-    public function index(): Response
+    public function index(ArticleRepository $articleRepository, CategoriesRepository $categoriesRepository): Response
     {
-        return $this->render('account/index.html.twig', [
+        return $this->render('account/actions/indexArt.html.twig', [
             'controller_name' => 'AccountController',
+            'articles' => $articleRepository->findAll(),
+            'categories' => $categoriesRepository->findAll()
         ]);
     }
 
