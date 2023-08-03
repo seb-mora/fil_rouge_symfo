@@ -47,8 +47,7 @@
             <tr>
  
                 <td>{{ commentaire.contenu }}</td>
-                      <td>{{ commentaire.auteur.nom}} 
-                      <br>{{ commentaire.auteur.prenom }}
+                      <td>{{ commentaire.auteur ? commentaire.auteur : "Anonyme"}}
                       </td>
                 <td>{{commentaire.date ? commentaire.date|date('Y-m-d H:i:s') : '' }}</td>
               
@@ -58,7 +57,7 @@
             </tr>
         {% else %}
             <tr>
-                <td colspan="5">no records found</td>
+                <td colspan="5">Pas de commentaires</td>
             </tr>
         {% endfor %}
         </tbody>
