@@ -28,6 +28,7 @@ return [
     'visitor_article_show' => [['id'], ['_controller' => 'App\\Controller\\Account\\VisitorController::showArt'], [], [['variable', '/', '[^/]++', 'id', true], ['text', '/visitor/user/artice']], [], [], []],
     'visitor_categorie_show' => [['id'], ['_controller' => 'App\\Controller\\Account\\VisitorController::showCat'], [], [['variable', '/', '[^/]++', 'id', true], ['text', '/visitor/user/categorie']], [], [], []],
     'visitor_user_new' => [[], ['_controller' => 'App\\Controller\\Account\\VisitorController::new'], [], [['text', '/visitor/user/new']], [], [], []],
+    'visitor_user_delete' => [['id'], ['_controller' => 'App\\Controller\\Account\\VisitorController::delete'], [], [['variable', '/', '[^/]++', 'id', true], ['text', '/visitor/user']], [], [], []],
     'app_admin' => [[], ['_controller' => 'App\\Controller\\Admin\\AdminController::index'], [], [['text', '/admin/']], [], [], []],
     'app_article_index' => [['categorie'], ['categorie' => null, '_controller' => 'App\\Controller\\Admin\\ArticleController::index'], [], [['variable', '/', '[^/]++', 'categorie', true], ['text', '/admin/article/list']], [], [], []],
     'app_article_new' => [[], ['_controller' => 'App\\Controller\\Admin\\ArticleController::new'], [], [['text', '/admin/article/new']], [], [], []],

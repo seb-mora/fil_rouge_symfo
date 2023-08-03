@@ -4,15 +4,16 @@ namespace App\Controller\Account;
 
 use App\Entity\User;
 use App\Form\UserType;
+use App\Entity\Commentaires;
+use App\Repository\UserRepository;
 use App\Repository\ArticleRepository;
 use App\Repository\CategoriesRepository;
-use App\Repository\UserRepository;
 use Doctrine\ORM\EntityManagerInterface;
-use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
-use Symfony\Component\PasswordHasher\Hasher\UserPasswordHasherInterface;
 use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\PasswordHasher\Hasher\UserPasswordHasherInterface;
 
 #[Route('/public/user')]
 class UserPublicController extends AbstractController
@@ -40,12 +41,9 @@ class UserPublicController extends AbstractController
                 $brutPassword
             );
             $user->setPassword($hashedPassword);
-
             $user->setRoles(["ROLE_VISITOR"]);
-
             $entityManager->persist($user);
             $entityManager->flush();
-
             return $this->redirectToRoute('user_login');
         }
 
@@ -55,14 +53,14 @@ class UserPublicController extends AbstractController
         ]);
     }
 
-    // #[Route('/{id}', name: 'public_user_delete', methods: ['POST'])]
-    // public function delete(Request $request, User $user, EntityManagerInterface $entityManager): Response
-    // {
-    //     if ($this->isCsrfTokenValid('delete' . $user->getId(), $request->request->get('_token'))) {
-    //         $entityManager->remove($user);
-    //         $entityManager->flush();
-    //     }
+    #[Route('/delete/{id}', name: 'app_commentaires_delete', methods: ['POST'])]
+    public function deleteCom(Request $request, Commentaires $commentaire, EntityManagerInterface $entityManager): Response
+    {
+        if ($this->isCsrfTokenValid('delete' . $commentaire->getId(), $request->request->get('_token'))) {
+            $entityManager->remove($commentaire);
+            $entityManager->flush();
+        }
 
-    //     return $this->redirectToRoute('app_user_index', [], Response::HTTP_SEE_OTHER);
-    // }
+        return $this->redirectToRoute('app_account_commentaires', [], Response::HTTP_SEE_OTHER);
+    }
 }

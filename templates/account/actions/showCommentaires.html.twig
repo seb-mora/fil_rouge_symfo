@@ -30,7 +30,8 @@
             <tr>
                 <th>Contenu</th>
                 <td>{{ commentaire.contenu }}</td>
-                <td><a href="{{ path('app_commentaires_delete', {'id': commentaire.id}) }}">SUPPRIMER</a></td>
+                {# <td><a href="{{ path('user_commentaires_delete', {'id': commentaire.id}) }}">SUPPRIMER</a></td> #}
+                <td>{{ include('account/actions/_deleteCom_form.html.twig') }}</td>
             </tr>
      
           {# TODO supprimer commentaire #}
