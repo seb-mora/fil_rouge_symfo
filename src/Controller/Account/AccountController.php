@@ -86,21 +86,13 @@ class AccountController extends AbstractController
     public function deleteUser(Request $request, User $user, EntityManagerInterface $entityManager, CommentairesRepository $commentairesRepository, $id): Response
     {
 
-        $commentaires = $commentairesRepository->findBy(['auteur' => $id]);
-        // dd($commentaires);
-        foreach ($commentaires as $commentaire) {
-            $commentaire->setAuteur(null);
+        if ($this->isCsrfTokenValid('delete' . $user->getId(), $request->request->get('_token'))) {
+            $commentairesRepository->setCommentsToNull($id);
+            $entityManager->remove($user);
+            $entityManager->flush();
+            $this->container->get('security.token_storage')->setToken(null);
         }
 
-
-        // if ($this->isCsrfTokenValid('delete' . $user->getId(), $request->request->get('_token'))) {
-
-
-
-        //     $entityManager->remove($user);
-        //     $entityManager->flush();
-        // }
-
-        return $this->redirectToRoute('app_account', [], Response::HTTP_SEE_OTHER);
+        return $this->redirectToRoute('app_home', [], Response::HTTP_SEE_OTHER);
     }
 }
