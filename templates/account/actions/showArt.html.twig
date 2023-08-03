@@ -1,4 +1,4 @@
-{% extends 'base.html.twig' %}
+{% extends 'account/baseAccount.html.twig' %}
 
 {% block title %}{{ article.titre }}{% endblock %}
 
@@ -47,7 +47,9 @@
             <tr>
  
                 <td>{{ commentaire.contenu }}</td>
-                      <td>{{ commentaire.auteur.nom}} <br>{{ commentaire.auteur.prenom }}</td>
+                      <td>{{ commentaire.auteur.nom}} 
+                      <br>{{ commentaire.auteur.prenom }}
+                      </td>
                 <td>{{commentaire.date ? commentaire.date|date('Y-m-d H:i:s') : '' }}</td>
               
                 {# <td>

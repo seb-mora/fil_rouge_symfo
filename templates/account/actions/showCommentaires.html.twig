@@ -44,9 +44,7 @@
         {% endfor %}
         </tbody>
     </table>
-     <input type="hidden" name="_csrf_token"
-                                                value="{{ csrf_token('authenticate') }}"
-                                            >
+     <input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}" >
 
     {# <a href="{{ path('app_commentaires_index') }}">back to list</a>
 

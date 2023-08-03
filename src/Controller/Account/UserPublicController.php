@@ -4,11 +4,13 @@ namespace App\Controller\Account;
 
 use App\Entity\User;
 use App\Form\UserType;
+use App\Entity\Article;
 use App\Entity\Commentaires;
 use App\Repository\UserRepository;
 use App\Repository\ArticleRepository;
 use App\Repository\CategoriesRepository;
 use Doctrine\ORM\EntityManagerInterface;
+use App\Repository\CommentairesRepository;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
@@ -63,5 +65,27 @@ class UserPublicController extends AbstractController
         }
 
         return $this->redirectToRoute('app_account_commentaires', ['id' => $commentaire->getAuteur()->getId()], Response::HTTP_SEE_OTHER);
+    }
+
+    #[Route('/categorie/{id}', name: 'user_categorie_show', methods: ['GET'])]
+    public function showCat(ArticleRepository $articleRepository, CategoriesRepository $categoriesRepository, $id): Response
+    {
+        return $this->render('account/actions/showCat.html.twig', [
+            'articles' => $articleRepository->findBy(['categorie' => $id]),
+            'categorie' => $categoriesRepository->find($id)
+        ]);
+    }
+
+    #[Route('/artice/{id}', name: 'user_article_show', methods: ['GET'])]
+    public function showArt(Article $article, CommentairesRepository $commentairesRepository, $id): Response
+    {
+        // $commentaires = $commentairesRepository->findBy(
+        //     ['article' => $id]
+        // );
+        // dd($commentaires);
+        return $this->render('account/actions/showART.html.twig', [
+            'article' => $article,
+            'commentaires' => $commentairesRepository->findBy(['article' => $id])
+        ]);
     }
 }

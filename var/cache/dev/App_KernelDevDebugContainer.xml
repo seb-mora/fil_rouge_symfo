@@ -506,7 +506,7 @@
     </service>
     <service id="argument_resolver.service" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\ServiceValueResolver">
       <tag priority="-50" name="Symfony\Component\HttpKernel\Controller\ArgumentResolver\ServiceValueResolver">controller.argument_value_resolver</tag>
-      <argument type="service" id=".service_locator.fV_M_Uf"/>
+      <argument type="service" id=".service_locator.Lnm8jYY"/>
     </service>
     <service id="argument_resolver.default" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\DefaultValueResolver">
       <tag priority="-100" name="Symfony\Component\HttpKernel\Controller\ArgumentResolver\DefaultValueResolver">controller.argument_value_resolver</tag>
@@ -3076,7 +3076,7 @@
     </service>
     <service id="argument_resolver.not_tagged_controller" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\NotTaggedControllerValueResolver">
       <tag name="controller.argument_value_resolver" priority="-200"/>
-      <argument type="service" id=".service_locator.fV_M_Uf"/>
+      <argument type="service" id=".service_locator.Lnm8jYY"/>
     </service>
     <service id="debug.log_processor" class="Symfony\Bridge\Monolog\Processor\DebugProcessor">
       <argument type="service" id="request_stack"/>
@@ -5789,7 +5789,7 @@
       <argument type="iterator">
         <argument key="security.firewall.map.context.dev" type="service" id=".security.request_matcher.kLbKLHa"/>
         <argument key="security.firewall.map.context.admin_secure_area" type="service" id=".security.request_matcher.5eRZPSi"/>
-        <argument key="security.firewall.map.context.user_secure_area" type="service" id=".security.request_matcher.u5Sg.Wu"/>
+        <argument key="security.firewall.map.context.user_secure_area" type="service" id=".security.request_matcher.yy_ZK6T"/>
         <argument key="security.firewall.map.context.main" type="service" id=".security.request_matcher.yy_ZK6T"/>
       </argument>
     </service>
@@ -6649,7 +6649,7 @@
     <service id="security.firewall.map.config.user_secure_area" class="Symfony\Bundle\SecurityBundle\Security\FirewallConfig">
       <argument>user_secure_area</argument>
       <argument>security.user_checker</argument>
-      <argument>.security.request_matcher.u5Sg.Wu</argument>
+      <argument>.security.request_matcher.yy_ZK6T</argument>
       <argument>true</argument>
       <argument>false</argument>
       <argument>security.user.provider.concrete.app_user_provider</argument>
@@ -6674,12 +6674,12 @@
         <argument key="delete_cookies" type="collection"/>
       </argument>
     </service>
-    <service id=".security.request_matcher.isGpTSX" class="Symfony\Component\HttpFoundation\RequestMatcher\PathRequestMatcher">
-      <argument>^/account</argument>
+    <service id=".security.request_matcher._LA_AHr" class="Symfony\Component\HttpFoundation\RequestMatcher\PathRequestMatcher">
+      <argument>^/</argument>
     </service>
-    <service id=".security.request_matcher.u5Sg.Wu" class="Symfony\Component\HttpFoundation\ChainRequestMatcher">
+    <service id=".security.request_matcher.yy_ZK6T" class="Symfony\Component\HttpFoundation\ChainRequestMatcher">
       <argument type="collection">
-        <argument type="service" id=".security.request_matcher.isGpTSX"/>
+        <argument type="service" id=".security.request_matcher._LA_AHr"/>
       </argument>
     </service>
     <service id="security.listener.user_secure_area.user_provider" class="Symfony\Component\Security\Http\EventListener\UserProviderListener">
@@ -6901,14 +6901,6 @@
       <argument>null</argument>
       <argument>null</argument>
     </service>
-    <service id=".security.request_matcher._LA_AHr" class="Symfony\Component\HttpFoundation\RequestMatcher\PathRequestMatcher">
-      <argument>^/</argument>
-    </service>
-    <service id=".security.request_matcher.yy_ZK6T" class="Symfony\Component\HttpFoundation\ChainRequestMatcher">
-      <argument type="collection">
-        <argument type="service" id=".security.request_matcher._LA_AHr"/>
-      </argument>
-    </service>
     <service id="security.listener.main.user_provider" class="Symfony\Component\Security\Http\EventListener\UserProviderListener">
       <tag name="kernel.event_listener" dispatcher="debug.security.event_dispatcher.main" event="Symfony\Component\Security\Http\Event\CheckPassportEvent" priority="2048" method="checkPassport"/>
       <argument type="service" id="security.user.provider.concrete.app_user_provider"/>
@@ -7010,6 +7002,9 @@
       <argument type="collection">
         <argument type="service" id=".security.request_matcher.j40lcYU"/>
       </argument>
+    </service>
+    <service id=".security.request_matcher.isGpTSX" class="Symfony\Component\HttpFoundation\RequestMatcher\PathRequestMatcher">
+      <argument>^/account</argument>
     </service>
     <service id=".security.request_matcher.xEUmqYO" class="Symfony\Component\HttpFoundation\ChainRequestMatcher">
       <argument type="collection">
@@ -7788,17 +7783,17 @@
         <argument key="articleRepository" type="service_closure" id="App\Repository\ArticleRepository"/>
       </argument>
     </service>
-    <service id=".service_locator.rSTd.nA" class="Symfony\Component\DependencyInjection\ServiceLocator">
-      <tag name="container.service_locator"/>
-      <argument type="collection">
-        <argument key="authenticationUtils" type="service_closure" id="security.authentication_utils"/>
-      </argument>
-    </service>
     <service id=".service_locator.2F4J8Iv" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
         <argument key="article" type="service_closure" id=".errored..service_locator.2F4J8Iv.App\Entity\Article"/>
         <argument key="commentairesRepository" type="service_closure" id="App\Repository\CommentairesRepository"/>
+      </argument>
+    </service>
+    <service id=".service_locator.rSTd.nA" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator"/>
+      <argument type="collection">
+        <argument key="authenticationUtils" type="service_closure" id="security.authentication_utils"/>
       </argument>
     </service>
     <service id=".service_locator.rvMNZGh" class="Symfony\Component\DependencyInjection\ServiceLocator">
@@ -7916,7 +7911,7 @@
         <argument key="user" type="service_closure" id=".errored..service_locator.Hz5btge.App\Entity\User"/>
       </argument>
     </service>
-    <service id=".service_locator.fV_M_Uf" class="Symfony\Component\DependencyInjection\ServiceLocator">
+    <service id=".service_locator.Lnm8jYY" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
         <argument key="App\Controller\Account\AccountController::deleteUser" type="service_closure" id=".service_locator.AwJmXdy"/>
@@ -7927,6 +7922,8 @@
         <argument key="App\Controller\Account\UserPublicController::deleteCom" type="service_closure" id=".service_locator.kxstp_I"/>
         <argument key="App\Controller\Account\UserPublicController::index" type="service_closure" id=".service_locator.b12wXHr"/>
         <argument key="App\Controller\Account\UserPublicController::new" type="service_closure" id=".service_locator.siLTv8S"/>
+        <argument key="App\Controller\Account\UserPublicController::showArt" type="service_closure" id=".service_locator.2F4J8Iv"/>
+        <argument key="App\Controller\Account\UserPublicController::showCat" type="service_closure" id=".service_locator.QkUTl3o"/>
         <argument key="App\Controller\Account\UserSecurityController::login" type="service_closure" id=".service_locator.rSTd.nA"/>
         <argument key="App\Controller\Account\VisitorController::delete" type="service_closure" id=".service_locator.rvMNZGh"/>
         <argument key="App\Controller\Account\VisitorController::index" type="service_closure" id=".service_locator.b12wXHr"/>
@@ -7973,6 +7970,8 @@
         <argument key="App\Controller\Account\UserPublicController:deleteCom" type="service_closure" id=".service_locator.kxstp_I"/>
         <argument key="App\Controller\Account\UserPublicController:index" type="service_closure" id=".service_locator.b12wXHr"/>
         <argument key="App\Controller\Account\UserPublicController:new" type="service_closure" id=".service_locator.siLTv8S"/>
+        <argument key="App\Controller\Account\UserPublicController:showArt" type="service_closure" id=".service_locator.2F4J8Iv"/>
+        <argument key="App\Controller\Account\UserPublicController:showCat" type="service_closure" id=".service_locator.QkUTl3o"/>
         <argument key="App\Controller\Account\UserSecurityController:login" type="service_closure" id=".service_locator.rSTd.nA"/>
         <argument key="App\Controller\Account\VisitorController:delete" type="service_closure" id=".service_locator.rvMNZGh"/>
         <argument key="App\Controller\Account\VisitorController:index" type="service_closure" id=".service_locator.b12wXHr"/>
@@ -10369,7 +10368,7 @@
     <service id="Psr\Log\LoggerInterface" alias="monolog.logger"/>
     <service id="container.env_var_processors_locator" alias=".service_locator.7nzbL4K" public="true"/>
     <service id="twig.loader.filesystem" alias="twig.loader.native_filesystem"/>
-    <service id="argument_resolver.controller_locator" alias=".service_locator.fV_M_Uf"/>
+    <service id="argument_resolver.controller_locator" alias=".service_locator.Lnm8jYY"/>
     <service id="doctrine.id_generator_locator" alias=".service_locator.KLVvNIq"/>
     <service id="twig.loader" alias="twig.loader.native_filesystem"/>
     <service id="Psr\Log\LoggerInterface $requestLogger" alias="monolog.logger.request"/>
@@ -10397,7 +10396,7 @@
     <service id=".service_locator.WV27cT9" alias=".service_locator.WWwIP5t"/>
     <service id=".service_locator.JVxQd1Z" alias=".service_locator.W6uTidP"/>
     <service id=".service_locator.hw72IKE" alias=".service_locator.7ZF768O"/>
-    <service id=".service_locator.qpAQBW3" alias=".service_locator.fV_M_Uf"/>
+    <service id=".service_locator.7l1UgHX" alias=".service_locator.Lnm8jYY"/>
     <service id=".service_locator.BFrsqsn" alias=".service_locator.F9PKc.7"/>
     <service id=".service_locator.pQLL1ki" alias=".service_locator.asyYv2B"/>
     <service id=".service_locator.jij13qc" alias=".service_locator.PBToVFE"/>
@@ -10431,8 +10430,8 @@
     <service id=".service_locator.RSyySC6" alias=".service_locator.siLTv8S"/>
     <service id=".service_locator.HvY8_tk" alias=".service_locator.AwJmXdy"/>
     <service id=".service_locator.XqClUT3" alias=".service_locator.b12wXHr"/>
-    <service id=".service_locator.7NIAq8D" alias=".service_locator.rSTd.nA"/>
     <service id=".service_locator.GA1U_vn" alias=".service_locator.2F4J8Iv"/>
+    <service id=".service_locator.7NIAq8D" alias=".service_locator.rSTd.nA"/>
     <service id=".service_locator.ICTRhpx" alias=".service_locator.rvMNZGh"/>
     <service id=".service_locator.eIPMQwM" alias=".service_locator.CJ3rQnu"/>
     <service id=".service_locator.s.PmVJl" alias=".service_locator.XqCCpgA"/>
