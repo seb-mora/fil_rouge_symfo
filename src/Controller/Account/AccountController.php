@@ -2,6 +2,7 @@
 
 namespace App\Controller\Account;
 
+use App\Entity\User;
 use App\Form\UserType;
 use App\Form\UserEditType;
 use App\Entity\Commentaires;
@@ -56,15 +57,50 @@ class AccountController extends AbstractController
 
         if ($form->isSubmitted() && $form->isValid()) {
 
+            $brutPassword = $user->getPassword();
+            $hashedPassword = $userPasswordHasherInterface->hashPassword(
+                $user,
+                $brutPassword
+            );
+            $user->setPassword($hashedPassword);
+
+            $user->setRoles(["ROLE_VISITOR"]);
+
+            $entityManager->persist($user);
+
 
             $entityManager->flush();
 
-            return $this->redirectToRoute('app_account', [], Response::HTTP_SEE_OTHER);
+            // return $this->redirectToRoute('app_account', [], Response::HTTP_SEE_OTHER);
+
+            return $this->render('account/index.html.twig');
         }
 
         return $this->render('account/actions/edit.html.twig', [
             'user' => $user,
             'form' => $form,
         ]);
+    }
+
+    #[Route('/delete/{id}', name: 'public_user_delete', methods: ['POST'])]
+    public function deleteUser(Request $request, User $user, EntityManagerInterface $entityManager, CommentairesRepository $commentairesRepository, $id): Response
+    {
+
+        $commentaires = $commentairesRepository->findBy(['auteur' => $id]);
+        // dd($commentaires);
+        foreach ($commentaires as $commentaire) {
+            $commentaire->setAuteur(null);
+        }
+
+
+        // if ($this->isCsrfTokenValid('delete' . $user->getId(), $request->request->get('_token'))) {
+
+
+
+        //     $entityManager->remove($user);
+        //     $entityManager->flush();
+        // }
+
+        return $this->redirectToRoute('app_account', [], Response::HTTP_SEE_OTHER);
     }
 }
