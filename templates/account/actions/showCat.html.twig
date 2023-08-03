@@ -2,16 +2,13 @@
 
 {% block title %}Categorie: {{categorie.nom}} {% endblock %}
 
-{% block categories %}{% endblock %}
-
 {% block body %}
 <br>
 <br>
-
-  <h1>Categorie: {{categorie.nom}} </h1>
-    <a href="{{ path('app_account') }}">Revenir à l'accueil</a>
-  <br>
- <br> 
+<a href="{{ path('app_account') }}">Revenir à l'accueil</a>
+<br>
+<h1>Categorie: {{categorie.nom}} </h1>
+<br> 
    <table class="table">
         <thead>
             <tr>
@@ -20,28 +17,29 @@
                 <th>Contenu</th>
                 <th>Date</th>
                 <th>Auteur</th>
-
             </tr>
         </thead>
-        <tbody>
-        {% for article in articles %}
-            <tr>
-                <td>{% if article.logo !='' %}
-                        <img src={{ article.logo }} height="50" width="50">
-                    {% endif %}</td>
-                <td>{{ article.titre }}</td>
-                <td>{{ article.contenu }}</td>
-                <td>{{ article.date ? article.date|date('Y-m-d H:i:s') : '' }}</td>
-                <td>{{ article.user }}</td>
-                <td><a href="{{ path('user_article_show', {'id': article.id}) }}">LIRE</a></td>
-            </tr>
-        {% else %}
-            <tr>
-                <td colspan="5">Aucun article dans cette catégorie.</td>
-            </tr>
-        {% endfor %}
-        </tbody>
-    </table>
 
+        <tbody>
+            {% for article in articles %}
+                <tr>
+                    <td>{% if article.logo !='' %}
+                            <img src={{ article.logo }} height="50" width="50">
+                        {% endif %}
+                    </td>
+                    <td>{{ article.titre }}</td>
+                    <td>{{ article.contenu }}</td>
+                    <td>{{ article.date ? article.date|date('Y-m-d H:i:s') : '' }}</td>
+                    <td>{{ article.user }}</td>
+                    <td><a href="{{ path('user_article_show', {'id': article.id}) }}">Lire l'article</a></td>
+                </tr>
+            {% else %}
+                <tr>
+                    <td colspan="5">Aucun article dans cette catégorie.</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+
+    </table>
 
 {% endblock %}

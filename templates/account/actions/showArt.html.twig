@@ -2,66 +2,52 @@
 
 {% block title %}{{ article.titre }}{% endblock %}
 
-{% block categories %}{% endblock %}
-
 {% block body %}
 <br>
 <br>
-    <a href="{{ path('app_home') }}">Revenir à l'accueil</a>
-    <h1>{{ article.titre }}</h1>
+<a href="{{ path('app_account') }}">Revenir à l'accueil</a>
+<h1>{{ article.titre }}</h1>
 
-    <table class="table">
-        <tbody>
-       
-            <tr>
-           
-                <td>{{ article.contenu }}</td>
-            </tr>
-        
-            <tr>
-             
-                <td><img src={{ article.logo }}></td>
-            </tr>
-                <tr>
-               
-                <td>{{ article.date ? article.date|date('Y-m-d H:i:s') : '' }}</td>
-            </tr>
-        </tbody>
-    </table>
+<table class="table">
 
- <table class="table">
-        <thead>
-            <tr>
+    <tbody>
+        <tr>
+            <td>{{ article.contenu }}</td>
+        </tr>
+        <tr>
+            <td><img src={{ article.logo }}></td>
+        </tr>
+        <tr> 
+            <td>{{ article.date ? article.date|date('d-m-Y H:i:s') : '' }}</td>
+        </tr>
+    </tbody>
+
+</table>
+
+<table class="table">
+
+    <thead>
+        <tr>
             <th>Commentaires</th>
-              
-             
-                 <th>Auteur</th>
-                <th>Date</th>
-       
-                  
+            <th>Auteur</th>
+            <th>Date</th>
+        </tr>
+    </thead>
 
-            </tr>
-        </thead>
-        <tbody>
+    <tbody>
         {% for commentaire in commentaires %}
             <tr>
- 
                 <td>{{ commentaire.contenu }}</td>
-                      <td>{{ commentaire.auteur ? commentaire.auteur : "Anonyme"}}
-                      </td>
-                <td>{{commentaire.date ? commentaire.date|date('Y-m-d H:i:s') : '' }}</td>
-              
-                {# <td>
-                    <a href="{{ path('visitor_article_show', {'id': article.id}) }}">LIRE</a>
-                </td> #}
+                <td>{{ commentaire.auteur ? commentaire.auteur : "Anonyme"}}</td>
+                <td>{{commentaire.date ? commentaire.date|date('d-m-Y H:i:s') : '' }}</td>
             </tr>
         {% else %}
             <tr>
                 <td colspan="5">Pas de commentaires</td>
             </tr>
         {% endfor %}
-        </tbody>
-    </table>
+    </tbody>
 
+</table>
 
 {% endblock %}
