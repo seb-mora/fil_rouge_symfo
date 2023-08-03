@@ -9,14 +9,16 @@
         <thead>
             <tr>
                 <th>CATEGORIES</th>
+                <td></td>
             </tr>
+           
         </thead>
         <tbody>
         {% for categorie in categories %}
             <tr>
                 <td>{{ categorie.nom }}</td> 
                 <td>
-                    <a href="{{ path('visitor_categorie_show', {'id': categorie.id}) }}">Voir les articles correspondants</a>
+                    <a href="{{ path('user_categorie_show', {'id': categorie.id}) }}">Voir les articles correspondants</a>
                 </td>
             </tr>
         {% else %}
@@ -38,7 +40,7 @@
                 <th>Date</th>
                 <th>Catégorie</th>
                    <th>Auteur</th>
-
+<td></td>
             </tr>
         </thead>
         <tbody>
@@ -65,5 +67,7 @@
         {% endfor %}
         </tbody>
     </table>
-
+ <input type="hidden" name="_csrf_token"
+                                                value="{{ csrf_token('authenticate') }}"
+                                            >
 {% endblock %}
