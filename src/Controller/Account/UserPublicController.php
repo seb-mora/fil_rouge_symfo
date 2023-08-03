@@ -17,6 +17,13 @@ use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\PasswordHasher\Hasher\UserPasswordHasherInterface;
 
+use App\Form\UserEditType;
+use Symfony\Component\Form\FormEvent;
+use Symfony\Component\Form\FormEvents;
+use Symfony\Component\Form\Extension\Core\Type\PasswordType;
+use Symfony\Component\Form\Extension\Core\Type\RepeatedType;
+
+
 #[Route('/public/user')]
 class UserPublicController extends AbstractController
 {
@@ -88,4 +95,38 @@ class UserPublicController extends AbstractController
             'commentaires' => $commentairesRepository->findBy(['article' => $id])
         ]);
     }
+
+    // #[Route('/edit', name: 'public_user_edit', methods: ['GET', 'POST'])]
+    // public function edit(Request $request, EntityManagerInterface $entityManager, UserPasswordHasherInterface $userPasswordHasherInterface): Response
+    // {
+    //     $user = $this->getUser();
+    //     $form = $this->createForm(UserType::class, $user);
+    //     $form->handleRequest($request);
+
+    //     if ($form->isSubmitted() && $form->isValid()) {
+
+    //         $brutPassword = $user->getPassword();
+    //         $hashedPassword = $userPasswordHasherInterface->hashPassword(
+    //             $user,
+    //             $brutPassword
+    //         );
+    //         $user->setPassword($hashedPassword);
+
+    //         $user->setRoles(["ROLE_VISITOR"]);
+
+    //         $entityManager->persist($user);
+
+
+    //         $entityManager->flush();
+
+    //         // return $this->redirectToRoute('app_account', [], Response::HTTP_SEE_OTHER);
+
+    //         return $this->render('account/index.html.twig');
+    //     }
+
+    //     return $this->render('account/actions/edit.html.twig', [
+    //         'user' => $user,
+    //         'form' => $form,
+    //     ]);
+    // }
 }

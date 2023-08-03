@@ -1,21 +1,17 @@
 {# {% extends 'base.html.twig' %} #}
 {% extends 'account/baseAccount.html.twig' %}
 
-{% block title %}Modifications profil{% endblock %}
-
+{% block title %}Sebfony - Votre profil{% endblock %}
  
 {% block body %}
+
+    <br>
+    <br>
+    <a href="{{ path('app_account')}}">Retour accueil</a>
     <h1>Modification du profil</h1>
-
-   <a href="{{ path('app_account')}}">Retour accueil</a>
-   <br>
-      <br>
-    {{ include('account/actions/_form.html.twig', {'button_label': 'Update'}) }}
-
-
- {# <a href="{{ path('app_commentaires_show', {'id': app.user.id}) }}">Retour accueil</a> #}
-   
-<input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}">
-
+    <br>
+    {{ include('account/actions/_form.html.twig', {'button_label': 'Enregistrer les modifications'}) }}
+    <input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}">
     {{ include('account/actions/_deleteUser_form.html.twig') }}
+
 {% endblock %}

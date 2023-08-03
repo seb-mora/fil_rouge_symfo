@@ -80,7 +80,7 @@ class __TwigTemplate_17cc00df704df97621db9e89950131b4 extends Template
                                 </div>
 
                                 <form method=\"post\">
-                                     ";
+                                    ";
         // line 19
         if ((isset($context["error"]) || array_key_exists("error", $context) ? $context["error"] : (function () { throw new RuntimeError('Variable "error" does not exist.', 19, $this->source); })())) {
             // line 20
@@ -183,7 +183,7 @@ class __TwigTemplate_17cc00df704df97621db9e89950131b4 extends Template
                                 </div>
 
                                 <form method=\"post\">
-                                     {% if error %}
+                                    {% if error %}
                                         <div class=\"alert alert-danger\"> {{ error.messageKey|trans(error.messageData, 'security') }} </div>
                                     {% endif %}
                                         <div class=\"form-group\">

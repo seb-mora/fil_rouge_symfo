@@ -75,9 +75,9 @@ class AccountController extends AbstractController
 
             $entityManager->flush();
 
-            // return $this->redirectToRoute('app_account', [], Response::HTTP_SEE_OTHER);
+            return $this->redirectToRoute('app_account', [], Response::HTTP_SEE_OTHER);
 
-            return $this->render('account/index.html.twig');
+            // return $this->render('account/actions/indexArt.html.twig');
         }
 
         return $this->render('account/actions/edit.html.twig', [
