@@ -23,13 +23,13 @@
         {# /public/user/{id}/edit #}
         {# path('app_article_show', {'id': article.id}) #}
         {# <a href="{{path('public_user_edit', {'id':app.user.id})}}"> Profil</a> #}
-      <a href="{{path('app_logout')}}"> Déconnection</a>
+     <button>  <a href="{{path('app_logout')}}"> Déconnection</a></button>
         {% else %}
-        <a href="{{path('public_user_new')}}"> Créer un compte</a>
-         <a href="{{path('user_login')}}">Connection</a>
-          <a href="{{path('admin_login')}}">Administration</a>
+     <button>    <a href="{{path('public_user_new')}}"> Créer un compte</a></button>
+     <button>     <a href="{{path('user_login')}}">Connection</a></button>
+     <button>      <a href="{{path('admin_login')}}">Administration</a></button>
         {% endif %}
-        
+       {# TODO mettre les boutons à chaque vue  #}
 
 {% endblock %}
 

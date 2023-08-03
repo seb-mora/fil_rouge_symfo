@@ -142,32 +142,31 @@ class __TwigTemplate_6e6b8f3e2012d1f531a432f25485f835 extends Template
             // line 24
             echo "        ";
             // line 25
-            echo "        <a href=\"";
-            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("public_user_edit", ["id" => twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 25, $this->source); })()), "user", [], "any", false, false, false, 25), "id", [], "any", false, false, false, 25)]), "html", null, true);
-            echo "\"> Profil</a>
-      <a href=\"";
+            echo "        ";
             // line 26
+            echo "     <button>  <a href=\"";
             echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_logout");
-            echo "\"> Déconnection</a>
+            echo "\"> Déconnection</a></button>
         ";
         } else {
             // line 28
-            echo "        <a href=\"";
+            echo "     <button>    <a href=\"";
             echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("public_user_new");
-            echo "\"> Créer un compte</a>
-         <a href=\"";
+            echo "\"> Créer un compte</a></button>
+     <button>     <a href=\"";
             // line 29
             echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("user_login");
-            echo "\">Connection</a>
-          <a href=\"";
+            echo "\">Connection</a></button>
+     <button>      <a href=\"";
             // line 30
             echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("admin_login");
-            echo "\">Administration</a>
+            echo "\">Administration</a></button>
         ";
         }
         // line 32
-        echo "        
-
+        echo "       ";
+        // line 33
+        echo "
 ";
         
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->leave($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof);
@@ -227,7 +226,7 @@ class __TwigTemplate_6e6b8f3e2012d1f531a432f25485f835 extends Template
 
     public function getDebugInfo()
     {
-        return array (  211 => 46,  201 => 45,  191 => 39,  181 => 38,  169 => 32,  164 => 30,  160 => 29,  155 => 28,  150 => 26,  145 => 25,  143 => 24,  137 => 21,  135 => 20,  132 => 19,  122 => 18,  103 => 11,  88 => 50,  86 => 45,  79 => 40,  77 => 38,  72 => 35,  70 => 18,  64 => 14,  59 => 11,  47 => 1,);
+        return array (  210 => 46,  200 => 45,  190 => 39,  180 => 38,  169 => 33,  167 => 32,  162 => 30,  158 => 29,  153 => 28,  147 => 26,  145 => 25,  143 => 24,  137 => 21,  135 => 20,  132 => 19,  122 => 18,  103 => 11,  88 => 50,  86 => 45,  79 => 40,  77 => 38,  72 => 35,  70 => 18,  64 => 14,  59 => 11,  47 => 1,);
     }
 
     public function getSourceContext()
@@ -256,14 +255,14 @@ class __TwigTemplate_6e6b8f3e2012d1f531a432f25485f835 extends Template
 
         {# /public/user/{id}/edit #}
         {# path('app_article_show', {'id': article.id}) #}
-        <a href=\"{{path('public_user_edit', {'id':app.user.id})}}\"> Profil</a>
-      <a href=\"{{path('app_logout')}}\"> Déconnection</a>
+        {# <a href=\"{{path('public_user_edit', {'id':app.user.id})}}\"> Profil</a> #}
+     <button>  <a href=\"{{path('app_logout')}}\"> Déconnection</a></button>
         {% else %}
-        <a href=\"{{path('public_user_new')}}\"> Créer un compte</a>
-         <a href=\"{{path('user_login')}}\">Connection</a>
-          <a href=\"{{path('admin_login')}}\">Administration</a>
+     <button>    <a href=\"{{path('public_user_new')}}\"> Créer un compte</a></button>
+     <button>     <a href=\"{{path('user_login')}}\">Connection</a></button>
+     <button>      <a href=\"{{path('admin_login')}}\">Administration</a></button>
         {% endif %}
-        
+       {# TODO mettre les boutons à chaque vue  #}
 
 {% endblock %}
 

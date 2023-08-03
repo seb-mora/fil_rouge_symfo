@@ -15,6 +15,7 @@ use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\Form\Extension\Core\Type\PasswordType;
 use Symfony\Component\Form\Extension\Core\Type\RepeatedType;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\PasswordHasher\Hasher\UserPasswordHasherInterface;
 
 #[Route('/account')]
 class AccountController extends AbstractController
@@ -47,24 +48,15 @@ class AccountController extends AbstractController
     }
 
     #[Route('/edit', name: 'public_user_edit', methods: ['GET', 'POST'])]
-    public function edit(Request $request, EntityManagerInterface $entityManager): Response
+    public function edit(Request $request, EntityManagerInterface $entityManager, UserPasswordHasherInterface $userPasswordHasherInterface): Response
     {
         $user = $this->getUser();
-        $form = $this->createForm(UserEditType::class, $user);
-        // $form->add('password', RepeatedType::class, [
-        //     'type' => PasswordType::class,
-        //     'invalid_message' => 'mots de passe différents',
-        //     'options' => ['attr' => [
-        //         'class' => 'password-field',
-        //         'autocomplete' => 'new-password'
-        //     ]],
-        //     'required' => false,
-        //     'first_options' => ['label' => 'Mot de passe'],
-        //     'second_options' => ['label' => 'Confirmer mot de passe']
-        // ]);
+        $form = $this->createForm(UserType::class, $user);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
+
+
             $entityManager->flush();
 
             return $this->redirectToRoute('app_account', [], Response::HTTP_SEE_OTHER);

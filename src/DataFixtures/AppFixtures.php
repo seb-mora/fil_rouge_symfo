@@ -64,8 +64,8 @@ class AppFixtures extends Fixture
             $user[$i]->setEmail('user' . $i . '@users.com');
             $user[$i]->setRoles(['ROLE_VISITOR']);
             $user[$i]->setPassword($hashedPassword);
-            $user[$i]->setNom($this->faker->firstName());
-            $user[$i]->setPrenom($this->faker->lastName());
+            $user[$i]->setNom($this->faker->lastName());
+            $user[$i]->setPrenom($this->faker->firstName());
             $manager->persist($user[$i]);
         }
         $manager->flush();
