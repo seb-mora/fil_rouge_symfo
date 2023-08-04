@@ -35,14 +35,16 @@ class AdminController extends AbstractController
     }
 
     #[Route('/deleteCom/{id}', name: 'delete_com_admin', methods: ['POST'])]
-    public function deleteCom(Request $request, CommentairesRepository $commentairesRepository, Commentaires $commentaire, EntityManagerInterface $entityManager): Response
+    public function deleteCom(Request $request, CommentairesRepository $commentairesRepository, Commentaires $commentaire, EntityManagerInterface $entityManager, $id): Response
     {
-
+        $foundCommentaires = $commentairesRepository->findBy(['id' => $id]);
+        $commentaire = $foundCommentaires[0];
+        $commentaire->setStatus(1);
         $entityManager->remove($commentaire);
         $entityManager->flush();
 
 
-        return $this->redirectToRoute('app_account_commentaires', ['commentaires' => $commentairesRepository->findBy(['status' => 0])], Response::HTTP_SEE_OTHER);
+        return $this->redirectToRoute('app_commentaires_index', [], Response::HTTP_SEE_OTHER);
 
         // return $this->render('admin/commentaires/index.html.twig', [
         //     'commentaires' => $commentairesRepository->findBy(['status' => 0]),

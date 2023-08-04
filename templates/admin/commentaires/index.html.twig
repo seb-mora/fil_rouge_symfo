@@ -29,8 +29,8 @@
                     <a href="{{ path('valid_com_admin', {'id': commentaire.id}) }}" style="color:#49c33e">VALIDER</a>
                     {# <a href="{{ path('delete_com_admin', {'id': commentaire.id}) }}" style="color:red">SUPPRIMER</a> #}
 
-<form method="post" action="{{ path('app_commentaires_delete', {'id': commentaire.id}) }}" onsubmit="return confirm('Are you sure you want to delete this item?');">
-    <a href="{{ path('delete_com_admin', {'id': commentaire.id}) }}" style="color:red">SUPPRIMER</a>
+<form method="post" action="{{ path('delete_com_admin', {'id': commentaire.id}) }}" onsubmit="return confirm('Etes-vous sûr(e) de vouloir supprimer ce commentaire ?');">
+        <button class="btn" style="color:red">SUPPRIMER</button>
 </form>
                 </td>
             </tr>

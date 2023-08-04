@@ -138,12 +138,9 @@ class __TwigTemplate_f21b19fed189376d04f3e35466abac9c extends Template
             echo "
 <form method=\"post\" action=\"";
             // line 32
-            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_commentaires_delete", ["id" => twig_get_attribute($this->env, $this->source, $context["commentaire"], "id", [], "any", false, false, false, 32)]), "html", null, true);
-            echo "\" onsubmit=\"return confirm('Are you sure you want to delete this item?');\">
-    <a href=\"";
-            // line 33
-            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("delete_com_admin", ["id" => twig_get_attribute($this->env, $this->source, $context["commentaire"], "id", [], "any", false, false, false, 33)]), "html", null, true);
-            echo "\" style=\"color:red\">SUPPRIMER</a>
+            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("delete_com_admin", ["id" => twig_get_attribute($this->env, $this->source, $context["commentaire"], "id", [], "any", false, false, false, 32)]), "html", null, true);
+            echo "\" onsubmit=\"return confirm('Etes-vous sûr(e) de vouloir supprimer ce commentaire ?');\">
+        <button class=\"btn\" style=\"color:red\">SUPPRIMER</button>
 </form>
                 </td>
             </tr>
@@ -189,7 +186,7 @@ class __TwigTemplate_f21b19fed189376d04f3e35466abac9c extends Template
 
     public function getDebugInfo()
     {
-        return array (  169 => 45,  164 => 42,  155 => 38,  145 => 33,  141 => 32,  138 => 31,  133 => 29,  128 => 26,  124 => 25,  120 => 24,  116 => 23,  112 => 22,  109 => 21,  104 => 20,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
+        return array (  166 => 45,  161 => 42,  152 => 38,  141 => 32,  138 => 31,  133 => 29,  128 => 26,  124 => 25,  120 => 24,  116 => 23,  112 => 22,  109 => 21,  104 => 20,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -225,8 +222,8 @@ class __TwigTemplate_f21b19fed189376d04f3e35466abac9c extends Template
                     <a href=\"{{ path('valid_com_admin', {'id': commentaire.id}) }}\" style=\"color:#49c33e\">VALIDER</a>
                     {# <a href=\"{{ path('delete_com_admin', {'id': commentaire.id}) }}\" style=\"color:red\">SUPPRIMER</a> #}
 
-<form method=\"post\" action=\"{{ path('app_commentaires_delete', {'id': commentaire.id}) }}\" onsubmit=\"return confirm('Are you sure you want to delete this item?');\">
-    <a href=\"{{ path('delete_com_admin', {'id': commentaire.id}) }}\" style=\"color:red\">SUPPRIMER</a>
+<form method=\"post\" action=\"{{ path('delete_com_admin', {'id': commentaire.id}) }}\" onsubmit=\"return confirm('Etes-vous sûr(e) de vouloir supprimer ce commentaire ?');\">
+        <button class=\"btn\" style=\"color:red\">SUPPRIMER</button>
 </form>
                 </td>
             </tr>
