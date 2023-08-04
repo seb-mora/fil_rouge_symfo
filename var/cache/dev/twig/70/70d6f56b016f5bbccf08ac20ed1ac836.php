@@ -131,7 +131,7 @@ class __TwigTemplate_f21b19fed189376d04f3e35466abac9c extends Template
                     ";
             // line 29
             echo "                    <a href=\"";
-            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_commentaires_edit", ["id" => twig_get_attribute($this->env, $this->source, $context["commentaire"], "id", [], "any", false, false, false, 29)]), "html", null, true);
+            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("valid_com_admin", ["id" => twig_get_attribute($this->env, $this->source, $context["commentaire"], "id", [], "any", false, false, false, 29)]), "html", null, true);
             echo "\" style=\"color:#49c33e\">VALIDER</a>
                     <a href=\"";
             // line 30
@@ -214,7 +214,7 @@ class __TwigTemplate_f21b19fed189376d04f3e35466abac9c extends Template
                 <td>{{ commentaire.article.titre }}</td>
                 <td>
                     {# <a href=\"{{ path('app_commentaires_show', {'id': commentaire.id}) }}\">show</a> #}
-                    <a href=\"{{ path('app_commentaires_edit', {'id': commentaire.id}) }}\" style=\"color:#49c33e\">VALIDER</a>
+                    <a href=\"{{ path('valid_com_admin', {'id': commentaire.id}) }}\" style=\"color:#49c33e\">VALIDER</a>
                     <a href=\"{{ path('app_commentaires_edit', {'id': commentaire.id}) }}\" style=\"color:red\">SUPPRIMER</a>
                 </td>
             </tr>
