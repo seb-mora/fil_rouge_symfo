@@ -33,7 +33,7 @@ class VisitorController extends AbstractController
     {
         return $this->render('visitor/article/show.html.twig', [
             'article' => $article,
-            'commentaires' => $commentairesRepository->findBy(['article' => $id])
+            'commentaires' => $commentairesRepository->findBy(['article' => $id, 'status' => 1])
         ]);
     }
 

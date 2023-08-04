@@ -95,7 +95,7 @@ class UserPublicController extends AbstractController
         ]);
     }
 
-    #[Route('/new/commentaire', name: 'user_commentaires_new', methods: ['GET', 'POST'])]
+    #[Route('/new/commentaire/{id}', name: 'user_commentaires_new', methods: ['GET', 'POST'])]
     public function newCom(Request $request, EntityManagerInterface $entityManager, ArticleRepository $articleRepository, $id): Response
     {
         $article = $articleRepository->findBy(['id' => $id]);
@@ -105,21 +105,23 @@ class UserPublicController extends AbstractController
         $date = date('Y-m-d');
         $format = 'Y-m-d';
         $date = DateTime::createFromFormat($format, $date);
+        // $user = $this->getUser();
 
         if ($form->isSubmitted() && $form->isValid()) {
             $commentaire->setDate($date);
             $commentaire->setStatus(0);
             $commentaire->setArticle($article[0]);
+            $commentaire->setAuteur($this->getUser());
             $entityManager->persist($commentaire);
             $entityManager->flush();
 
-            return $this->redirectToRoute('app_commentaires_index', ['id' => $id], Response::HTTP_SEE_OTHER);
+            return $this->redirectToRoute('user_article_show', ['id' => $id], Response::HTTP_SEE_OTHER);
         }
 
-        // return $this->render('account/actions/newCom.html.twig', [
-        //     'commentaire' => $commentaire,
-        //     'form' => $form,
-        // ]);
+        return $this->render('account/actions/newCom.html.twig', [
+            'commentaire' => $commentaire,
+            'form' => $form,
+        ]);
     }
 
     // #[Route('/edit', name: 'public_user_edit', methods: ['GET', 'POST'])]
