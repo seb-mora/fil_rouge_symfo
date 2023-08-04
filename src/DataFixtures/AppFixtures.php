@@ -45,8 +45,8 @@ class AppFixtures extends Fixture
             'password'
         );
         $team->setPassword($hashedPassword);
-        $team->setNom('Krueger');
-        $team->setPrenom('Freddy');
+        $team->setNom('Alagede');
+        $team->setPrenom('Pierre');
         $team->setRoles(['ROLE_ADMIN']);
         $manager->persist($team);
 

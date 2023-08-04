@@ -48,6 +48,7 @@ return [
     'app_categories_delete' => [['id'], ['_controller' => 'App\\Controller\\Admin\\CategoriesController::delete'], [], [['variable', '/', '[^/]++', 'id', true], ['text', '/admin/categories']], [], [], []],
     'app_commentaires_index' => [[], ['_controller' => 'App\\Controller\\Admin\\CommentairesController::index'], [], [['text', '/admin/commentaires/']], [], [], []],
     'app_commentaires_new' => [[], ['_controller' => 'App\\Controller\\Admin\\CommentairesController::new'], [], [['text', '/admin/commentaires/new']], [], [], []],
+    'testillette_lol' => [[], ['_controller' => 'App\\Controller\\Admin\\CommentairesController::testillette'], [], [['text', '/admin/commentaires/testillette']], [], [], []],
     'app_commentaires_show' => [['id'], ['_controller' => 'App\\Controller\\Admin\\CommentairesController::show'], [], [['variable', '/', '[^/]++', 'id', true], ['text', '/admin/commentaires']], [], [], []],
     'app_commentaires_edit' => [['id'], ['_controller' => 'App\\Controller\\Admin\\CommentairesController::edit'], [], [['text', '/edit'], ['variable', '/', '[^/]++', 'id', true], ['text', '/admin/commentaires']], [], [], []],
     'app_commentaires_delete' => [['id'], ['_controller' => 'App\\Controller\\Admin\\CommentairesController::delete'], [], [['variable', '/', '[^/]++', 'id', true], ['text', '/admin/commentaires']], [], [], []],

@@ -506,7 +506,7 @@
     </service>
     <service id="argument_resolver.service" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\ServiceValueResolver">
       <tag priority="-50" name="Symfony\Component\HttpKernel\Controller\ArgumentResolver\ServiceValueResolver">controller.argument_value_resolver</tag>
-      <argument type="service" id=".service_locator.qJXdehb"/>
+      <argument type="service" id=".service_locator.9v4lSBF"/>
     </service>
     <service id="argument_resolver.default" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\DefaultValueResolver">
       <tag priority="-100" name="Symfony\Component\HttpKernel\Controller\ArgumentResolver\DefaultValueResolver">controller.argument_value_resolver</tag>
@@ -3076,7 +3076,7 @@
     </service>
     <service id="argument_resolver.not_tagged_controller" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\NotTaggedControllerValueResolver">
       <tag name="controller.argument_value_resolver" priority="-200"/>
-      <argument type="service" id=".service_locator.qJXdehb"/>
+      <argument type="service" id=".service_locator.9v4lSBF"/>
     </service>
     <service id="debug.log_processor" class="Symfony\Bridge\Monolog\Processor\DebugProcessor">
       <argument type="service" id="request_stack"/>
@@ -7933,7 +7933,7 @@
         <argument key="user" type="service_closure" id=".errored..service_locator.Hz5btge.App\Entity\User"/>
       </argument>
     </service>
-    <service id=".service_locator.qJXdehb" class="Symfony\Component\DependencyInjection\ServiceLocator">
+    <service id=".service_locator.9v4lSBF" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
         <argument key="App\Controller\Account\AccountController::deleteUser" type="service_closure" id=".service_locator.AwJmXdy"/>
@@ -7971,6 +7971,7 @@
         <argument key="App\Controller\Admin\CommentairesController::index" type="service_closure" id=".service_locator.MxB7ylD"/>
         <argument key="App\Controller\Admin\CommentairesController::new" type="service_closure" id=".service_locator.CsMkqUa"/>
         <argument key="App\Controller\Admin\CommentairesController::show" type="service_closure" id=".service_locator.XhnVWUw"/>
+        <argument key="App\Controller\Admin\CommentairesController::testillette" type="service_closure" id=".service_locator.MxB7ylD"/>
         <argument key="App\Controller\Admin\TeamController::delete" type="service_closure" id=".service_locator.7ZF768O"/>
         <argument key="App\Controller\Admin\TeamController::edit" type="service_closure" id=".service_locator.7ZF768O"/>
         <argument key="App\Controller\Admin\TeamController::index" type="service_closure" id=".service_locator.nAmwTrk"/>
@@ -8022,6 +8023,7 @@
         <argument key="App\Controller\Admin\CommentairesController:index" type="service_closure" id=".service_locator.MxB7ylD"/>
         <argument key="App\Controller\Admin\CommentairesController:new" type="service_closure" id=".service_locator.CsMkqUa"/>
         <argument key="App\Controller\Admin\CommentairesController:show" type="service_closure" id=".service_locator.XhnVWUw"/>
+        <argument key="App\Controller\Admin\CommentairesController:testillette" type="service_closure" id=".service_locator.MxB7ylD"/>
         <argument key="App\Controller\Admin\TeamController:delete" type="service_closure" id=".service_locator.7ZF768O"/>
         <argument key="App\Controller\Admin\TeamController:edit" type="service_closure" id=".service_locator.7ZF768O"/>
         <argument key="App\Controller\Admin\TeamController:index" type="service_closure" id=".service_locator.nAmwTrk"/>
@@ -10399,7 +10401,7 @@
     <service id="Psr\Log\LoggerInterface" alias="monolog.logger"/>
     <service id="container.env_var_processors_locator" alias=".service_locator.7nzbL4K" public="true"/>
     <service id="twig.loader.filesystem" alias="twig.loader.native_filesystem"/>
-    <service id="argument_resolver.controller_locator" alias=".service_locator.qJXdehb"/>
+    <service id="argument_resolver.controller_locator" alias=".service_locator.9v4lSBF"/>
     <service id="doctrine.id_generator_locator" alias=".service_locator.KLVvNIq"/>
     <service id="twig.loader" alias="twig.loader.native_filesystem"/>
     <service id="Psr\Log\LoggerInterface $requestLogger" alias="monolog.logger.request"/>
@@ -10429,7 +10431,7 @@
     <service id=".service_locator.WV27cT9" alias=".service_locator.WWwIP5t"/>
     <service id=".service_locator.JVxQd1Z" alias=".service_locator.W6uTidP"/>
     <service id=".service_locator.hw72IKE" alias=".service_locator.7ZF768O"/>
-    <service id=".service_locator.nbuavbl" alias=".service_locator.qJXdehb"/>
+    <service id=".service_locator.tR3xm_7" alias=".service_locator.9v4lSBF"/>
     <service id=".service_locator.BFrsqsn" alias=".service_locator.F9PKc.7"/>
     <service id=".service_locator.pQLL1ki" alias=".service_locator.asyYv2B"/>
     <service id=".service_locator.jij13qc" alias=".service_locator.PBToVFE"/>
