@@ -1728,3 +1728,16 @@ f6c2ec,127.0.0.1,GET,http://127.0.0.1:8000/public/user/delete/10,1691176321,3c26
 c1a2b3,127.0.0.1,GET,http://127.0.0.1:8000/public/user/commentaires/1,1691176326,,200
 7b33d0,127.0.0.1,POST,http://127.0.0.1:8000/public/user/delete/16,1691176328,,303
 bed30f,127.0.0.1,GET,http://127.0.0.1:8000/public/user/commentaires/1,1691176328,,200
+14e465,127.0.0.1,GET,http://127.0.0.1:8000/account/logout,1691176631,,302
+d355e2,127.0.0.1,GET,http://127.0.0.1:8000/,1691176631,,200
+85eae7,127.0.0.1,GET,http://127.0.0.1:8000/account/login,1691176635,,200
+05b896,127.0.0.1,POST,http://127.0.0.1:8000/account/login,1691176650,,302
+8f522e,127.0.0.1,GET,http://127.0.0.1:8000/account/,1691176651,,200
+bd9eff,127.0.0.1,GET,http://127.0.0.1:8000/public/user/commentaires/4,1691176655,,200
+e9371c,127.0.0.1,GET,http://127.0.0.1:8000/public/user/commentaires/4,1691179272,,200
+720b29,127.0.0.1,GET,http://127.0.0.1:8000/public/user/commentaires/4,1691179287,,200
+c82ff6,127.0.0.1,GET,http://127.0.0.1:8000/public/user/commentaires/4,1691179958,,200
+51aa7d,127.0.0.1,POST,http://127.0.0.1:8000/public/user/delete/1,1691179963,,303
+e63a99,127.0.0.1,GET,http://127.0.0.1:8000/public/user/commentaires/4,1691179963,,200
+45099e,127.0.0.1,GET,http://127.0.0.1:8000/public/user/commentaires/4,1691180031,,200
+b23539,127.0.0.1,GET,http://127.0.0.1:8000/public/user/commentaires/4,1691180131,,200

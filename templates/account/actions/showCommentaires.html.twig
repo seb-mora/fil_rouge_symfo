@@ -12,10 +12,11 @@
     <h1>Vos commentaires</h1>
     <br>
     <table class="table">
-<caption align="top" style="color:orange">Vos commentaires en attente de validation :</caption>
+
+    <caption align="top" style="color:orange">Vos commentaires en attente de validation :</caption>
         <tbody>
-            {% for commentaire in commentaires %}
-            {% if commentaire.status == 0 %}
+            {% for commentaire in commentairesValid %}
+            
                 <tr>
                     <th></th>
                     <td></td>
@@ -31,22 +32,25 @@
                     <td>Lire l'article commenté : <a href="{{ path('user_article_show', {'id': commentaire.article.id}) }}">{{ commentaire.article.titre }}</a></td>
                     <td>{{ include('account/actions/_deleteCom_form.html.twig') }}</td>
                 </tr>
-                 {% endif %}
+
             {% else %}
+
                 <tr>
-                    <td colspan="5">no records found</td>
+                    <td colspan="5">Aucun</td>
                 </tr>
            
             {% endfor %}
+            
         </tbody>
 
     </table>
+<br>
+    <table class="table">
 
-     <table class="table">
-<caption align="top" style="color:#49c33e">Vos commentaires validés :</caption>
+    <caption align="top" style="color:#49c33e">Vos commentaires validés :</caption>
         <tbody>
-            {% for commentaire in commentaires %}
-              {% if commentaire.status == 1 %}
+            {% for commentaire in commentairesNotValid %}
+           
                 <tr>
                     <th></th>
                     <td></td>
@@ -62,13 +66,15 @@
                     <td>Lire l'article commenté : <a href="{{ path('user_article_show', {'id': commentaire.article.id}) }}">{{ commentaire.article.titre }}</a></td>
                     <td>{{ include('account/actions/_deleteCom_form.html.twig') }}</td>
                 </tr>
-                {% endif %}
+             
             {% else %}
+
                 <tr>
-                    <td colspan="5">no records found</td>
+                    <td colspan="5">Aucun</td>
                 </tr>
             
             {% endfor %}
+
         </tbody>
 
     </table>
