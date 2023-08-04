@@ -10,6 +10,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Component\Validator\Constraints\Length;
 
 #[Route('admin/commentaires')]
 class CommentairesController extends AbstractController
@@ -41,6 +42,27 @@ class CommentairesController extends AbstractController
             'form' => $form,
         ]);
     }
+
+    // TEST 
+
+    #[Route('/testillette', name: 'testillette_lol', methods: ['GET'])]
+    public function testillette(CommentairesRepository $commentairesRepository): int
+    {
+        // return count($commentairesRepository->findBy(['status' => 0]));
+
+        $myInt = count($commentairesRepository->findBy(['status' => 0]));
+        return $this->render('admin/partials/_sidebar.twig.html', [
+            'myInt' => $myInt,
+        ]);
+    }
+
+
+
+
+
+
+
+
 
     #[Route('/{id}', name: 'app_commentaires_show', methods: ['GET'])]
     public function show(Commentaires $commentaires): Response
