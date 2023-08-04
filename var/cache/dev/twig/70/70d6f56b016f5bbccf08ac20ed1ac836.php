@@ -91,48 +91,59 @@ class __TwigTemplate_f21b19fed189376d04f3e35466abac9c extends Template
         <thead>
             <tr>
                 <th>Id</th>
+                <th>Auteur</th>
                 <th>Contenu</th>
                 <th>Date</th>
+                <th>Article commenté</th>
                 <th>actions</th>
             </tr>
         </thead>
         <tbody>
         ";
-        // line 18
+        // line 20
         $context['_parent'] = $context;
-        $context['_seq'] = twig_ensure_traversable((isset($context["commentaires"]) || array_key_exists("commentaires", $context) ? $context["commentaires"] : (function () { throw new RuntimeError('Variable "commentaires" does not exist.', 18, $this->source); })()));
+        $context['_seq'] = twig_ensure_traversable((isset($context["commentaires"]) || array_key_exists("commentaires", $context) ? $context["commentaires"] : (function () { throw new RuntimeError('Variable "commentaires" does not exist.', 20, $this->source); })()));
         $context['_iterated'] = false;
         foreach ($context['_seq'] as $context["_key"] => $context["commentaire"]) {
-            // line 19
+            // line 21
             echo "            <tr>
                 <td>";
-            // line 20
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["commentaire"], "id", [], "any", false, false, false, 20), "html", null, true);
-            echo "</td>
-                <td>";
-            // line 21
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["commentaire"], "contenu", [], "any", false, false, false, 21), "html", null, true);
-            echo "</td>
-                <td>";
             // line 22
-            ((twig_get_attribute($this->env, $this->source, $context["commentaire"], "date", [], "any", false, false, false, 22)) ? (print (twig_escape_filter($this->env, twig_date_format_filter($this->env, twig_get_attribute($this->env, $this->source, $context["commentaire"], "date", [], "any", false, false, false, 22), "Y-m-d H:i:s"), "html", null, true))) : (print ("")));
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["commentaire"], "id", [], "any", false, false, false, 22), "html", null, true);
+            echo "</td>
+                <td>";
+            // line 23
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["commentaire"], "auteur", [], "any", false, false, false, 23), "html", null, true);
+            echo "</td>
+                <td>";
+            // line 24
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["commentaire"], "contenu", [], "any", false, false, false, 24), "html", null, true);
+            echo "</td>
+                <td>";
+            // line 25
+            ((twig_get_attribute($this->env, $this->source, $context["commentaire"], "date", [], "any", false, false, false, 25)) ? (print (twig_escape_filter($this->env, twig_date_format_filter($this->env, twig_get_attribute($this->env, $this->source, $context["commentaire"], "date", [], "any", false, false, false, 25), "Y-m-d H:i:s"), "html", null, true))) : (print ("")));
+            echo "</td>
+                <td>";
+            // line 26
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["commentaire"], "article", [], "any", false, false, false, 26), "titre", [], "any", false, false, false, 26), "html", null, true);
             echo "</td>
                 <td>
+                    ";
+            // line 29
+            echo "                    <a href=\"";
+            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_commentaires_edit", ["id" => twig_get_attribute($this->env, $this->source, $context["commentaire"], "id", [], "any", false, false, false, 29)]), "html", null, true);
+            echo "\" style=\"color:#49c33e\">VALIDER</a>
                     <a href=\"";
-            // line 24
-            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_commentaires_show", ["id" => twig_get_attribute($this->env, $this->source, $context["commentaire"], "id", [], "any", false, false, false, 24)]), "html", null, true);
-            echo "\">show</a>
-                    <a href=\"";
-            // line 25
-            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_commentaires_edit", ["id" => twig_get_attribute($this->env, $this->source, $context["commentaire"], "id", [], "any", false, false, false, 25)]), "html", null, true);
-            echo "\">edit</a>
+            // line 30
+            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_commentaires_edit", ["id" => twig_get_attribute($this->env, $this->source, $context["commentaire"], "id", [], "any", false, false, false, 30)]), "html", null, true);
+            echo "\" style=\"color:red\">SUPPRIMER</a>
                 </td>
             </tr>
         ";
             $context['_iterated'] = true;
         }
         if (!$context['_iterated']) {
-            // line 29
+            // line 34
             echo "            <tr>
                 <td colspan=\"4\">no records found</td>
             </tr>
@@ -141,12 +152,12 @@ class __TwigTemplate_f21b19fed189376d04f3e35466abac9c extends Template
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['commentaire'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 33
+        // line 38
         echo "        </tbody>
     </table>
 
     <a href=\"";
-        // line 36
+        // line 41
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_commentaires_new");
         echo "\">Create new</a>
 ";
@@ -170,7 +181,7 @@ class __TwigTemplate_f21b19fed189376d04f3e35466abac9c extends Template
 
     public function getDebugInfo()
     {
-        return array (  150 => 36,  145 => 33,  136 => 29,  127 => 25,  123 => 24,  118 => 22,  114 => 21,  110 => 20,  107 => 19,  102 => 18,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
+        return array (  161 => 41,  156 => 38,  147 => 34,  138 => 30,  133 => 29,  128 => 26,  124 => 25,  120 => 24,  116 => 23,  112 => 22,  109 => 21,  104 => 20,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -186,8 +197,10 @@ class __TwigTemplate_f21b19fed189376d04f3e35466abac9c extends Template
         <thead>
             <tr>
                 <th>Id</th>
+                <th>Auteur</th>
                 <th>Contenu</th>
                 <th>Date</th>
+                <th>Article commenté</th>
                 <th>actions</th>
             </tr>
         </thead>
@@ -195,11 +208,14 @@ class __TwigTemplate_f21b19fed189376d04f3e35466abac9c extends Template
         {% for commentaire in commentaires %}
             <tr>
                 <td>{{ commentaire.id }}</td>
+                <td>{{ commentaire.auteur }}</td>
                 <td>{{ commentaire.contenu }}</td>
                 <td>{{ commentaire.date ? commentaire.date|date('Y-m-d H:i:s') : '' }}</td>
+                <td>{{ commentaire.article.titre }}</td>
                 <td>
-                    <a href=\"{{ path('app_commentaires_show', {'id': commentaire.id}) }}\">show</a>
-                    <a href=\"{{ path('app_commentaires_edit', {'id': commentaire.id}) }}\">edit</a>
+                    {# <a href=\"{{ path('app_commentaires_show', {'id': commentaire.id}) }}\">show</a> #}
+                    <a href=\"{{ path('app_commentaires_edit', {'id': commentaire.id}) }}\" style=\"color:#49c33e\">VALIDER</a>
+                    <a href=\"{{ path('app_commentaires_edit', {'id': commentaire.id}) }}\" style=\"color:red\">SUPPRIMER</a>
                 </td>
             </tr>
         {% else %}
