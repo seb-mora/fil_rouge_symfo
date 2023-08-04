@@ -18,7 +18,7 @@ class CommentairesController extends AbstractController
     public function index(CommentairesRepository $commentairesRepository): Response
     {
         return $this->render('admin/commentaires/index.html.twig', [
-            'commentaires' => $commentairesRepository->findAll(),
+            'commentaires' => $commentairesRepository->findBy(['status' => 0]),
         ]);
     }
 

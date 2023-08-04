@@ -45,8 +45,8 @@ class AppFixtures extends Fixture
             'password'
         );
         $team->setPassword($hashedPassword);
-        $team->setNom('Lenom');
-        $team->setPrenom('Leprenom');
+        $team->setNom('Krueger');
+        $team->setPrenom('Freddy');
         $team->setRoles(['ROLE_ADMIN']);
         $manager->persist($team);
 
@@ -55,7 +55,7 @@ class AppFixtures extends Fixture
 
     protected function usersFixtures($manager): void
     {
-        for ($i = 1; $i <= 7; $i++) {
+        for ($i = 1; $i <= 10; $i++) {
             $user[$i] = new User;
             $hashedPassword = $this->passwordHasher->hashPassword(
                 $user[$i],
@@ -73,9 +73,9 @@ class AppFixtures extends Fixture
 
     protected function categoriesFixtures($manager): void
     {
-        for ($i = 1; $i <= 3; $i++) {
+        for ($i = 1; $i <= 5; $i++) {
             $categorie[$i] = new Categories;
-            $categorie[$i]->setNom($this->faker->firstName());
+            $categorie[$i]->setNom($this->faker->country());
             $manager->persist($categorie[$i]);
         }
         $manager->flush();
@@ -83,11 +83,11 @@ class AppFixtures extends Fixture
 
     protected function articleFixtures($manager): void
     {
-        for ($i = 1; $i <= 12; $i++) {
+        for ($i = 1; $i <= 20; $i++) {
             $article[$i] = new Article;
             $article[$i]->setUser($this->getRandomReference('App\Entity\Team', $manager));
             $article[$i]->setCategorie($this->getRandomReference('App\Entity\Categories', $manager));
-            $article[$i]->setTitre($this->faker->country());
+            $article[$i]->setTitre($this->faker->city());
             $article[$i]->setContenu($this->faker->text());
             $article[$i]->setDate($this->faker->datetime());
             $article[$i]->setLogo('https://loremflickr.com/640/480/lanscape');
@@ -98,7 +98,7 @@ class AppFixtures extends Fixture
 
     protected function commentairesFixtures($manager): void
     {
-        for ($i = 1; $i <= 25; $i++) {
+        for ($i = 1; $i <= 40; $i++) {
             $commentaire[$i] = new Commentaires;
             $commentaire[$i]->setAuteur($this->getRandomReference('App\Entity\User', $manager));
             $commentaire[$i]->setArticle($this->getRandomReference('App\Entity\Article', $manager));
