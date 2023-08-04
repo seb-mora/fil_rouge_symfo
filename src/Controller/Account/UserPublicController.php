@@ -73,7 +73,7 @@ class UserPublicController extends AbstractController
             $entityManager->flush();
         }
 
-        return $this->redirectToRoute('app_account_commentaires', ['id' => $commentaire->getAuteur()->getId()], Response::HTTP_SEE_OTHER);
+        return $this->redirectToRoute('user_commentaires', ['id' => $commentaire->getAuteur()->getId()], Response::HTTP_SEE_OTHER);
     }
 
     #[Route('/categorie/{id}', name: 'user_categorie_show', methods: ['GET'])]
@@ -121,6 +121,14 @@ class UserPublicController extends AbstractController
         return $this->render('account/actions/newCom.html.twig', [
             'commentaire' => $commentaire,
             'form' => $form,
+        ]);
+    }
+
+    #[Route('/commentaires/{id}', name: 'user_commentaires', methods: ['GET'])]
+    public function userCommentaires(CommentairesRepository $commentairesRepository, $id): Response
+    {
+        return $this->render('account/actions/showCommentaires.html.twig', [
+            'commentaires' => $commentairesRepository->findBy(['auteur' => $id]),
         ]);
     }
 

@@ -33,14 +33,6 @@ class AccountController extends AbstractController
         ]);
     }
 
-    #[Route('/commentaires/{id}', name: 'app_account_commentaires', methods: ['GET'])]
-    public function userCommentaires(CommentairesRepository $commentairesRepository, $id): Response
-    {
-        return $this->render('account/actions/showCommentaires.html.twig', [
-            'commentaires' => $commentairesRepository->findBy(['auteur' => $id]),
-        ]);
-    }
-
     #[Route('/commentaires/delete/{id}', name: 'app_commentaires_delete', methods: ['POST'])]
     public function userDeleteCommentaires(Request $request, Commentaires $commentaire, EntityManagerInterface $entityManager): Response
     {
@@ -49,7 +41,7 @@ class AccountController extends AbstractController
             $entityManager->flush();
         }
 
-        return $this->redirectToRoute('app_account_commentaires', [], Response::HTTP_SEE_OTHER);
+        return $this->redirectToRoute('user_commentaires', [], Response::HTTP_SEE_OTHER);
     }
 
     #[Route('/edit', name: 'public_user_edit', methods: ['GET', 'POST'])]

@@ -17,7 +17,7 @@
 
         {% block haut %}
                &nbsp;&nbsp;&nbsp;&nbsp;Bonjour {{app.user.prenom}} !
-                &nbsp;&nbsp;&nbsp;&nbsp;<button><a href="{{ path('app_account_commentaires', {'id': app.user.id}) }}"> Consulter ses commentaires </a></button>
+                &nbsp;&nbsp;&nbsp;&nbsp;<button><a href="{{ path('user_commentaires', {'id': app.user.id}) }}"> Consulter ses commentaires </a></button>
                 &nbsp;&nbsp;&nbsp;&nbsp;<button><a href="{{ path('public_user_edit') }}"> Editer son profil </a></button>
                 &nbsp;&nbsp;&nbsp;&nbsp;<button><a href="{{ path('app_logout') }}"> Se déconnecter </a></button>
         {% endblock %}
