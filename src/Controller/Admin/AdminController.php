@@ -23,26 +23,30 @@ class AdminController extends AbstractController
     }
 
     #[Route('/validCom/{id}', name: 'valid_com_admin')]
-    public function validCom(CommentairesRepository $commentairesRepository, EntityManagerInterface $entityManager, $id): Response
+    public function validCom(CommentairesRepository $commentairesRepository, EntityManagerInterface $entityManagerInterface, $id): Response
     {
         $foundCommentaires = $commentairesRepository->findBy(['id' => $id]);
         $commentaire = $foundCommentaires[0];
         $commentaire->setStatus(1);
-        $entityManager->persist($commentaire);
-        $entityManager->flush();
+        $entityManagerInterface->persist($commentaire);
+        $entityManagerInterface->flush();
         return $this->render('admin/commentaires/index.html.twig', [
             'commentaires' => $commentairesRepository->findBy(['status' => 0]),
         ]);
     }
 
     #[Route('/deleteCom/{id}', name: 'delete_com_admin', methods: ['POST'])]
-    public function deleteCom(Request $request, Commentaires $commentaire, EntityManagerInterface $entityManager): Response
+    public function deleteCom(Request $request, CommentairesRepository $commentairesRepository, Commentaires $commentaire, EntityManagerInterface $entityManager): Response
     {
-        if ($this->isCsrfTokenValid('delete' . $commentaire->getId(), $request->request->get('_token'))) {
-            $entityManager->remove($commentaire);
-            $entityManager->flush();
-        }
 
-        return $this->redirectToRoute('app_account_commentaires', ['id' => $commentaire->getAuteur()->getId()], Response::HTTP_SEE_OTHER);
+        $entityManager->remove($commentaire);
+        $entityManager->flush();
+
+
+        return $this->redirectToRoute('app_account_commentaires', ['commentaires' => $commentairesRepository->findBy(['status' => 0])], Response::HTTP_SEE_OTHER);
+
+        return $this->render('admin/commentaires/index.html.twig', [
+            'commentaires' => $commentairesRepository->findBy(['status' => 0]),
+        ]);
     }
 }

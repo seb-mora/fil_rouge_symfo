@@ -67,7 +67,7 @@ class UserPublicController extends AbstractController
     #[Route('/delete/{id}', name: 'user_commentaires_delete', methods: ['POST'])]
     public function deleteCom(Request $request, Commentaires $commentaire, EntityManagerInterface $entityManager): Response
     {
-        $user = $this->getUser();
+        // $user = $this->getUser();
         if ($this->isCsrfTokenValid('delete' . $commentaire->getId(), $request->request->get('_token'))) {
             $entityManager->remove($commentaire);
             $entityManager->flush();
@@ -95,7 +95,7 @@ class UserPublicController extends AbstractController
         ]);
     }
 
-    #[Route('/new/commentaire/{id}', name: 'user_commentaires_new', methods: ['GET', 'POST'])]
+    #[Route('/new/commentaire', name: 'user_commentaires_new', methods: ['GET', 'POST'])]
     public function newCom(Request $request, EntityManagerInterface $entityManager, ArticleRepository $articleRepository, $id): Response
     {
         $article = $articleRepository->findBy(['id' => $id]);
@@ -113,13 +113,13 @@ class UserPublicController extends AbstractController
             $entityManager->persist($commentaire);
             $entityManager->flush();
 
-            return $this->redirectToRoute('user_article_show', ['id' => $id], Response::HTTP_SEE_OTHER);
+            return $this->redirectToRoute('app_commentaires_index', ['id' => $id], Response::HTTP_SEE_OTHER);
         }
 
-        return $this->render('account/actions/newCom.html.twig', [
-            'commentaire' => $commentaire,
-            'form' => $form,
-        ]);
+        // return $this->render('account/actions/newCom.html.twig', [
+        //     'commentaire' => $commentaire,
+        //     'form' => $form,
+        // ]);
     }
 
     // #[Route('/edit', name: 'public_user_edit', methods: ['GET', 'POST'])]
