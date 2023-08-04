@@ -506,7 +506,7 @@
     </service>
     <service id="argument_resolver.service" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\ServiceValueResolver">
       <tag priority="-50" name="Symfony\Component\HttpKernel\Controller\ArgumentResolver\ServiceValueResolver">controller.argument_value_resolver</tag>
-      <argument type="service" id=".service_locator.Mtry.RX"/>
+      <argument type="service" id=".service_locator.AiGyJER"/>
     </service>
     <service id="argument_resolver.default" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\DefaultValueResolver">
       <tag priority="-100" name="Symfony\Component\HttpKernel\Controller\ArgumentResolver\DefaultValueResolver">controller.argument_value_resolver</tag>
@@ -3076,7 +3076,7 @@
     </service>
     <service id="argument_resolver.not_tagged_controller" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\NotTaggedControllerValueResolver">
       <tag name="controller.argument_value_resolver" priority="-200"/>
-      <argument type="service" id=".service_locator.Mtry.RX"/>
+      <argument type="service" id=".service_locator.AiGyJER"/>
     </service>
     <service id="debug.log_processor" class="Symfony\Bridge\Monolog\Processor\DebugProcessor">
       <argument type="service" id="request_stack"/>
@@ -7790,9 +7790,10 @@
         <argument key="commentairesRepository" type="service_closure" id="App\Repository\CommentairesRepository"/>
       </argument>
     </service>
-    <service id=".service_locator.CsMkqUa" class="Symfony\Component\DependencyInjection\ServiceLocator">
+    <service id=".service_locator.slJUwxp" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
+        <argument key="articleRepository" type="service_closure" id="App\Repository\ArticleRepository"/>
         <argument key="entityManager" type="service_closure" id="doctrine.orm.default_entity_manager"/>
       </argument>
     </service>
@@ -7861,6 +7862,12 @@
         <argument key="categoriesRepository" type="service_closure" id="App\Repository\CategoriesRepository"/>
       </argument>
     </service>
+    <service id=".service_locator.CsMkqUa" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator"/>
+      <argument type="collection">
+        <argument key="entityManager" type="service_closure" id="doctrine.orm.default_entity_manager"/>
+      </argument>
+    </service>
     <service id=".service_locator.i60bMqk" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
@@ -7911,7 +7918,7 @@
         <argument key="user" type="service_closure" id=".errored..service_locator.Hz5btge.App\Entity\User"/>
       </argument>
     </service>
-    <service id=".service_locator.Mtry.RX" class="Symfony\Component\DependencyInjection\ServiceLocator">
+    <service id=".service_locator.AiGyJER" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
         <argument key="App\Controller\Account\AccountController::deleteUser" type="service_closure" id=".service_locator.AwJmXdy"/>
@@ -7922,7 +7929,7 @@
         <argument key="App\Controller\Account\UserPublicController::deleteCom" type="service_closure" id=".service_locator.kxstp_I"/>
         <argument key="App\Controller\Account\UserPublicController::index" type="service_closure" id=".service_locator.b12wXHr"/>
         <argument key="App\Controller\Account\UserPublicController::new" type="service_closure" id=".service_locator.siLTv8S"/>
-        <argument key="App\Controller\Account\UserPublicController::newCom" type="service_closure" id=".service_locator.CsMkqUa"/>
+        <argument key="App\Controller\Account\UserPublicController::newCom" type="service_closure" id=".service_locator.slJUwxp"/>
         <argument key="App\Controller\Account\UserPublicController::showArt" type="service_closure" id=".service_locator.2F4J8Iv"/>
         <argument key="App\Controller\Account\UserPublicController::showCat" type="service_closure" id=".service_locator.QkUTl3o"/>
         <argument key="App\Controller\Account\UserSecurityController::login" type="service_closure" id=".service_locator.rSTd.nA"/>
@@ -7971,7 +7978,7 @@
         <argument key="App\Controller\Account\UserPublicController:deleteCom" type="service_closure" id=".service_locator.kxstp_I"/>
         <argument key="App\Controller\Account\UserPublicController:index" type="service_closure" id=".service_locator.b12wXHr"/>
         <argument key="App\Controller\Account\UserPublicController:new" type="service_closure" id=".service_locator.siLTv8S"/>
-        <argument key="App\Controller\Account\UserPublicController:newCom" type="service_closure" id=".service_locator.CsMkqUa"/>
+        <argument key="App\Controller\Account\UserPublicController:newCom" type="service_closure" id=".service_locator.slJUwxp"/>
         <argument key="App\Controller\Account\UserPublicController:showArt" type="service_closure" id=".service_locator.2F4J8Iv"/>
         <argument key="App\Controller\Account\UserPublicController:showCat" type="service_closure" id=".service_locator.QkUTl3o"/>
         <argument key="App\Controller\Account\UserSecurityController:login" type="service_closure" id=".service_locator.rSTd.nA"/>
@@ -10370,7 +10377,7 @@
     <service id="Psr\Log\LoggerInterface" alias="monolog.logger"/>
     <service id="container.env_var_processors_locator" alias=".service_locator.7nzbL4K" public="true"/>
     <service id="twig.loader.filesystem" alias="twig.loader.native_filesystem"/>
-    <service id="argument_resolver.controller_locator" alias=".service_locator.Mtry.RX"/>
+    <service id="argument_resolver.controller_locator" alias=".service_locator.AiGyJER"/>
     <service id="doctrine.id_generator_locator" alias=".service_locator.KLVvNIq"/>
     <service id="twig.loader" alias="twig.loader.native_filesystem"/>
     <service id="Psr\Log\LoggerInterface $requestLogger" alias="monolog.logger.request"/>
@@ -10393,12 +10400,13 @@
     <service id=".service_locator.iKdhooI" alias=".service_locator.ipy50uC"/>
     <service id=".service_locator.o.uf2zi" alias=".service_locator.7nzbL4K"/>
     <service id=".service_locator.tGfgZZq" alias=".service_locator.AwJmXdy"/>
+    <service id=".service_locator.6xBERtV" alias=".service_locator.slJUwxp"/>
     <service id=".service_locator.R0Sb2kd" alias=".service_locator.rvMNZGh"/>
     <service id=".service_locator.P6aPNRW" alias=".service_locator.CJ3rQnu"/>
     <service id=".service_locator.WV27cT9" alias=".service_locator.WWwIP5t"/>
     <service id=".service_locator.JVxQd1Z" alias=".service_locator.W6uTidP"/>
     <service id=".service_locator.hw72IKE" alias=".service_locator.7ZF768O"/>
-    <service id=".service_locator.kkU6mBx" alias=".service_locator.Mtry.RX"/>
+    <service id=".service_locator.QeEr7Kg" alias=".service_locator.AiGyJER"/>
     <service id=".service_locator.BFrsqsn" alias=".service_locator.F9PKc.7"/>
     <service id=".service_locator.pQLL1ki" alias=".service_locator.asyYv2B"/>
     <service id=".service_locator.jij13qc" alias=".service_locator.PBToVFE"/>
@@ -10433,7 +10441,7 @@
     <service id=".service_locator.HvY8_tk" alias=".service_locator.AwJmXdy"/>
     <service id=".service_locator.XqClUT3" alias=".service_locator.b12wXHr"/>
     <service id=".service_locator.GA1U_vn" alias=".service_locator.2F4J8Iv"/>
-    <service id=".service_locator.9e2t_lq" alias=".service_locator.CsMkqUa"/>
+    <service id=".service_locator.pffOTdY" alias=".service_locator.slJUwxp"/>
     <service id=".service_locator.7NIAq8D" alias=".service_locator.rSTd.nA"/>
     <service id=".service_locator.ICTRhpx" alias=".service_locator.rvMNZGh"/>
     <service id=".service_locator.eIPMQwM" alias=".service_locator.CJ3rQnu"/>
@@ -10441,6 +10449,7 @@
     <service id=".service_locator.AZx11EC" alias=".service_locator.WWwIP5t"/>
     <service id=".service_locator.ct6Q_Tx" alias=".service_locator.zwPUnYq"/>
     <service id=".service_locator.otOFunJ" alias=".service_locator.do9sDn8"/>
+    <service id=".service_locator.9e2t_lq" alias=".service_locator.CsMkqUa"/>
     <service id=".service_locator.bTx13YG" alias=".service_locator.i60bMqk"/>
     <service id=".service_locator.y61UWdC" alias=".service_locator.8IzX0f9"/>
     <service id=".service_locator.QwL1uur" alias=".service_locator.HBWOX4X"/>

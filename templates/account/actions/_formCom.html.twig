@@ -1,0 +1,7 @@
+{{ form_start(form) }}
+
+    {{form_row(form.contenu,{'label':'Votre commentaire :'})}}
+    {{ form_widget(form) }}
+    <button class="btn" style="color:blue">{{ button_label|default('Enregistrer le commentaire') }}</button>
+    
+{{ form_end(form) }}

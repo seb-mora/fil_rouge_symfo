@@ -88,26 +88,28 @@ class UserPublicController extends AbstractController
     #[Route('/artice/{id}', name: 'user_article_show', methods: ['GET'])]
     public function showArt(Article $article, CommentairesRepository $commentairesRepository, $id): Response
     {
-        // $commentaires = $commentairesRepository->findBy(
-        //     ['article' => $id]
-        // );
-        // dd($commentaires);
+
         return $this->render('account/actions/showArt.html.twig', [
             'article' => $article,
-            'commentaires' => $commentairesRepository->findBy(['article' => $id])
+            'commentaires' => $commentairesRepository->findBy(['article' => $id, 'status' => 1])
         ]);
     }
 
     #[Route('/new/commentaire/{id}', name: 'user_commentaires_new', methods: ['GET', 'POST'])]
-    public function newCom(Request $request, EntityManagerInterface $entityManager, $id): Response
+    public function newCom(Request $request, EntityManagerInterface $entityManager, ArticleRepository $articleRepository, $id): Response
     {
+        $article = $articleRepository->findBy(['id' => $id]);
         $commentaire = new Commentaires();
         $form = $this->createForm(CommentairesType::class, $commentaire);
         $form->handleRequest($request);
+        $date = date('Y-m-d');
+        $format = 'Y-m-d';
         $date = DateTime::createFromFormat($format, $date);
 
         if ($form->isSubmitted() && $form->isValid()) {
             $commentaire->setDate($date);
+            $commentaire->setStatus(0);
+            $commentaire->setArticle($article[0]);
             $entityManager->persist($commentaire);
             $entityManager->flush();
 

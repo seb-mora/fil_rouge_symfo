@@ -12,9 +12,10 @@
     <h1>Vos commentaires</h1>
     <br>
     <table class="table">
-
+<caption align="top">Vos commentaires en attente de validation :</caption>
         <tbody>
             {% for commentaire in commentaires %}
+            {# {% if commentaire.status == 0 %} #}
                 <tr>
                     <th></th>
                     <td></td>
@@ -34,6 +35,37 @@
                 <tr>
                     <td colspan="5">no records found</td>
                 </tr>
+            {# {% endif %} #}
+            {% endfor %}
+        </tbody>
+
+    </table>
+
+     <table class="table">
+<caption align="top">Vos commentaires validés :</caption>
+        <tbody>
+            {% for commentaire in commentaires %}
+              {# {% if commentaire.status == 1 %} #}
+                <tr>
+                    <th></th>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <th>Commentaire</th>
+                    <td>{{ commentaire.contenu }}</td>
+                    <td>{{ commentaire.date ? commentaire.date|date('d-m-Y H:i:s') : '' }}</td>
+                </tr>
+                <tr>
+                    <th></th>
+                    <td>Lire l'article commenté : <a href="{{ path('user_article_show', {'id': commentaire.article.id}) }}">{{ commentaire.article.titre }}</a></td>
+                    <td>{{ include('account/actions/_deleteCom_form.html.twig') }}</td>
+                </tr>
+            {% else %}
+                <tr>
+                    <td colspan="5">no records found</td>
+                </tr>
+            {# {% endif %} #}
             {% endfor %}
         </tbody>
 
