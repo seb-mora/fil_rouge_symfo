@@ -30,9 +30,8 @@ class AdminController extends AbstractController
         $commentaire->setStatus(1);
         $entityManagerInterface->persist($commentaire);
         $entityManagerInterface->flush();
-        return $this->render('admin/commentaires/index.html.twig', [
-            'commentaires' => $commentairesRepository->findBy(['status' => 0]),
-        ]);
+
+        return $this->redirectToRoute('app_commentaires_index', [], Response::HTTP_SEE_OTHER);
     }
 
     #[Route('/deleteCom/{id}', name: 'delete_com_admin', methods: ['POST'])]
@@ -45,8 +44,8 @@ class AdminController extends AbstractController
 
         return $this->redirectToRoute('app_account_commentaires', ['commentaires' => $commentairesRepository->findBy(['status' => 0])], Response::HTTP_SEE_OTHER);
 
-        return $this->render('admin/commentaires/index.html.twig', [
-            'commentaires' => $commentairesRepository->findBy(['status' => 0]),
-        ]);
+        // return $this->render('admin/commentaires/index.html.twig', [
+        //     'commentaires' => $commentairesRepository->findBy(['status' => 0]),
+        // ]);
     }
 }
