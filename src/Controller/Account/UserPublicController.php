@@ -2,26 +2,28 @@
 
 namespace App\Controller\Account;
 
+use DateTime;
 use App\Entity\User;
 use App\Form\UserType;
 use App\Entity\Article;
+use App\Form\UserEditType;
 use App\Entity\Commentaires;
+use App\Form\CommentairesType;
 use App\Repository\UserRepository;
 use App\Repository\ArticleRepository;
+use Symfony\Component\Form\FormEvent;
+use Symfony\Component\Form\FormEvents;
 use App\Repository\CategoriesRepository;
 use Doctrine\ORM\EntityManagerInterface;
 use App\Repository\CommentairesRepository;
+
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
-use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
-use Symfony\Component\PasswordHasher\Hasher\UserPasswordHasherInterface;
-
-use App\Form\UserEditType;
-use Symfony\Component\Form\FormEvent;
-use Symfony\Component\Form\FormEvents;
 use Symfony\Component\Form\Extension\Core\Type\PasswordType;
 use Symfony\Component\Form\Extension\Core\Type\RepeatedType;
+use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\PasswordHasher\Hasher\UserPasswordHasherInterface;
 
 
 #[Route('/public/user')]
@@ -90,9 +92,31 @@ class UserPublicController extends AbstractController
         //     ['article' => $id]
         // );
         // dd($commentaires);
-        return $this->render('account/actions/showART.html.twig', [
+        return $this->render('account/actions/showArt.html.twig', [
             'article' => $article,
             'commentaires' => $commentairesRepository->findBy(['article' => $id])
+        ]);
+    }
+
+    #[Route('/new/commentaire/{id}', name: 'user_commentaires_new', methods: ['GET', 'POST'])]
+    public function newCom(Request $request, EntityManagerInterface $entityManager, $id): Response
+    {
+        $commentaire = new Commentaires();
+        $form = $this->createForm(CommentairesType::class, $commentaire);
+        $form->handleRequest($request);
+        $date = DateTime::createFromFormat($format, $date);
+
+        if ($form->isSubmitted() && $form->isValid()) {
+            $commentaire->setDate($date);
+            $entityManager->persist($commentaire);
+            $entityManager->flush();
+
+            return $this->redirectToRoute('user_article_show', ['id' => $id], Response::HTTP_SEE_OTHER);
+        }
+
+        return $this->render('account/actions/newCom.html.twig', [
+            'commentaire' => $commentaire,
+            'form' => $form,
         ]);
     }
 
