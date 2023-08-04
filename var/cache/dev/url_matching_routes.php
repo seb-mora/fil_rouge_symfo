@@ -95,11 +95,12 @@ return [
                     .'|delete/([^/]++)(*:585)'
                     .'|categorie/([^/]++)(*:611)'
                     .'|artice/([^/]++)(*:634)'
+                    .'|new/commentaire/([^/]++)(*:666)'
                 .')'
                 .'|/visitor/user/(?'
-                    .'|artice/([^/]++)(*:675)'
-                    .'|categorie/([^/]++)(*:701)'
-                    .'|([^/]++)(*:717)'
+                    .'|artice/([^/]++)(*:707)'
+                    .'|categorie/([^/]++)(*:733)'
+                    .'|([^/]++)(*:749)'
                 .')'
             .')/?$}sDu',
     ],
@@ -133,9 +134,10 @@ return [
         585 => [[['_route' => 'user_commentaires_delete', '_controller' => 'App\\Controller\\Account\\UserPublicController::deleteCom'], ['id'], ['POST' => 0], null, false, true, null]],
         611 => [[['_route' => 'user_categorie_show', '_controller' => 'App\\Controller\\Account\\UserPublicController::showCat'], ['id'], ['GET' => 0], null, false, true, null]],
         634 => [[['_route' => 'user_article_show', '_controller' => 'App\\Controller\\Account\\UserPublicController::showArt'], ['id'], ['GET' => 0], null, false, true, null]],
-        675 => [[['_route' => 'visitor_article_show', '_controller' => 'App\\Controller\\Account\\VisitorController::showArt'], ['id'], ['GET' => 0], null, false, true, null]],
-        701 => [[['_route' => 'visitor_categorie_show', '_controller' => 'App\\Controller\\Account\\VisitorController::showCat'], ['id'], ['GET' => 0], null, false, true, null]],
-        717 => [
+        666 => [[['_route' => 'user_commentaires_new', '_controller' => 'App\\Controller\\Account\\UserPublicController::newCom'], ['id'], ['GET' => 0, 'POST' => 1], null, false, true, null]],
+        707 => [[['_route' => 'visitor_article_show', '_controller' => 'App\\Controller\\Account\\VisitorController::showArt'], ['id'], ['GET' => 0], null, false, true, null]],
+        733 => [[['_route' => 'visitor_categorie_show', '_controller' => 'App\\Controller\\Account\\VisitorController::showCat'], ['id'], ['GET' => 0], null, false, true, null]],
+        749 => [
             [['_route' => 'visitor_user_delete', '_controller' => 'App\\Controller\\Account\\VisitorController::delete'], ['id'], ['POST' => 0], null, false, true, null],
             [null, null, null, null, false, false, 0],
         ],

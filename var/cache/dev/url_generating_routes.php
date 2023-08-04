@@ -25,6 +25,7 @@ return [
     'user_commentaires_delete' => [['id'], ['_controller' => 'App\\Controller\\Account\\UserPublicController::deleteCom'], [], [['variable', '/', '[^/]++', 'id', true], ['text', '/public/user/delete']], [], [], []],
     'user_categorie_show' => [['id'], ['_controller' => 'App\\Controller\\Account\\UserPublicController::showCat'], [], [['variable', '/', '[^/]++', 'id', true], ['text', '/public/user/categorie']], [], [], []],
     'user_article_show' => [['id'], ['_controller' => 'App\\Controller\\Account\\UserPublicController::showArt'], [], [['variable', '/', '[^/]++', 'id', true], ['text', '/public/user/artice']], [], [], []],
+    'user_commentaires_new' => [['id'], ['_controller' => 'App\\Controller\\Account\\UserPublicController::newCom'], [], [['variable', '/', '[^/]++', 'id', true], ['text', '/public/user/new/commentaire']], [], [], []],
     'user_login' => [['params'], ['params' => null, '_controller' => 'App\\Controller\\Account\\UserSecurityController::login'], [], [['variable', '/', '[^/]++', 'params', true], ['text', '/account/login']], [], [], []],
     'app_logout' => [[], ['_controller' => 'App\\Controller\\Account\\UserSecurityController::logout'], [], [['text', '/account/logout']], [], [], []],
     'visitor_article_index' => [[], ['_controller' => 'App\\Controller\\Account\\VisitorController::index'], [], [['text', '/visitor/user/']], [], [], []],

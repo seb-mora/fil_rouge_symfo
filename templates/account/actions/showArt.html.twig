@@ -20,6 +20,10 @@
         <tr> 
             <td>{{ article.date ? article.date|date('d-m-Y H:i:s') : '' }}</td>
         </tr>
+        <tr> 
+            <td><a href="{{ path('user_commentaires_new', {'id': article.id}) }}">Laisser un commentaire</a></td>
+
+        </tr>
     </tbody>
 
 </table>

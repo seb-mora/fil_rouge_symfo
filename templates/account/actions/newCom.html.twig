@@ -1,0 +1,11 @@
+{% extends 'account/baseAccount.html.twig' %}
+
+{% block title %}Sebfony - Laissez votre commentaire{% endblock %}
+
+{% block body %}
+    <h1>Laissez votre commentaire</h1>
+
+    {{ include('admin/commentaires/_form.html.twig') }}
+
+    <a href="{{ path('app_commentaires_index') }}">back to list</a>
+{% endblock %}
