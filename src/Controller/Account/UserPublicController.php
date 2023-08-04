@@ -104,8 +104,7 @@ class UserPublicController extends AbstractController
         $form->handleRequest($request);
         $date = date('Y-m-d');
         $format = 'Y-m-d';
-        $date = DateTime::createFromFormat($format, $date);
-        // $user = $this->getUser();
+
 
         if ($form->isSubmitted() && $form->isValid()) {
             $commentaire->setDate($date);
@@ -128,41 +127,8 @@ class UserPublicController extends AbstractController
     public function userCommentaires(CommentairesRepository $commentairesRepository, $id): Response
     {
         return $this->render('account/actions/showCommentaires.html.twig', [
-            'commentaires' => $commentairesRepository->findBy(['auteur' => $id]),
+            'commentairesValid' => $commentairesRepository->findBy(['auteur' => $id, 'status' => 1]),
+            'commentairesNotValid' => $commentairesRepository->findBy(['auteur' => $id, 'status' => 0])
         ]);
     }
-
-    // #[Route('/edit', name: 'public_user_edit', methods: ['GET', 'POST'])]
-    // public function edit(Request $request, EntityManagerInterface $entityManager, UserPasswordHasherInterface $userPasswordHasherInterface): Response
-    // {
-    //     $user = $this->getUser();
-    //     $form = $this->createForm(UserType::class, $user);
-    //     $form->handleRequest($request);
-
-    //     if ($form->isSubmitted() && $form->isValid()) {
-
-    //         $brutPassword = $user->getPassword();
-    //         $hashedPassword = $userPasswordHasherInterface->hashPassword(
-    //             $user,
-    //             $brutPassword
-    //         );
-    //         $user->setPassword($hashedPassword);
-
-    //         $user->setRoles(["ROLE_VISITOR"]);
-
-    //         $entityManager->persist($user);
-
-
-    //         $entityManager->flush();
-
-    //         // return $this->redirectToRoute('app_account', [], Response::HTTP_SEE_OTHER);
-
-    //         return $this->render('account/index.html.twig');
-    //     }
-
-    //     return $this->render('account/actions/edit.html.twig', [
-    //         'user' => $user,
-    //         'form' => $form,
-    //     ]);
-    // }
 }
