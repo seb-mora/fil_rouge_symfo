@@ -1,6 +1,8 @@
 <!-- Sidebar -->
         <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
 
+{# {% set nbrComsNotValid = CommentairesController::testitouille() %} #}
+
             <a class="sidebar-brand d-flex align-items-center justify-content-center" href="/admin">
                 <div class="sidebar-brand-icon rotate-n-15">
                     <i class="fa-solid fa-laugh-wink"></i>
@@ -37,10 +39,8 @@
             </li>
          
             <li class="nav-item">
-                <a class="nav-link" href="{{ path('app_commentaires_index') }}"><span>Commentaires</span> 
-                  {{ myInt }}
-               {# {{ path('testillette_lol') }} #}
-                {# {{ render(controller('App\\Controller\\Admin\\CommentairesController::test')) }} #}
+                <a class="nav-link" href="{{ path('app_commentaires_index') }}"><span>Commentaires  &nbsp;&nbsp;&nbsp;&nbsp; <span style ="color:red"> {{ nbrComsNotValid }}</span></span> 
+      
                 
                 
                 </a>

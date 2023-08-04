@@ -1,9 +1,9 @@
 {% extends 'admin/base_admin.html.twig' %}
 
-{% block title %}Commentaires index{% endblock %}
+{% block title %}Admin - commentaires{% endblock %}
 
 {% block body %}
-    <h1>Commentaires index</h1>
+    <h1><span style ="color:red">{{ nbrComsNotValid }}</span> commentaires à administrer</h1>
 
     <table class="table">
         <thead>

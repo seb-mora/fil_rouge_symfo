@@ -177,7 +177,7 @@ class __TwigTemplate_6d645ebff7e03394dedfa9eba036f905 extends Template
 
     public function getSourceContext()
     {
-        return new Source("{% extends 'admin/base_admin.html.twig' %}
+        return new Source("{% extends 'admin/base_admin.html.twig'%}
 
 {% block title %}Categories index{% endblock %}
 

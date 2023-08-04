@@ -15,10 +15,17 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 class AdminController extends AbstractController
 {
     #[Route('/', name: 'app_admin')]
-    public function index(): Response
+    public function index(CommentairesRepository $commentairesRepository): Response
     {
+
+        $nbrComsNotValid = count($commentairesRepository->findBy(['status' => 0]));
+
+
+
+
         return $this->render('admin/index.html.twig', [
             'controller_name' => 'AdminController',
+            'nbrComsNotValid' => $nbrComsNotValid,
         ]);
     }
 

@@ -18,8 +18,10 @@ class CommentairesController extends AbstractController
     #[Route('/', name: 'app_commentaires_index', methods: ['GET'])]
     public function index(CommentairesRepository $commentairesRepository): Response
     {
+        $nbrComsNotValid = count($commentairesRepository->findBy(['status' => 0]));
         return $this->render('admin/commentaires/index.html.twig', [
             'commentaires' => $commentairesRepository->findBy(['status' => 0]),
+            'nbrComsNotValid' => $nbrComsNotValid,
         ]);
     }
 
@@ -42,26 +44,6 @@ class CommentairesController extends AbstractController
             'form' => $form,
         ]);
     }
-
-    // TEST 
-
-    #[Route('/testillette', name: 'testillette_lol', methods: ['GET'])]
-    public function testillette(CommentairesRepository $commentairesRepository): int
-    {
-        // return count($commentairesRepository->findBy(['status' => 0]));
-
-        $myInt = count($commentairesRepository->findBy(['status' => 0]));
-        return $this->render('admin/partials/_sidebar.twig.html', [
-            'myInt' => $myInt,
-        ]);
-    }
-
-
-
-
-
-
-
 
 
     #[Route('/{id}', name: 'app_commentaires_show', methods: ['GET'])]

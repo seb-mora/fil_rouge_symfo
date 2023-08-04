@@ -65,7 +65,7 @@ class __TwigTemplate_f21b19fed189376d04f3e35466abac9c extends Template
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "title"));
 
-        echo "Commentaires index";
+        echo "Admin - commentaires";
         
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->leave($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof);
 
@@ -85,7 +85,9 @@ class __TwigTemplate_f21b19fed189376d04f3e35466abac9c extends Template
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "body"));
 
         // line 6
-        echo "    <h1>Commentaires index</h1>
+        echo "    <h1><span style =\"color:red\">";
+        echo twig_escape_filter($this->env, (isset($context["nbrComsNotValid"]) || array_key_exists("nbrComsNotValid", $context) ? $context["nbrComsNotValid"] : (function () { throw new RuntimeError('Variable "nbrComsNotValid" does not exist.', 6, $this->source); })()), "html", null, true);
+        echo "</span> commentaires à administrer</h1>
 
     <table class=\"table\">
         <thead>
@@ -186,17 +188,17 @@ class __TwigTemplate_f21b19fed189376d04f3e35466abac9c extends Template
 
     public function getDebugInfo()
     {
-        return array (  166 => 45,  161 => 42,  152 => 38,  141 => 32,  138 => 31,  133 => 29,  128 => 26,  124 => 25,  120 => 24,  116 => 23,  112 => 22,  109 => 21,  104 => 20,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
+        return array (  168 => 45,  163 => 42,  154 => 38,  143 => 32,  140 => 31,  135 => 29,  130 => 26,  126 => 25,  122 => 24,  118 => 23,  114 => 22,  111 => 21,  106 => 20,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
     }
 
     public function getSourceContext()
     {
         return new Source("{% extends 'admin/base_admin.html.twig' %}
 
-{% block title %}Commentaires index{% endblock %}
+{% block title %}Admin - commentaires{% endblock %}
 
 {% block body %}
-    <h1>Commentaires index</h1>
+    <h1><span style =\"color:red\">{{ nbrComsNotValid }}</span> commentaires à administrer</h1>
 
     <table class=\"table\">
         <thead>

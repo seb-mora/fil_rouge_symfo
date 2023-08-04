@@ -43,6 +43,9 @@ class __TwigTemplate_8ad8664702b2b0edb4b9ffe5bdea6b63 extends Template
         echo "<!-- Sidebar -->
         <ul class=\"navbar-nav bg-gradient-primary sidebar sidebar-dark accordion\" id=\"accordionSidebar\">
 
+";
+        // line 5
+        echo "
             <a class=\"sidebar-brand d-flex align-items-center justify-content-center\" href=\"/admin\">
                 <div class=\"sidebar-brand-icon rotate-n-15\">
                     <i class=\"fa-solid fa-laugh-wink\"></i>
@@ -54,7 +57,7 @@ class __TwigTemplate_8ad8664702b2b0edb4b9ffe5bdea6b63 extends Template
 
             <li class=\"nav-item\">
                 <a class=\"nav-link\" href=\"";
-        // line 14
+        // line 16
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_admin");
         echo "\">
                     <i class=\"fa-solid fa-fw fa-tachometer-alt\"></i>
@@ -70,43 +73,38 @@ class __TwigTemplate_8ad8664702b2b0edb4b9ffe5bdea6b63 extends Template
 
             <li class=\"nav-item\">
                 <a class=\"nav-link\" href=\"";
-        // line 27
+        // line 29
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_team_index");
         echo "\"><span>Administrateurs</span></a>
             </li>
             <li class=\"nav-item\">
                 <a class=\"nav-link\" href=\"";
-        // line 30
+        // line 32
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_user_index");
         echo "\"><span>Utilisateurs</span></a>
             </li>
             <li class=\"nav-item\">
                 <a class=\"nav-link\" href=\"";
-        // line 33
+        // line 35
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_categories_index");
         echo "\"><span>Catégories </span></a>
             </li>
             <li class=\"nav-item\">
                 <a class=\"nav-link\" href=\"";
-        // line 36
+        // line 38
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_article_index");
         echo "\"><span>Articles</span></a>
             </li>
          
             <li class=\"nav-item\">
                 <a class=\"nav-link\" href=\"";
-        // line 40
+        // line 42
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_commentaires_index");
-        echo "\"><span>Commentaires</span> 
-                  ";
-        // line 41
-        echo twig_escape_filter($this->env, (isset($context["myInt"]) || array_key_exists("myInt", $context) ? $context["myInt"] : (function () { throw new RuntimeError('Variable "myInt" does not exist.', 41, $this->source); })()), "html", null, true);
-        echo "
-               ";
-        // line 43
-        echo "                ";
-        // line 44
-        echo "                
+        echo "\"><span>Commentaires  &nbsp;&nbsp;&nbsp;&nbsp; <span style =\"color:red\"> ";
+        echo twig_escape_filter($this->env, (isset($context["nbrComsNotValid"]) || array_key_exists("nbrComsNotValid", $context) ? $context["nbrComsNotValid"] : (function () { throw new RuntimeError('Variable "nbrComsNotValid" does not exist.', 42, $this->source); })()), "html", null, true);
+        echo "</span></span> 
+      
+                
                 
                 </a>
             </li>
@@ -154,13 +152,15 @@ class __TwigTemplate_8ad8664702b2b0edb4b9ffe5bdea6b63 extends Template
 
     public function getDebugInfo()
     {
-        return array (  127 => 67,  120 => 62,  117 => 60,  109 => 44,  107 => 43,  103 => 41,  99 => 40,  92 => 36,  86 => 33,  80 => 30,  74 => 27,  58 => 14,  43 => 1,);
+        return array (  125 => 67,  118 => 62,  115 => 60,  102 => 42,  95 => 38,  89 => 35,  83 => 32,  77 => 29,  61 => 16,  48 => 5,  43 => 1,);
     }
 
     public function getSourceContext()
     {
         return new Source("<!-- Sidebar -->
         <ul class=\"navbar-nav bg-gradient-primary sidebar sidebar-dark accordion\" id=\"accordionSidebar\">
+
+{# {% set nbrComsNotValid = CommentairesController::testitouille() %} #}
 
             <a class=\"sidebar-brand d-flex align-items-center justify-content-center\" href=\"/admin\">
                 <div class=\"sidebar-brand-icon rotate-n-15\">
@@ -198,10 +198,8 @@ class __TwigTemplate_8ad8664702b2b0edb4b9ffe5bdea6b63 extends Template
             </li>
          
             <li class=\"nav-item\">
-                <a class=\"nav-link\" href=\"{{ path('app_commentaires_index') }}\"><span>Commentaires</span> 
-                  {{ myInt }}
-               {# {{ path('testillette_lol') }} #}
-                {# {{ render(controller('App\\\\Controller\\\\Admin\\\\CommentairesController::test')) }} #}
+                <a class=\"nav-link\" href=\"{{ path('app_commentaires_index') }}\"><span>Commentaires  &nbsp;&nbsp;&nbsp;&nbsp; <span style =\"color:red\"> {{ nbrComsNotValid }}</span></span> 
+      
                 
                 
                 </a>
