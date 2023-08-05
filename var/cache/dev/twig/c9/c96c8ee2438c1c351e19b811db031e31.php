@@ -77,10 +77,11 @@ class __TwigTemplate_73a81fa9fc68e22bfa7eaf0ac5780c4e extends Template
 
         ";
         // line 26
-        $this->loadTemplate("/admin/partials/_sidebar.html.twig", "admin/base_admin.html.twig", 26)->display(twig_array_merge($context, ["nbrComsNotValid" =>         // line 27
-(isset($context["nbrComsNotValid"]) || array_key_exists("nbrComsNotValid", $context) ? $context["nbrComsNotValid"] : (function () { throw new RuntimeError('Variable "nbrComsNotValid" does not exist.', 27, $this->source); })())]));
-        // line 29
-        echo "
+        $this->loadTemplate("/admin/partials/_sidebar.html.twig", "admin/base_admin.html.twig", 26)->display($context);
+        // line 27
+        echo "   ";
+        // line 28
+        echo "   
         <!-- Content Wrapper -->
         <div id=\"content-wrapper\" class=\"d-flex flex-column\">
 
@@ -102,19 +103,19 @@ class __TwigTemplate_73a81fa9fc68e22bfa7eaf0ac5780c4e extends Template
 
                         <!-- Nav Item - Alerts -->
                         ";
-        // line 99
+        // line 98
         echo "
                         <!-- Nav Item - Messages -->
                         ";
-        // line 167
+        // line 166
         echo "
                         <!-- Nav Item - User Information -->
                         <li class=\"nav-item dropdown no-arrow\">
                             <a class=\"nav-link dropdown-toggle\" href=\"#\" id=\"userDropdown\" role=\"button\"
                                 data-toggle=\"dropdown\" aria-haspopup=\"true\" aria-expanded=\"false\">
                                 <span class=\"mr-2 d-none d-lg-inline text-gray-600 small\">";
-        // line 172
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 172, $this->source); })()), "user", [], "any", false, false, false, 172), "prenom", [], "any", false, false, false, 172), "html", null, true);
+        // line 171
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 171, $this->source); })()), "user", [], "any", false, false, false, 171), "prenom", [], "any", false, false, false, 171), "html", null, true);
         echo "</span>
                                 <img class=\"img-profile rounded-circle\"
                                     src=\"/assets/img/pierre.jpg\">
@@ -151,9 +152,9 @@ class __TwigTemplate_73a81fa9fc68e22bfa7eaf0ac5780c4e extends Template
                 <div class=\"container-fluid\">
 
                     ";
-        // line 207
+        // line 206
         $this->displayBlock('body', $context, $blocks);
-        // line 208
+        // line 207
         echo "
                 </div>
                 <!-- /.container-fluid -->
@@ -211,9 +212,9 @@ class __TwigTemplate_73a81fa9fc68e22bfa7eaf0ac5780c4e extends Template
         <script src=\"/assets/js/admin/sb-admin-2.min.js\"></script>
         <script src=\"/assets/js/admin/admin.js\"></script>
         ";
-        // line 264
+        // line 263
         $this->displayBlock('javascripts', $context, $blocks);
-        // line 265
+        // line 264
         echo "    </body>
 </html>
 ";
@@ -262,7 +263,7 @@ class __TwigTemplate_73a81fa9fc68e22bfa7eaf0ac5780c4e extends Template
 
     }
 
-    // line 207
+    // line 206
     public function block_body($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -280,7 +281,7 @@ class __TwigTemplate_73a81fa9fc68e22bfa7eaf0ac5780c4e extends Template
 
     }
 
-    // line 264
+    // line 263
     public function block_javascripts($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -310,7 +311,7 @@ class __TwigTemplate_73a81fa9fc68e22bfa7eaf0ac5780c4e extends Template
 
     public function getDebugInfo()
     {
-        return array (  284 => 264,  266 => 207,  248 => 19,  229 => 11,  217 => 265,  215 => 264,  157 => 208,  155 => 207,  117 => 172,  110 => 167,  106 => 99,  83 => 29,  81 => 27,  80 => 26,  72 => 20,  70 => 19,  59 => 11,  47 => 1,);
+        return array (  285 => 263,  267 => 206,  249 => 19,  230 => 11,  218 => 264,  216 => 263,  158 => 207,  156 => 206,  118 => 171,  111 => 166,  107 => 98,  84 => 28,  82 => 27,  80 => 26,  72 => 20,  70 => 19,  59 => 11,  47 => 1,);
     }
 
     public function getSourceContext()
@@ -340,10 +341,9 @@ class __TwigTemplate_73a81fa9fc68e22bfa7eaf0ac5780c4e extends Template
         <!-- Page Wrapper -->
     <div id=\"wrapper\">
 
-        {% include '/admin/partials/_sidebar.html.twig'
-        with {nbrComsNotValid: nbrComsNotValid} 
-        %}
-
+        {% include '/admin/partials/_sidebar.html.twig' %}
+   {# with {nbrComsNotValid: nbrComsNotValid}  #}
+   
         <!-- Content Wrapper -->
         <div id=\"content-wrapper\" class=\"d-flex flex-column\">
 

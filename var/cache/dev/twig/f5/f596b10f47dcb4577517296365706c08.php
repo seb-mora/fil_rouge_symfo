@@ -45,9 +45,6 @@ class __TwigTemplate_5874775c85381784a4dfae3d3c436e9a extends Template
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "admin/index.html.twig"));
 
-        // line 3
-        $context["nbrComsNotValid"] = (isset($context["nbrComsNotValid"]) || array_key_exists("nbrComsNotValid", $context) ? $context["nbrComsNotValid"] : (function () { throw new RuntimeError('Variable "nbrComsNotValid" does not exist.', 3, $this->source); })());
-        // line 1
         $this->parent = $this->loadTemplate("admin/base_admin.html.twig", "admin/index.html.twig", 1);
         $this->parent->display($context, array_merge($this->blocks, $blocks));
         
@@ -129,14 +126,14 @@ class __TwigTemplate_5874775c85381784a4dfae3d3c436e9a extends Template
 
     public function getDebugInfo()
     {
-        return array (  107 => 19,  103 => 18,  91 => 8,  81 => 7,  62 => 5,  51 => 1,  49 => 3,  36 => 1,);
+        return array (  104 => 19,  100 => 18,  88 => 8,  78 => 7,  59 => 5,  36 => 1,);
     }
 
     public function getSourceContext()
     {
         return new Source("{% extends 'admin/base_admin.html.twig' %}
 
-{% set nbrComsNotValid = nbrComsNotValid %}
+{# {% set nbrComsNotValid = nbrComsNotValid %} #}
 
 {% block title %}Hello AdminController!{% endblock %}
 

@@ -4,6 +4,7 @@ namespace App\Controller\Admin;
 
 use App\Entity\Team;
 use App\Form\TeamType;
+use App\Repository\CommentairesRepository;
 use App\Repository\TeamRepository;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
@@ -16,10 +17,13 @@ use Symfony\Component\Routing\Annotation\Route;
 class TeamController extends AbstractController
 {
     #[Route('/', name: 'app_team_index', methods: ['GET'])]
-    public function index(TeamRepository $teamRepository): Response
+    public function index(CommentairesRepository $commentairesRepository, TeamRepository $teamRepository): Response
     {
+        $nbrComsNotValid = count($commentairesRepository->findBy(['status' => 0]));
+
         return $this->render('admin/team/index.html.twig', [
             'teams' => $teamRepository->findAll(),
+            'nbrComsNotValid' => $nbrComsNotValid,
         ]);
     }
 

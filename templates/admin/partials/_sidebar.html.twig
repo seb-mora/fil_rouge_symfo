@@ -44,7 +44,7 @@
                 &nbsp;&nbsp;&nbsp;&nbsp; <span style ="color:red"> {{ nbrComsNotValid }}</span>
                 {% endif %}
                 </span> 
-      
+      {# {{ attribute(CommentairesController, grostest) }} #}
                 
                 
                 </a>
@@ -63,9 +63,7 @@
             </li>
             <hr class="sidebar-divider d-none d-md-block"> #}
 
-            <li class="nav-item">
-                <a class="nav-link" href=""><span>Mon profil</span></a>
-            </li>
+        
             <li class="nav-item">
                 <a class="nav-link" href="{{ path('admin_logout') }}"><span>Déconnexion</span></a>
             </li>

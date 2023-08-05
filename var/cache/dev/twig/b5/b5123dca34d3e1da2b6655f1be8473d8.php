@@ -112,8 +112,9 @@ class __TwigTemplate_8ad8664702b2b0edb4b9ffe5bdea6b63 extends Template
         }
         // line 46
         echo "                </span> 
-      
-                
+      ";
+        // line 48
+        echo "                
                 
                 </a>
             </li>
@@ -121,12 +122,10 @@ class __TwigTemplate_8ad8664702b2b0edb4b9ffe5bdea6b63 extends Template
             ";
         // line 65
         echo "
-            <li class=\"nav-item\">
-                <a class=\"nav-link\" href=\"\"><span>Mon profil</span></a>
-            </li>
+        
             <li class=\"nav-item\">
                 <a class=\"nav-link\" href=\"";
-        // line 70
+        // line 68
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("admin_logout");
         echo "\"><span>Déconnexion</span></a>
             </li>
@@ -157,7 +156,7 @@ class __TwigTemplate_8ad8664702b2b0edb4b9ffe5bdea6b63 extends Template
 
     public function getDebugInfo()
     {
-        return array (  130 => 70,  123 => 65,  114 => 46,  108 => 44,  106 => 43,  102 => 42,  95 => 38,  89 => 35,  83 => 32,  77 => 29,  61 => 16,  48 => 5,  43 => 1,);
+        return array (  129 => 68,  124 => 65,  117 => 48,  114 => 46,  108 => 44,  106 => 43,  102 => 42,  95 => 38,  89 => 35,  83 => 32,  77 => 29,  61 => 16,  48 => 5,  43 => 1,);
     }
 
     public function getSourceContext()
@@ -208,7 +207,7 @@ class __TwigTemplate_8ad8664702b2b0edb4b9ffe5bdea6b63 extends Template
                 &nbsp;&nbsp;&nbsp;&nbsp; <span style =\"color:red\"> {{ nbrComsNotValid }}</span>
                 {% endif %}
                 </span> 
-      
+      {# {{ attribute(CommentairesController, grostest) }} #}
                 
                 
                 </a>
@@ -227,9 +226,7 @@ class __TwigTemplate_8ad8664702b2b0edb4b9ffe5bdea6b63 extends Template
             </li>
             <hr class=\"sidebar-divider d-none d-md-block\"> #}
 
-            <li class=\"nav-item\">
-                <a class=\"nav-link\" href=\"\"><span>Mon profil</span></a>
-            </li>
+        
             <li class=\"nav-item\">
                 <a class=\"nav-link\" href=\"{{ path('admin_logout') }}\"><span>Déconnexion</span></a>
             </li>
