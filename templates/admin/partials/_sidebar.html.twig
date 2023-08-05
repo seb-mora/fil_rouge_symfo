@@ -40,11 +40,12 @@
          
             <li class="nav-item">
                 <a class="nav-link" href="{{ path('app_commentaires_index') }}"><span>Commentaires 
-                {% if nbrComsNotValid and nbrComsNotValid > 0 %}
-                &nbsp;&nbsp;&nbsp;&nbsp; <span style ="color:red"> {{ nbrComsNotValid }}</span>
+                {% if comsToValidation and comsToValidation > 0 %}
+                &nbsp;&nbsp;&nbsp;&nbsp; <span style ="color:#ff5757">{{comsToValidation}}</span>
                 {% endif %}
                 </span> 
-      {# {{ attribute(CommentairesController, grostest) }} #}
+                
+ 
                 
                 
                 </a>
