@@ -17,11 +17,7 @@ class AdminController extends AbstractController
     #[Route('/', name: 'app_admin')]
     public function index(CommentairesRepository $commentairesRepository): Response
     {
-
         $nbrComsNotValid = count($commentairesRepository->findBy(['status' => 0]));
-
-
-
 
         return $this->render('admin/index.html.twig', [
             'controller_name' => 'AdminController',

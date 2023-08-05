@@ -152,7 +152,7 @@ class __TwigTemplate_f21b19fed189376d04f3e35466abac9c extends Template
         if (!$context['_iterated']) {
             // line 38
             echo "            <tr>
-                <td colspan=\"4\">no records found</td>
+                <td colspan=\"4\">Aucun commentaire en attente</td>
             </tr>
         ";
         }
@@ -162,11 +162,6 @@ class __TwigTemplate_f21b19fed189376d04f3e35466abac9c extends Template
         // line 42
         echo "        </tbody>
     </table>
-
-    <a href=\"";
-        // line 45
-        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_commentaires_new");
-        echo "\">Create new</a>
 ";
         
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->leave($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof);
@@ -188,7 +183,7 @@ class __TwigTemplate_f21b19fed189376d04f3e35466abac9c extends Template
 
     public function getDebugInfo()
     {
-        return array (  168 => 45,  163 => 42,  154 => 38,  143 => 32,  140 => 31,  135 => 29,  130 => 26,  126 => 25,  122 => 24,  118 => 23,  114 => 22,  111 => 21,  106 => 20,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
+        return array (  163 => 42,  154 => 38,  143 => 32,  140 => 31,  135 => 29,  130 => 26,  126 => 25,  122 => 24,  118 => 23,  114 => 22,  111 => 21,  106 => 20,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -231,13 +226,11 @@ class __TwigTemplate_f21b19fed189376d04f3e35466abac9c extends Template
             </tr>
         {% else %}
             <tr>
-                <td colspan=\"4\">no records found</td>
+                <td colspan=\"4\">Aucun commentaire en attente</td>
             </tr>
         {% endfor %}
         </tbody>
     </table>
-
-    <a href=\"{{ path('app_commentaires_new') }}\">Create new</a>
 {% endblock %}
 ", "admin/commentaires/index.html.twig", "C:\\Users\\Moras\\Desktop\\formationCDA\\symfony\\blog\\my_project_directory\\templates\\admin\\commentaires\\index.html.twig");
     }

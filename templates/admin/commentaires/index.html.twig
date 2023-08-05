@@ -36,11 +36,9 @@
             </tr>
         {% else %}
             <tr>
-                <td colspan="4">no records found</td>
+                <td colspan="4">Aucun commentaire en attente</td>
             </tr>
         {% endfor %}
         </tbody>
     </table>
-
-    <a href="{{ path('app_commentaires_new') }}">Create new</a>
 {% endblock %}

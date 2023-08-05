@@ -45,8 +45,8 @@ class __TwigTemplate_5874775c85381784a4dfae3d3c436e9a extends Template
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "admin/index.html.twig"));
 
-        // line 2
-        $context["nbrComsNotValid"] = (isset($context["nbrComsNotValid"]) || array_key_exists("nbrComsNotValid", $context) ? $context["nbrComsNotValid"] : (function () { throw new RuntimeError('Variable "nbrComsNotValid" does not exist.', 2, $this->source); })());
+        // line 3
+        $context["nbrComsNotValid"] = (isset($context["nbrComsNotValid"]) || array_key_exists("nbrComsNotValid", $context) ? $context["nbrComsNotValid"] : (function () { throw new RuntimeError('Variable "nbrComsNotValid" does not exist.', 3, $this->source); })());
         // line 1
         $this->parent = $this->loadTemplate("admin/base_admin.html.twig", "admin/index.html.twig", 1);
         $this->parent->display($context, array_merge($this->blocks, $blocks));
@@ -58,7 +58,7 @@ class __TwigTemplate_5874775c85381784a4dfae3d3c436e9a extends Template
 
     }
 
-    // line 3
+    // line 5
     public function block_title($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -77,7 +77,7 @@ class __TwigTemplate_5874775c85381784a4dfae3d3c436e9a extends Template
 
     }
 
-    // line 5
+    // line 7
     public function block_body($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -87,29 +87,23 @@ class __TwigTemplate_5874775c85381784a4dfae3d3c436e9a extends Template
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "body"));
 
-        // line 6
+        // line 8
         echo "<style>
     .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
     .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
 </style>
 
 <div class=\"example-wrapper\">
-    <h1>Hello ";
-        // line 12
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 12, $this->source); })()), "user", [], "any", false, false, false, 12), "prenom", [], "any", false, false, false, 12), "html", null, true);
-        echo "! ✅</h1>
-team_logué:
+    <h1>Salut le blond ! ✅</h1>
+
     <ul>
-    ";
-        // line 15
-        echo twig_escape_filter($this->env, (isset($context["nbrComsNotValid"]) || array_key_exists("nbrComsNotValid", $context) ? $context["nbrComsNotValid"] : (function () { throw new RuntimeError('Variable "nbrComsNotValid" does not exist.', 15, $this->source); })()), "html", null, true);
-        echo "
+  
         <li>Your controller at <code><a href=\"";
-        // line 16
+        // line 18
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\CodeExtension']->getFileLink("C:/Users/Moras/Desktop/formationCDA/symfony/blog/my_project_directory/src/Controller/AdminController.php", 0), "html", null, true);
         echo "\">src/Controller/AdminController.php</a></code></li>
         <li>Your template at <code><a href=\"";
-        // line 17
+        // line 19
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\CodeExtension']->getFileLink("C:/Users/Moras/Desktop/formationCDA/symfony/blog/my_project_directory/templates/admin/index.html.twig", 0), "html", null, true);
         echo "\">templates/admin/index.html.twig</a></code></li>
     </ul>
@@ -135,13 +129,15 @@ team_logué:
 
     public function getDebugInfo()
     {
-        return array (  113 => 17,  109 => 16,  105 => 15,  99 => 12,  91 => 6,  81 => 5,  62 => 3,  51 => 1,  49 => 2,  36 => 1,);
+        return array (  107 => 19,  103 => 18,  91 => 8,  81 => 7,  62 => 5,  51 => 1,  49 => 3,  36 => 1,);
     }
 
     public function getSourceContext()
     {
         return new Source("{% extends 'admin/base_admin.html.twig' %}
+
 {% set nbrComsNotValid = nbrComsNotValid %}
+
 {% block title %}Hello AdminController!{% endblock %}
 
 {% block body %}
@@ -151,10 +147,10 @@ team_logué:
 </style>
 
 <div class=\"example-wrapper\">
-    <h1>Hello {{ app.user.prenom }}! ✅</h1>
-team_logué:
+    <h1>Salut le blond ! ✅</h1>
+
     <ul>
-    {{nbrComsNotValid}}
+  
         <li>Your controller at <code><a href=\"{{ 'C:/Users/Moras/Desktop/formationCDA/symfony/blog/my_project_directory/src/Controller/AdminController.php'|file_link(0) }}\">src/Controller/AdminController.php</a></code></li>
         <li>Your template at <code><a href=\"{{ 'C:/Users/Moras/Desktop/formationCDA/symfony/blog/my_project_directory/templates/admin/index.html.twig'|file_link(0) }}\">templates/admin/index.html.twig</a></code></li>
     </ul>

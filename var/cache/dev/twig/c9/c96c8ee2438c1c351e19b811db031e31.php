@@ -340,7 +340,7 @@ class __TwigTemplate_73a81fa9fc68e22bfa7eaf0ac5780c4e extends Template
         <!-- Page Wrapper -->
     <div id=\"wrapper\">
 
-        {% include '/admin/partials/_sidebar.html.twig' 
+        {% include '/admin/partials/_sidebar.html.twig'
         with {nbrComsNotValid: nbrComsNotValid} 
         %}
 

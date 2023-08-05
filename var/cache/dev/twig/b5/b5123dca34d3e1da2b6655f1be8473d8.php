@@ -61,7 +61,7 @@ class __TwigTemplate_8ad8664702b2b0edb4b9ffe5bdea6b63 extends Template
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_admin");
         echo "\">
                     <i class=\"fa-solid fa-fw fa-tachometer-alt\"></i>
-                    <span>Dashboard</span>
+                    <span>Accueil</span>
                 </a>
             </li>
 
@@ -100,28 +100,33 @@ class __TwigTemplate_8ad8664702b2b0edb4b9ffe5bdea6b63 extends Template
                 <a class=\"nav-link\" href=\"";
         // line 42
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_commentaires_index");
-        echo "\"><span>Commentaires  &nbsp;&nbsp;&nbsp;&nbsp; <span style =\"color:red\"> ";
-        echo twig_escape_filter($this->env, (isset($context["nbrComsNotValid"]) || array_key_exists("nbrComsNotValid", $context) ? $context["nbrComsNotValid"] : (function () { throw new RuntimeError('Variable "nbrComsNotValid" does not exist.', 42, $this->source); })()), "html", null, true);
-        echo "</span></span> 
+        echo "\"><span>Commentaires 
+                ";
+        // line 43
+        if (((isset($context["nbrComsNotValid"]) || array_key_exists("nbrComsNotValid", $context) ? $context["nbrComsNotValid"] : (function () { throw new RuntimeError('Variable "nbrComsNotValid" does not exist.', 43, $this->source); })()) && ((isset($context["nbrComsNotValid"]) || array_key_exists("nbrComsNotValid", $context) ? $context["nbrComsNotValid"] : (function () { throw new RuntimeError('Variable "nbrComsNotValid" does not exist.', 43, $this->source); })()) > 0))) {
+            // line 44
+            echo "                &nbsp;&nbsp;&nbsp;&nbsp; <span style =\"color:red\"> ";
+            echo twig_escape_filter($this->env, (isset($context["nbrComsNotValid"]) || array_key_exists("nbrComsNotValid", $context) ? $context["nbrComsNotValid"] : (function () { throw new RuntimeError('Variable "nbrComsNotValid" does not exist.', 44, $this->source); })()), "html", null, true);
+            echo "</span>
+                ";
+        }
+        // line 46
+        echo "                </span> 
       
                 
                 
                 </a>
             </li>
 
-            <hr class=\"sidebar-divider d-none d-md-block\">
-";
-        // line 60
-        echo "
             ";
-        // line 62
+        // line 65
         echo "
             <li class=\"nav-item\">
                 <a class=\"nav-link\" href=\"\"><span>Mon profil</span></a>
             </li>
             <li class=\"nav-item\">
                 <a class=\"nav-link\" href=\"";
-        // line 67
+        // line 70
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("admin_logout");
         echo "\"><span>Déconnexion</span></a>
             </li>
@@ -152,7 +157,7 @@ class __TwigTemplate_8ad8664702b2b0edb4b9ffe5bdea6b63 extends Template
 
     public function getDebugInfo()
     {
-        return array (  125 => 67,  118 => 62,  115 => 60,  102 => 42,  95 => 38,  89 => 35,  83 => 32,  77 => 29,  61 => 16,  48 => 5,  43 => 1,);
+        return array (  130 => 70,  123 => 65,  114 => 46,  108 => 44,  106 => 43,  102 => 42,  95 => 38,  89 => 35,  83 => 32,  77 => 29,  61 => 16,  48 => 5,  43 => 1,);
     }
 
     public function getSourceContext()
@@ -174,7 +179,7 @@ class __TwigTemplate_8ad8664702b2b0edb4b9ffe5bdea6b63 extends Template
             <li class=\"nav-item\">
                 <a class=\"nav-link\" href=\"{{ path('app_admin') }}\">
                     <i class=\"fa-solid fa-fw fa-tachometer-alt\"></i>
-                    <span>Dashboard</span>
+                    <span>Accueil</span>
                 </a>
             </li>
 
@@ -198,15 +203,19 @@ class __TwigTemplate_8ad8664702b2b0edb4b9ffe5bdea6b63 extends Template
             </li>
          
             <li class=\"nav-item\">
-                <a class=\"nav-link\" href=\"{{ path('app_commentaires_index') }}\"><span>Commentaires  &nbsp;&nbsp;&nbsp;&nbsp; <span style =\"color:red\"> {{ nbrComsNotValid }}</span></span> 
+                <a class=\"nav-link\" href=\"{{ path('app_commentaires_index') }}\"><span>Commentaires 
+                {% if nbrComsNotValid and nbrComsNotValid > 0 %}
+                &nbsp;&nbsp;&nbsp;&nbsp; <span style =\"color:red\"> {{ nbrComsNotValid }}</span>
+                {% endif %}
+                </span> 
       
                 
                 
                 </a>
             </li>
 
-            <hr class=\"sidebar-divider d-none d-md-block\">
-{# 
+            {# <hr class=\"sidebar-divider d-none d-md-block\">
+
             <li class=\"nav-item dropdown\">
                 <a class=\"nav-link  dropdown-toggle\" href=\"#\" id=\"paramsDropdown\" role=\"button\" data-bs-toggle=\"dropdown\" aria-expanded=\"false\">
                     <i class=\"fas fa-fw fa-wrench\"></i>
@@ -215,9 +224,8 @@ class __TwigTemplate_8ad8664702b2b0edb4b9ffe5bdea6b63 extends Template
                 <ul class=\"dropdown-menu bg-white ml-3 collapse-inner rounded\" aria-labelledby=\"paramsDropdown\">
                     <li><a class=\"dropdown-item\" href=\"\">Types d'utilisateurs</a></li>
                 </ul>
-            </li> #}
-
-            {# <hr class=\"sidebar-divider d-none d-md-block\"> #}
+            </li>
+            <hr class=\"sidebar-divider d-none d-md-block\"> #}
 
             <li class=\"nav-item\">
                 <a class=\"nav-link\" href=\"\"><span>Mon profil</span></a>

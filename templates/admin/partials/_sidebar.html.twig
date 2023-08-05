@@ -15,7 +15,7 @@
             <li class="nav-item">
                 <a class="nav-link" href="{{ path('app_admin') }}">
                     <i class="fa-solid fa-fw fa-tachometer-alt"></i>
-                    <span>Dashboard</span>
+                    <span>Accueil</span>
                 </a>
             </li>
 
@@ -39,15 +39,19 @@
             </li>
          
             <li class="nav-item">
-                <a class="nav-link" href="{{ path('app_commentaires_index') }}"><span>Commentaires  &nbsp;&nbsp;&nbsp;&nbsp; <span style ="color:red"> {{ nbrComsNotValid }}</span></span> 
+                <a class="nav-link" href="{{ path('app_commentaires_index') }}"><span>Commentaires 
+                {% if nbrComsNotValid and nbrComsNotValid > 0 %}
+                &nbsp;&nbsp;&nbsp;&nbsp; <span style ="color:red"> {{ nbrComsNotValid }}</span>
+                {% endif %}
+                </span> 
       
                 
                 
                 </a>
             </li>
 
-            <hr class="sidebar-divider d-none d-md-block">
-{# 
+            {# <hr class="sidebar-divider d-none d-md-block">
+
             <li class="nav-item dropdown">
                 <a class="nav-link  dropdown-toggle" href="#" id="paramsDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                     <i class="fas fa-fw fa-wrench"></i>
@@ -56,9 +60,8 @@
                 <ul class="dropdown-menu bg-white ml-3 collapse-inner rounded" aria-labelledby="paramsDropdown">
                     <li><a class="dropdown-item" href="">Types d'utilisateurs</a></li>
                 </ul>
-            </li> #}
-
-            {# <hr class="sidebar-divider d-none d-md-block"> #}
+            </li>
+            <hr class="sidebar-divider d-none d-md-block"> #}
 
             <li class="nav-item">
                 <a class="nav-link" href=""><span>Mon profil</span></a>
