@@ -19,11 +19,8 @@ class TeamController extends AbstractController
     #[Route('/', name: 'app_team_index', methods: ['GET'])]
     public function index(CommentairesRepository $commentairesRepository, TeamRepository $teamRepository): Response
     {
-        $nbrComsNotValid = count($commentairesRepository->findBy(['status' => 0]));
-
         return $this->render('admin/team/index.html.twig', [
             'teams' => $teamRepository->findAll(),
-            'nbrComsNotValid' => $nbrComsNotValid,
         ]);
     }
 

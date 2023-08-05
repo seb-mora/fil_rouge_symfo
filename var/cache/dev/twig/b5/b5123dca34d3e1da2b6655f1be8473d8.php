@@ -12,7 +12,7 @@ use Twig\Sandbox\SecurityNotAllowedFunctionError;
 use Twig\Source;
 use Twig\Template;
 
-/* /admin/partials/_sidebar.html.twig */
+/* admin/partials/_sidebar.html.twig */
 class __TwigTemplate_8ad8664702b2b0edb4b9ffe5bdea6b63 extends Template
 {
     private $source;
@@ -34,10 +34,10 @@ class __TwigTemplate_8ad8664702b2b0edb4b9ffe5bdea6b63 extends Template
     {
         $macros = $this->macros;
         $__internal_5a27a8ba21ca79b61932376b2fa922d2 = $this->extensions["Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension"];
-        $__internal_5a27a8ba21ca79b61932376b2fa922d2->enter($__internal_5a27a8ba21ca79b61932376b2fa922d2_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "/admin/partials/_sidebar.html.twig"));
+        $__internal_5a27a8ba21ca79b61932376b2fa922d2->enter($__internal_5a27a8ba21ca79b61932376b2fa922d2_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "admin/partials/_sidebar.html.twig"));
 
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
-        $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "/admin/partials/_sidebar.html.twig"));
+        $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "admin/partials/_sidebar.html.twig"));
 
         // line 1
         echo "<!-- Sidebar -->
@@ -103,29 +103,30 @@ class __TwigTemplate_8ad8664702b2b0edb4b9ffe5bdea6b63 extends Template
         echo "\"><span>Commentaires 
                 ";
         // line 43
-        if (((isset($context["nbrComsNotValid"]) || array_key_exists("nbrComsNotValid", $context) ? $context["nbrComsNotValid"] : (function () { throw new RuntimeError('Variable "nbrComsNotValid" does not exist.', 43, $this->source); })()) && ((isset($context["nbrComsNotValid"]) || array_key_exists("nbrComsNotValid", $context) ? $context["nbrComsNotValid"] : (function () { throw new RuntimeError('Variable "nbrComsNotValid" does not exist.', 43, $this->source); })()) > 0))) {
+        if (((isset($context["comsToValidation"]) || array_key_exists("comsToValidation", $context) ? $context["comsToValidation"] : (function () { throw new RuntimeError('Variable "comsToValidation" does not exist.', 43, $this->source); })()) && ((isset($context["comsToValidation"]) || array_key_exists("comsToValidation", $context) ? $context["comsToValidation"] : (function () { throw new RuntimeError('Variable "comsToValidation" does not exist.', 43, $this->source); })()) > 0))) {
             // line 44
-            echo "                &nbsp;&nbsp;&nbsp;&nbsp; <span style =\"color:red\"> ";
-            echo twig_escape_filter($this->env, (isset($context["nbrComsNotValid"]) || array_key_exists("nbrComsNotValid", $context) ? $context["nbrComsNotValid"] : (function () { throw new RuntimeError('Variable "nbrComsNotValid" does not exist.', 44, $this->source); })()), "html", null, true);
+            echo "                &nbsp;&nbsp;&nbsp;&nbsp; <span style =\"color:#ff5757\">";
+            echo twig_escape_filter($this->env, (isset($context["comsToValidation"]) || array_key_exists("comsToValidation", $context) ? $context["comsToValidation"] : (function () { throw new RuntimeError('Variable "comsToValidation" does not exist.', 44, $this->source); })()), "html", null, true);
             echo "</span>
                 ";
         }
         // line 46
         echo "                </span> 
+                
       ";
-        // line 48
+        // line 49
         echo "                
                 
                 </a>
             </li>
 
             ";
-        // line 65
+        // line 66
         echo "
         
             <li class=\"nav-item\">
                 <a class=\"nav-link\" href=\"";
-        // line 68
+        // line 69
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("admin_logout");
         echo "\"><span>Déconnexion</span></a>
             </li>
@@ -146,7 +147,7 @@ class __TwigTemplate_8ad8664702b2b0edb4b9ffe5bdea6b63 extends Template
 
     public function getTemplateName()
     {
-        return "/admin/partials/_sidebar.html.twig";
+        return "admin/partials/_sidebar.html.twig";
     }
 
     public function isTraitable()
@@ -156,7 +157,7 @@ class __TwigTemplate_8ad8664702b2b0edb4b9ffe5bdea6b63 extends Template
 
     public function getDebugInfo()
     {
-        return array (  129 => 68,  124 => 65,  117 => 48,  114 => 46,  108 => 44,  106 => 43,  102 => 42,  95 => 38,  89 => 35,  83 => 32,  77 => 29,  61 => 16,  48 => 5,  43 => 1,);
+        return array (  130 => 69,  125 => 66,  118 => 49,  114 => 46,  108 => 44,  106 => 43,  102 => 42,  95 => 38,  89 => 35,  83 => 32,  77 => 29,  61 => 16,  48 => 5,  43 => 1,);
     }
 
     public function getSourceContext()
@@ -203,10 +204,11 @@ class __TwigTemplate_8ad8664702b2b0edb4b9ffe5bdea6b63 extends Template
          
             <li class=\"nav-item\">
                 <a class=\"nav-link\" href=\"{{ path('app_commentaires_index') }}\"><span>Commentaires 
-                {% if nbrComsNotValid and nbrComsNotValid > 0 %}
-                &nbsp;&nbsp;&nbsp;&nbsp; <span style =\"color:red\"> {{ nbrComsNotValid }}</span>
+                {% if comsToValidation and comsToValidation > 0 %}
+                &nbsp;&nbsp;&nbsp;&nbsp; <span style =\"color:#ff5757\">{{comsToValidation}}</span>
                 {% endif %}
                 </span> 
+                
       {# {{ attribute(CommentairesController, grostest) }} #}
                 
                 
@@ -236,6 +238,6 @@ class __TwigTemplate_8ad8664702b2b0edb4b9ffe5bdea6b63 extends Template
             </li>
 
         </ul>
-    <!-- End of Sidebar -->", "/admin/partials/_sidebar.html.twig", "C:\\Users\\Moras\\Desktop\\formationCDA\\symfony\\blog\\my_project_directory\\templates\\admin\\partials\\_sidebar.html.twig");
+    <!-- End of Sidebar -->", "admin/partials/_sidebar.html.twig", "C:\\Users\\Moras\\Desktop\\formationCDA\\symfony\\blog\\my_project_directory\\templates\\admin\\partials\\_sidebar.html.twig");
     }
 }

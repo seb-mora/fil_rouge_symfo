@@ -22,6 +22,7 @@ return [
         '/visitor/user' => [[['_route' => 'visitor_article_index', '_controller' => 'App\\Controller\\Account\\VisitorController::index'], null, ['GET' => 0], null, true, false, null]],
         '/visitor/user/new' => [[['_route' => 'visitor_user_new', '_controller' => 'App\\Controller\\Account\\VisitorController::new'], null, ['GET' => 0, 'POST' => 1], null, false, false, null]],
         '/admin' => [[['_route' => 'app_admin', '_controller' => 'App\\Controller\\Admin\\AdminController::index'], null, null, null, true, false, null]],
+        '/admin/comstovalid' => [[['_route' => 'coms_to_validation', '_controller' => 'App\\Controller\\Admin\\AdminController::nbrComsToValid'], null, null, null, false, false, null]],
         '/admin/article/new' => [[['_route' => 'app_article_new', '_controller' => 'App\\Controller\\Admin\\ArticleController::new'], null, ['GET' => 0, 'POST' => 1], null, false, false, null]],
         '/admin/categories' => [[['_route' => 'app_categories_index', '_controller' => 'App\\Controller\\Admin\\CategoriesController::index'], null, ['GET' => 0], null, true, false, null]],
         '/admin/categories/new' => [[['_route' => 'app_categories_new', '_controller' => 'App\\Controller\\Admin\\CategoriesController::new'], null, ['GET' => 0, 'POST' => 1], null, false, false, null]],

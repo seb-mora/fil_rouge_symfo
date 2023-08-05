@@ -17,11 +17,11 @@ class AdminController extends AbstractController
     #[Route('/', name: 'app_admin')]
     public function index(CommentairesRepository $commentairesRepository): Response
     {
-        $nbrComsNotValid = count($commentairesRepository->findBy(['status' => 0]));
+        // $nbrComsNotValid = count($commentairesRepository->findBy(['status' => 0]));
 
         return $this->render('admin/index.html.twig', [
             'controller_name' => 'AdminController',
-            'nbrComsNotValid' => $nbrComsNotValid,
+            // 'nbrComsNotValid' => $nbrComsNotValid,
         ]);
     }
 
@@ -52,5 +52,16 @@ class AdminController extends AbstractController
         // return $this->render('admin/commentaires/index.html.twig', [
         //     'commentaires' => $commentairesRepository->findBy(['status' => 0]),
         // ]);
+    }
+
+    #[Route('/comstovalid', name: 'coms_to_validation')]
+    public function nbrComsToValid(CommentairesRepository $commentairesRepository): Response
+    {
+        $comsToValidation = count($commentairesRepository->findBy(['status' => 0]));
+
+        return $this->render('admin/partials/_sidebar.html.twig', [
+            // 'controller_name' => 'AdminController',
+            'comsToValidation' => $comsToValidation,
+        ]);
     }
 }

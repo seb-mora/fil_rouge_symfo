@@ -23,9 +23,10 @@
         <!-- Page Wrapper -->
     <div id="wrapper">
 
-        {% include '/admin/partials/_sidebar.html.twig' %}
+        {# {% include '/admin/partials/_sidebar.html.twig' %} #}
+{{render(path('coms_to_validation'))}}
    {# with {nbrComsNotValid: nbrComsNotValid}  #}
-   
+
         <!-- Content Wrapper -->
         <div id="content-wrapper" class="d-flex flex-column">
 

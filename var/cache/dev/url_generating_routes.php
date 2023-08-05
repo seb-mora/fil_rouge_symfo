@@ -36,6 +36,7 @@ return [
     'app_admin' => [[], ['_controller' => 'App\\Controller\\Admin\\AdminController::index'], [], [['text', '/admin/']], [], [], []],
     'valid_com_admin' => [['id'], ['_controller' => 'App\\Controller\\Admin\\AdminController::validCom'], [], [['variable', '/', '[^/]++', 'id', true], ['text', '/admin/validCom']], [], [], []],
     'delete_com_admin' => [['id'], ['_controller' => 'App\\Controller\\Admin\\AdminController::deleteCom'], [], [['variable', '/', '[^/]++', 'id', true], ['text', '/admin/deleteCom']], [], [], []],
+    'coms_to_validation' => [[], ['_controller' => 'App\\Controller\\Admin\\AdminController::nbrComsToValid'], [], [['text', '/admin/comstovalid']], [], [], []],
     'app_article_index' => [['categorie'], ['categorie' => null, '_controller' => 'App\\Controller\\Admin\\ArticleController::index'], [], [['variable', '/', '[^/]++', 'categorie', true], ['text', '/admin/article/list']], [], [], []],
     'app_article_new' => [[], ['_controller' => 'App\\Controller\\Admin\\ArticleController::new'], [], [['text', '/admin/article/new']], [], [], []],
     'app_article_show' => [['id'], ['_controller' => 'App\\Controller\\Admin\\ArticleController::show'], [], [['variable', '/', '[^/]++', 'id', true], ['text', '/admin/article']], [], [], []],
