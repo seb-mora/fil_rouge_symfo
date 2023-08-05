@@ -113,9 +113,8 @@ class __TwigTemplate_8ad8664702b2b0edb4b9ffe5bdea6b63 extends Template
         // line 46
         echo "                </span> 
                 
-      ";
-        // line 49
-        echo "                
+ 
+                
                 
                 </a>
             </li>
@@ -157,7 +156,7 @@ class __TwigTemplate_8ad8664702b2b0edb4b9ffe5bdea6b63 extends Template
 
     public function getDebugInfo()
     {
-        return array (  130 => 69,  125 => 66,  118 => 49,  114 => 46,  108 => 44,  106 => 43,  102 => 42,  95 => 38,  89 => 35,  83 => 32,  77 => 29,  61 => 16,  48 => 5,  43 => 1,);
+        return array (  129 => 69,  124 => 66,  114 => 46,  108 => 44,  106 => 43,  102 => 42,  95 => 38,  89 => 35,  83 => 32,  77 => 29,  61 => 16,  48 => 5,  43 => 1,);
     }
 
     public function getSourceContext()
@@ -209,7 +208,7 @@ class __TwigTemplate_8ad8664702b2b0edb4b9ffe5bdea6b63 extends Template
                 {% endif %}
                 </span> 
                 
-      {# {{ attribute(CommentairesController, grostest) }} #}
+ 
                 
                 
                 </a>
