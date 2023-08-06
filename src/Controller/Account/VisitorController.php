@@ -38,10 +38,11 @@ class VisitorController extends AbstractController
     }
 
     #[Route('/categorie/{id}', name: 'visitor_categorie_show', methods: ['GET'])]
-    public function showCat(ArticleRepository $articleRepository, $id): Response
+    public function showCat(ArticleRepository $articleRepository, Categories $categorie, $id): Response
     {
         return $this->render('visitor/showCat.html.twig', [
             'articles' => $articleRepository->findBy(['categorie' => $id]),
+            'categorie' => $categorie,
         ]);
     }
 

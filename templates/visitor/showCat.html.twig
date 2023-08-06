@@ -10,7 +10,7 @@
 <br>
 <br>
     <a href="{{ path('app_home') }}"> Revenir à l'accueil </a>
-    <h1>Catégories</h1>
+    <h1>Catégorie "{{ categorie.nom }}"</h1>
     <br>
         <table class="table">
             <thead>
@@ -19,7 +19,6 @@
                     <th>Titre</th>
                     <th>Contenu</th>
                     <th>Date</th>
-                    <th>Catégorie</th>
                     <th>Auteur</th>
                     <th></th>
                 </tr>
@@ -34,7 +33,6 @@
                     <td> {{ article.titre }} </td>
                     <td> {{ article.contenu }} </td>
                     <td> {{ article.date ? article.date|date('d-m-Y H:i:s') : '' }} </td>
-                    <td> {{ article.categorie }} </td>
                     <td> {{ article.user }} </td>
                     <td> <a href="{{ path('visitor_article_show', {'id': article.id}) }}"> Lire l'article </a> </td>
                 </tr>

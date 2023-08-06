@@ -30,6 +30,32 @@
         </tbody>
     </table>
 
+<table class="table">
+
+    <thead>
+        <tr>
+            <th>Commentaires</th>
+            <th>Auteur</th>
+            <th>Date</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        {% for commentaire in commentaires %}
+            <tr>
+                <td>{{ commentaire.contenu }}</td>
+                <td>{{ commentaire.auteur ? commentaire.auteur : "Anonyme"}}</td>
+                <td>{{commentaire.date ? commentaire.date|date('d-m-Y H:i:s') : '' }}</td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="5">Pas de commentaires</td>
+            </tr>
+        {% endfor %}
+    </tbody>
+
+</table>
+
     <a href="{{ path('app_article_index') }}">back to list</a>
 
     <a href="{{ path('app_article_edit', {'id': article.id}) }}">edit</a>

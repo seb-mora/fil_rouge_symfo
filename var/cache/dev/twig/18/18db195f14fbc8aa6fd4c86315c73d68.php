@@ -127,18 +127,68 @@ class __TwigTemplate_e1634395857c270becc144099d77d370 extends Template
         </tbody>
     </table>
 
+<table class=\"table\">
+
+    <thead>
+        <tr>
+            <th>Commentaires</th>
+            <th>Auteur</th>
+            <th>Date</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        ";
+        // line 44
+        $context['_parent'] = $context;
+        $context['_seq'] = twig_ensure_traversable((isset($context["commentaires"]) || array_key_exists("commentaires", $context) ? $context["commentaires"] : (function () { throw new RuntimeError('Variable "commentaires" does not exist.', 44, $this->source); })()));
+        $context['_iterated'] = false;
+        foreach ($context['_seq'] as $context["_key"] => $context["commentaire"]) {
+            // line 45
+            echo "            <tr>
+                <td>";
+            // line 46
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["commentaire"], "contenu", [], "any", false, false, false, 46), "html", null, true);
+            echo "</td>
+                <td>";
+            // line 47
+            ((twig_get_attribute($this->env, $this->source, $context["commentaire"], "auteur", [], "any", false, false, false, 47)) ? (print (twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["commentaire"], "auteur", [], "any", false, false, false, 47), "html", null, true))) : (print ("Anonyme")));
+            echo "</td>
+                <td>";
+            // line 48
+            ((twig_get_attribute($this->env, $this->source, $context["commentaire"], "date", [], "any", false, false, false, 48)) ? (print (twig_escape_filter($this->env, twig_date_format_filter($this->env, twig_get_attribute($this->env, $this->source, $context["commentaire"], "date", [], "any", false, false, false, 48), "d-m-Y H:i:s"), "html", null, true))) : (print ("")));
+            echo "</td>
+            </tr>
+        ";
+            $context['_iterated'] = true;
+        }
+        if (!$context['_iterated']) {
+            // line 51
+            echo "            <tr>
+                <td colspan=\"5\">Pas de commentaires</td>
+            </tr>
+        ";
+        }
+        $_parent = $context['_parent'];
+        unset($context['_seq'], $context['_iterated'], $context['_key'], $context['commentaire'], $context['_parent'], $context['loop']);
+        $context = array_intersect_key($context, $_parent) + $_parent;
+        // line 55
+        echo "    </tbody>
+
+</table>
+
     <a href=\"";
-        // line 33
+        // line 59
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_article_index");
         echo "\">back to list</a>
 
     <a href=\"";
-        // line 35
-        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_article_edit", ["id" => twig_get_attribute($this->env, $this->source, (isset($context["article"]) || array_key_exists("article", $context) ? $context["article"] : (function () { throw new RuntimeError('Variable "article" does not exist.', 35, $this->source); })()), "id", [], "any", false, false, false, 35)]), "html", null, true);
+        // line 61
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_article_edit", ["id" => twig_get_attribute($this->env, $this->source, (isset($context["article"]) || array_key_exists("article", $context) ? $context["article"] : (function () { throw new RuntimeError('Variable "article" does not exist.', 61, $this->source); })()), "id", [], "any", false, false, false, 61)]), "html", null, true);
         echo "\">edit</a>
 
     ";
-        // line 37
+        // line 63
         echo twig_include($this->env, $context, "admin/article/_delete_form.html.twig");
         echo "
 ";
@@ -162,7 +212,7 @@ class __TwigTemplate_e1634395857c270becc144099d77d370 extends Template
 
     public function getDebugInfo()
     {
-        return array (  142 => 37,  137 => 35,  132 => 33,  124 => 28,  117 => 24,  110 => 20,  103 => 16,  96 => 12,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
+        return array (  192 => 63,  187 => 61,  182 => 59,  176 => 55,  167 => 51,  159 => 48,  155 => 47,  151 => 46,  148 => 45,  143 => 44,  124 => 28,  117 => 24,  110 => 20,  103 => 16,  96 => 12,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -198,6 +248,32 @@ class __TwigTemplate_e1634395857c270becc144099d77d370 extends Template
             </tr>
         </tbody>
     </table>
+
+<table class=\"table\">
+
+    <thead>
+        <tr>
+            <th>Commentaires</th>
+            <th>Auteur</th>
+            <th>Date</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        {% for commentaire in commentaires %}
+            <tr>
+                <td>{{ commentaire.contenu }}</td>
+                <td>{{ commentaire.auteur ? commentaire.auteur : \"Anonyme\"}}</td>
+                <td>{{commentaire.date ? commentaire.date|date('d-m-Y H:i:s') : '' }}</td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan=\"5\">Pas de commentaires</td>
+            </tr>
+        {% endfor %}
+    </tbody>
+
+</table>
 
     <a href=\"{{ path('app_article_index') }}\">back to list</a>
 

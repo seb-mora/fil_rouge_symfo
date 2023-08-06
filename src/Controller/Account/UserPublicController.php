@@ -104,6 +104,7 @@ class UserPublicController extends AbstractController
         $form->handleRequest($request);
         $date = date('Y-m-d');
         $format = 'Y-m-d';
+        $date = DateTime::createFromFormat($format, $date);
 
 
         if ($form->isSubmitted() && $form->isValid()) {

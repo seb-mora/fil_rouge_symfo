@@ -2,17 +2,18 @@
 
 namespace App\Controller\Admin;
 
+use DateTime;
 use App\Entity\Article;
 use App\Form\ArticleType;
-use App\Repository\ArticleRepository;
 use App\Service\FileUploaderService;
-use DateTime;
+use App\Repository\ArticleRepository;
 use Doctrine\ORM\EntityManagerInterface;
-use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use App\Repository\CommentairesRepository;
 use Symfony\Component\Form\FileUploadError;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
 #[Route('admin/article')]
 class ArticleController extends AbstractController
@@ -64,10 +65,11 @@ class ArticleController extends AbstractController
     }
 
     #[Route('/{id}', name: 'app_article_show', methods: ['GET'])]
-    public function show(Article $article): Response
+    public function show(Article $article, CommentairesRepository $commentairesRepository, $id): Response
     {
         return $this->render('admin/article/show.html.twig', [
             'article' => $article,
+            'commentaires' => $commentairesRepository->findBy(['article' => $id, 'status' => 1])
         ]);
     }
 

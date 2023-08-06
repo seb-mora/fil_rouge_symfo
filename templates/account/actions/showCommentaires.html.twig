@@ -15,7 +15,7 @@
 
     <caption align="top" style="color:orange">Vos commentaires en attente de validation :</caption>
         <tbody>
-            {% for commentaire in commentairesValid %}
+            {% for commentaire in commentairesNotValid %}
             
                 <tr>
                     <th></th>
@@ -49,7 +49,7 @@
 
     <caption align="top" style="color:#49c33e">Vos commentaires validés :</caption>
         <tbody>
-            {% for commentaire in commentairesNotValid %}
+            {% for commentaire in commentairesValid %}
            
                 <tr>
                     <th></th>
