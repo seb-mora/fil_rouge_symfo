@@ -17,7 +17,7 @@ use Symfony\Component\Routing\Annotation\Route;
 class TeamController extends AbstractController
 {
     #[Route('/', name: 'app_team_index', methods: ['GET'])]
-    public function index(CommentairesRepository $commentairesRepository, TeamRepository $teamRepository): Response
+    public function index(TeamRepository $teamRepository): Response
     {
         return $this->render('admin/team/index.html.twig', [
             'teams' => $teamRepository->findAll(),
@@ -38,7 +38,6 @@ class TeamController extends AbstractController
                 $brutPassword
             );
             $team->setPassword($hashedPassword);
-
             $entityManager->persist($team);
             $entityManager->flush();
 

@@ -83,32 +83,4 @@ class CommentairesController extends AbstractController
 
         return $this->redirectToRoute('app_commentaires_index', [], Response::HTTP_SEE_OTHER);
     }
-
-    // #[Route('/new/commentaire/{id}', name: 'user_commentaires_new', methods: ['GET', 'POST'])]
-    // public function newCom(Request $request, EntityManagerInterface $entityManager, ArticleRepository $articleRepository, $id): Response
-    // {
-    //     $article = $articleRepository->findBy(['id' => $id]);
-    //     $commentaire = new Commentaires();
-    //     $form = $this->createForm(CommentairesType::class, $commentaire);
-    //     $form->handleRequest($request);
-    //     $date = date('Y-m-d');
-    //     $format = 'Y-m-d';
-
-
-    //     if ($form->isSubmitted() && $form->isValid()) {
-    //         $commentaire->setDate($date);
-    //         $commentaire->setStatus(0);
-    //         $commentaire->setArticle($article[0]);
-    //         $commentaire->setAuteur($this->getUser());
-    //         $entityManager->persist($commentaire);
-    //         $entityManager->flush();
-
-    //         return $this->redirectToRoute('user_article_show', ['id' => $id], Response::HTTP_SEE_OTHER);
-    //     }
-
-    //     return $this->render('account/actions/newCom.html.twig', [
-    //         'commentaire' => $commentaire,
-    //         'form' => $form,
-    //     ]);
-    // }
 }

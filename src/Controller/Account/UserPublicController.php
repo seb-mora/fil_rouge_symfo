@@ -6,22 +6,15 @@ use DateTime;
 use App\Entity\User;
 use App\Form\UserType;
 use App\Entity\Article;
-use App\Form\UserEditType;
 use App\Entity\Commentaires;
 use App\Form\CommentairesType;
-use App\Repository\UserRepository;
 use App\Repository\ArticleRepository;
-use Symfony\Component\Form\FormEvent;
-use Symfony\Component\Form\FormEvents;
 use App\Repository\CategoriesRepository;
 use Doctrine\ORM\EntityManagerInterface;
 use App\Repository\CommentairesRepository;
-
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
-use Symfony\Component\Form\Extension\Core\Type\PasswordType;
-use Symfony\Component\Form\Extension\Core\Type\RepeatedType;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\PasswordHasher\Hasher\UserPasswordHasherInterface;
 
@@ -67,7 +60,7 @@ class UserPublicController extends AbstractController
     #[Route('/delete/{id}', name: 'user_commentaires_delete', methods: ['POST'])]
     public function deleteCom(Request $request, Commentaires $commentaire, EntityManagerInterface $entityManager): Response
     {
-        // $user = $this->getUser();
+
         if ($this->isCsrfTokenValid('delete' . $commentaire->getId(), $request->request->get('_token'))) {
             $entityManager->remove($commentaire);
             $entityManager->flush();

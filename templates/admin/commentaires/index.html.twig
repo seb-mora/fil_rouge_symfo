@@ -25,13 +25,10 @@
                 <td>{{ commentaire.date ? commentaire.date|date('Y-m-d H:i:s') : '' }}</td>
                 <td>{{ commentaire.article.titre }}</td>
                 <td>
-                    {# <a href="{{ path('app_commentaires_show', {'id': commentaire.id}) }}">show</a> #}
                     <a href="{{ path('valid_com_admin', {'id': commentaire.id}) }}" style="color:#49c33e">VALIDER</a>
-                    {# <a href="{{ path('delete_com_admin', {'id': commentaire.id}) }}" style="color:red">SUPPRIMER</a> #}
-
-<form method="post" action="{{ path('delete_com_admin', {'id': commentaire.id}) }}" onsubmit="return confirm('Etes-vous sûr(e) de vouloir supprimer ce commentaire ?');">
-        <button class="btn" style="color:red">SUPPRIMER</button>
-</form>
+                    <form method="post" action="{{ path('delete_com_admin', {'id': commentaire.id}) }}" onsubmit="return confirm('Etes-vous sûr(e) de vouloir supprimer ce commentaire ?');">
+                        <button class="btn" style="color:red">SUPPRIMER</button>
+                    </form>
                 </td>
             </tr>
         {% else %}

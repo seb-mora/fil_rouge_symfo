@@ -3,10 +3,8 @@
 namespace App\Controller\Admin;
 
 use App\Entity\Commentaires;
-use Doctrine\ORM\EntityManager;
 use Doctrine\ORM\EntityManagerInterface;
 use App\Repository\CommentairesRepository;
-use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
@@ -17,11 +15,8 @@ class AdminController extends AbstractController
     #[Route('/', name: 'app_admin')]
     public function index(CommentairesRepository $commentairesRepository): Response
     {
-        // $nbrComsNotValid = count($commentairesRepository->findBy(['status' => 0]));
-
         return $this->render('admin/index.html.twig', [
             'controller_name' => 'AdminController',
-            // 'nbrComsNotValid' => $nbrComsNotValid,
         ]);
     }
 
@@ -38,7 +33,7 @@ class AdminController extends AbstractController
     }
 
     #[Route('/deleteCom/{id}', name: 'delete_com_admin', methods: ['POST'])]
-    public function deleteCom(Request $request, CommentairesRepository $commentairesRepository, Commentaires $commentaire, EntityManagerInterface $entityManager, $id): Response
+    public function deleteCom(CommentairesRepository $commentairesRepository, Commentaires $commentaire, EntityManagerInterface $entityManager, $id): Response
     {
         $foundCommentaires = $commentairesRepository->findBy(['id' => $id]);
         $commentaire = $foundCommentaires[0];
@@ -46,12 +41,7 @@ class AdminController extends AbstractController
         $entityManager->remove($commentaire);
         $entityManager->flush();
 
-
         return $this->redirectToRoute('app_commentaires_index', [], Response::HTTP_SEE_OTHER);
-
-        // return $this->render('admin/commentaires/index.html.twig', [
-        //     'commentaires' => $commentairesRepository->findBy(['status' => 0]),
-        // ]);
     }
 
     #[Route('/comstovalid', name: 'coms_to_validation')]
@@ -60,7 +50,6 @@ class AdminController extends AbstractController
         $comsToValidation = count($commentairesRepository->findBy(['status' => 0]));
 
         return $this->render('admin/partials/_sidebar.html.twig', [
-            // 'controller_name' => 'AdminController',
             'comsToValidation' => $comsToValidation,
         ]);
     }

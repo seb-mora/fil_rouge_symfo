@@ -6,9 +6,7 @@ use App\Entity\User;
 use App\Form\UserType;
 use App\Entity\Article;
 use App\Entity\Categories;
-use App\Repository\UserRepository;
 use App\Repository\ArticleRepository;
-use App\Repository\CategoriesRepository;
 use App\Repository\CommentairesRepository;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Component\HttpFoundation\Request;
@@ -61,13 +59,9 @@ class VisitorController extends AbstractController
                 $brutPassword
             );
             $user->setPassword($hashedPassword);
-
             $user->setRoles(["ROLE_VISITOR"]);
-
             $entityManager->persist($user);
             $entityManager->flush();
-
-            // return $this->render('account/login/account_login.html.twig', ['params' => $user->getEmail(), 'error' => []]);
 
             return $this->redirectToRoute('user_login', ['params' => $user->getEmail()]);
         }
@@ -78,43 +72,6 @@ class VisitorController extends AbstractController
         ]);
     }
 
-    // #[Route('/{id}', name: 'public_user_show', methods: ['GET'])]
-    // public function show(User $user): Response
-    // {
-    //     return $this->render('admin/user/show.html.twig', [
-    //         'user' => $user,
-    //     ]);
-    // }
-
-    // #[Route('/{id}/edit', name: 'visitor_user_edit', methods: ['GET', 'POST'])]
-    // public function edit(Request $request, User $user, EntityManagerInterface $entityManager, UserPasswordHasherInterface $userPasswordHasherInterface): Response
-    // {
-    //     $form = $this->createForm(UserType::class, $user);
-    //     $form->handleRequest($request);
-
-    //     if ($form->isSubmitted() && $form->isValid()) {
-
-    //         $brutPassword = $user->getPassword();
-    //         $hashedPassword = $userPasswordHasherInterface->hashPassword(
-    //             $user,
-    //             $brutPassword
-    //         );
-    //         $user->setPassword($hashedPassword);
-
-    //         $user->setRoles(["ROLE_VISITOR"]);
-
-    //         $entityManager->persist($user);
-
-    //         $entityManager->flush();
-
-    //         return $this->redirectToRoute('app_account');
-    //     }
-
-    //     return $this->render('account/actions/edit.html.twig', [
-    //         'user' => $user,
-    //         'form' => $form,
-    //     ]);
-    // }
 
     #[Route('/{id}', name: 'visitor_user_delete', methods: ['POST'])]
     public function delete(Request $request, User $user, EntityManagerInterface $entityManager): Response

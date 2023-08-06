@@ -4,10 +4,7 @@ namespace App\Controller\Account;
 
 use App\Entity\User;
 use App\Form\UserType;
-use App\Form\UserEditType;
 use App\Entity\Commentaires;
-use Symfony\Component\Form\FormEvent;
-use Symfony\Component\Form\FormEvents;
 use Doctrine\ORM\EntityManagerInterface;
 use App\Repository\CommentairesRepository;
 use App\Repository\ArticleRepository;
@@ -15,8 +12,6 @@ use App\Repository\CategoriesRepository;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
-use Symfony\Component\Form\Extension\Core\Type\PasswordType;
-use Symfony\Component\Form\Extension\Core\Type\RepeatedType;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\PasswordHasher\Hasher\UserPasswordHasherInterface;
 
@@ -47,7 +42,7 @@ class AccountController extends AbstractController
     #[Route('/edit', name: 'public_user_edit', methods: ['GET', 'POST'])]
     public function edit(Request $request, EntityManagerInterface $entityManager, UserPasswordHasherInterface $userPasswordHasherInterface): Response
     {
-        $user = new User;
+        $user = new User();
         $user = $this->getUser();
         $form = $this->createForm(UserType::class, $user);
         $form->handleRequest($request);
@@ -60,17 +55,10 @@ class AccountController extends AbstractController
                 $brutPassword
             );
             $user->setPassword($hashedPassword);
-
             $user->setRoles(["ROLE_VISITOR"]);
-
             $entityManager->persist($user);
-
-
             $entityManager->flush();
-
             return $this->redirectToRoute('app_account', [], Response::HTTP_SEE_OTHER);
-
-            // return $this->render('account/actions/indexArt.html.twig');
         }
 
         return $this->render('account/actions/edit.html.twig', [

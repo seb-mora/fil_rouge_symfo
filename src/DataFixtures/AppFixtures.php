@@ -141,7 +141,6 @@ SET FOREIGN_KEY_CHECKS = 1;
 
         $db->prepare($sql);
         $db->executeQuery($sql);
-
         $db->commit();
         $db->beginTransaction();
     }

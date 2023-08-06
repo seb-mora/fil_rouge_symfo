@@ -14,18 +14,16 @@
         <tbody>
        
             <tr>
-           
                 <td>{{ article.contenu }}</td>
             </tr>
         
             <tr>
-             
                 <td><img src={{ article.logo }}></td>
             </tr>
-                <tr>
-               
+            <tr>
                 <td>{{ article.date ? article.date|date('Y-m-d H:i:s') : '' }}</td>
             </tr>
+            
         </tbody>
     </table>
 
