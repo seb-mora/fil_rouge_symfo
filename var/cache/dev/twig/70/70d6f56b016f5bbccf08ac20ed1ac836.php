@@ -130,27 +130,23 @@ class __TwigTemplate_f21b19fed189376d04f3e35466abac9c extends Template
             echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["commentaire"], "article", [], "any", false, false, false, 26), "titre", [], "any", false, false, false, 26), "html", null, true);
             echo "</td>
                 <td>
-                    ";
-            // line 29
-            echo "                    <a href=\"";
-            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("valid_com_admin", ["id" => twig_get_attribute($this->env, $this->source, $context["commentaire"], "id", [], "any", false, false, false, 29)]), "html", null, true);
+                    <a href=\"";
+            // line 28
+            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("valid_com_admin", ["id" => twig_get_attribute($this->env, $this->source, $context["commentaire"], "id", [], "any", false, false, false, 28)]), "html", null, true);
             echo "\" style=\"color:#49c33e\">VALIDER</a>
-                    ";
-            // line 31
-            echo "
-<form method=\"post\" action=\"";
-            // line 32
-            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("delete_com_admin", ["id" => twig_get_attribute($this->env, $this->source, $context["commentaire"], "id", [], "any", false, false, false, 32)]), "html", null, true);
+                    <form method=\"post\" action=\"";
+            // line 29
+            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("delete_com_admin", ["id" => twig_get_attribute($this->env, $this->source, $context["commentaire"], "id", [], "any", false, false, false, 29)]), "html", null, true);
             echo "\" onsubmit=\"return confirm('Etes-vous sûr(e) de vouloir supprimer ce commentaire ?');\">
-        <button class=\"btn\" style=\"color:red\">SUPPRIMER</button>
-</form>
+                        <button class=\"btn\" style=\"color:red\">SUPPRIMER</button>
+                    </form>
                 </td>
             </tr>
         ";
             $context['_iterated'] = true;
         }
         if (!$context['_iterated']) {
-            // line 38
+            // line 35
             echo "            <tr>
                 <td colspan=\"4\">Aucun commentaire en attente</td>
             </tr>
@@ -159,7 +155,7 @@ class __TwigTemplate_f21b19fed189376d04f3e35466abac9c extends Template
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['commentaire'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 42
+        // line 39
         echo "        </tbody>
     </table>
 ";
@@ -183,7 +179,7 @@ class __TwigTemplate_f21b19fed189376d04f3e35466abac9c extends Template
 
     public function getDebugInfo()
     {
-        return array (  163 => 42,  154 => 38,  143 => 32,  140 => 31,  135 => 29,  130 => 26,  126 => 25,  122 => 24,  118 => 23,  114 => 22,  111 => 21,  106 => 20,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
+        return array (  159 => 39,  150 => 35,  139 => 29,  135 => 28,  130 => 26,  126 => 25,  122 => 24,  118 => 23,  114 => 22,  111 => 21,  106 => 20,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -215,13 +211,10 @@ class __TwigTemplate_f21b19fed189376d04f3e35466abac9c extends Template
                 <td>{{ commentaire.date ? commentaire.date|date('Y-m-d H:i:s') : '' }}</td>
                 <td>{{ commentaire.article.titre }}</td>
                 <td>
-                    {# <a href=\"{{ path('app_commentaires_show', {'id': commentaire.id}) }}\">show</a> #}
                     <a href=\"{{ path('valid_com_admin', {'id': commentaire.id}) }}\" style=\"color:#49c33e\">VALIDER</a>
-                    {# <a href=\"{{ path('delete_com_admin', {'id': commentaire.id}) }}\" style=\"color:red\">SUPPRIMER</a> #}
-
-<form method=\"post\" action=\"{{ path('delete_com_admin', {'id': commentaire.id}) }}\" onsubmit=\"return confirm('Etes-vous sûr(e) de vouloir supprimer ce commentaire ?');\">
-        <button class=\"btn\" style=\"color:red\">SUPPRIMER</button>
-</form>
+                    <form method=\"post\" action=\"{{ path('delete_com_admin', {'id': commentaire.id}) }}\" onsubmit=\"return confirm('Etes-vous sûr(e) de vouloir supprimer ce commentaire ?');\">
+                        <button class=\"btn\" style=\"color:red\">SUPPRIMER</button>
+                    </form>
                 </td>
             </tr>
         {% else %}

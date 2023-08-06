@@ -43,9 +43,6 @@ class __TwigTemplate_8ad8664702b2b0edb4b9ffe5bdea6b63 extends Template
         echo "<!-- Sidebar -->
         <ul class=\"navbar-nav bg-gradient-primary sidebar sidebar-dark accordion\" id=\"accordionSidebar\">
 
-";
-        // line 5
-        echo "
             <a class=\"sidebar-brand d-flex align-items-center justify-content-center\" href=\"/admin\">
                 <div class=\"sidebar-brand-icon rotate-n-15\">
                     <i class=\"fa-solid fa-laugh-wink\"></i>
@@ -57,7 +54,7 @@ class __TwigTemplate_8ad8664702b2b0edb4b9ffe5bdea6b63 extends Template
 
             <li class=\"nav-item\">
                 <a class=\"nav-link\" href=\"";
-        // line 16
+        // line 14
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_admin");
         echo "\">
                     <i class=\"fa-solid fa-fw fa-tachometer-alt\"></i>
@@ -73,59 +70,51 @@ class __TwigTemplate_8ad8664702b2b0edb4b9ffe5bdea6b63 extends Template
 
             <li class=\"nav-item\">
                 <a class=\"nav-link\" href=\"";
-        // line 29
+        // line 27
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_team_index");
         echo "\"><span>Administrateurs</span></a>
             </li>
             <li class=\"nav-item\">
                 <a class=\"nav-link\" href=\"";
-        // line 32
+        // line 30
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_user_index");
         echo "\"><span>Utilisateurs</span></a>
             </li>
             <li class=\"nav-item\">
                 <a class=\"nav-link\" href=\"";
-        // line 35
+        // line 33
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_categories_index");
         echo "\"><span>Catégories </span></a>
             </li>
             <li class=\"nav-item\">
                 <a class=\"nav-link\" href=\"";
-        // line 38
+        // line 36
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_article_index");
         echo "\"><span>Articles</span></a>
             </li>
          
             <li class=\"nav-item\">
                 <a class=\"nav-link\" href=\"";
-        // line 42
+        // line 40
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_commentaires_index");
         echo "\"><span>Commentaires 
                 ";
-        // line 43
-        if (((isset($context["comsToValidation"]) || array_key_exists("comsToValidation", $context) ? $context["comsToValidation"] : (function () { throw new RuntimeError('Variable "comsToValidation" does not exist.', 43, $this->source); })()) && ((isset($context["comsToValidation"]) || array_key_exists("comsToValidation", $context) ? $context["comsToValidation"] : (function () { throw new RuntimeError('Variable "comsToValidation" does not exist.', 43, $this->source); })()) > 0))) {
-            // line 44
+        // line 41
+        if (((isset($context["comsToValidation"]) || array_key_exists("comsToValidation", $context) ? $context["comsToValidation"] : (function () { throw new RuntimeError('Variable "comsToValidation" does not exist.', 41, $this->source); })()) && ((isset($context["comsToValidation"]) || array_key_exists("comsToValidation", $context) ? $context["comsToValidation"] : (function () { throw new RuntimeError('Variable "comsToValidation" does not exist.', 41, $this->source); })()) > 0))) {
+            // line 42
             echo "                &nbsp;&nbsp;&nbsp;&nbsp; <span style =\"color:#ff5757\">";
-            echo twig_escape_filter($this->env, (isset($context["comsToValidation"]) || array_key_exists("comsToValidation", $context) ? $context["comsToValidation"] : (function () { throw new RuntimeError('Variable "comsToValidation" does not exist.', 44, $this->source); })()), "html", null, true);
+            echo twig_escape_filter($this->env, (isset($context["comsToValidation"]) || array_key_exists("comsToValidation", $context) ? $context["comsToValidation"] : (function () { throw new RuntimeError('Variable "comsToValidation" does not exist.', 42, $this->source); })()), "html", null, true);
             echo "</span>
                 ";
         }
-        // line 46
-        echo "                </span> 
-                
- 
-                
-                
+        // line 44
+        echo "                </span>     
                 </a>
             </li>
 
-            ";
-        // line 66
-        echo "
-        
             <li class=\"nav-item\">
                 <a class=\"nav-link\" href=\"";
-        // line 69
+        // line 49
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("admin_logout");
         echo "\"><span>Déconnexion</span></a>
             </li>
@@ -156,15 +145,13 @@ class __TwigTemplate_8ad8664702b2b0edb4b9ffe5bdea6b63 extends Template
 
     public function getDebugInfo()
     {
-        return array (  129 => 69,  124 => 66,  114 => 46,  108 => 44,  106 => 43,  102 => 42,  95 => 38,  89 => 35,  83 => 32,  77 => 29,  61 => 16,  48 => 5,  43 => 1,);
+        return array (  118 => 49,  111 => 44,  105 => 42,  103 => 41,  99 => 40,  92 => 36,  86 => 33,  80 => 30,  74 => 27,  58 => 14,  43 => 1,);
     }
 
     public function getSourceContext()
     {
         return new Source("<!-- Sidebar -->
         <ul class=\"navbar-nav bg-gradient-primary sidebar sidebar-dark accordion\" id=\"accordionSidebar\">
-
-{# {% set nbrComsNotValid = CommentairesController::testitouille() %} #}
 
             <a class=\"sidebar-brand d-flex align-items-center justify-content-center\" href=\"/admin\">
                 <div class=\"sidebar-brand-icon rotate-n-15\">
@@ -206,28 +193,10 @@ class __TwigTemplate_8ad8664702b2b0edb4b9ffe5bdea6b63 extends Template
                 {% if comsToValidation and comsToValidation > 0 %}
                 &nbsp;&nbsp;&nbsp;&nbsp; <span style =\"color:#ff5757\">{{comsToValidation}}</span>
                 {% endif %}
-                </span> 
-                
- 
-                
-                
+                </span>     
                 </a>
             </li>
 
-            {# <hr class=\"sidebar-divider d-none d-md-block\">
-
-            <li class=\"nav-item dropdown\">
-                <a class=\"nav-link  dropdown-toggle\" href=\"#\" id=\"paramsDropdown\" role=\"button\" data-bs-toggle=\"dropdown\" aria-expanded=\"false\">
-                    <i class=\"fas fa-fw fa-wrench\"></i>
-                    <span>Paramètres</span>
-                </a>
-                <ul class=\"dropdown-menu bg-white ml-3 collapse-inner rounded\" aria-labelledby=\"paramsDropdown\">
-                    <li><a class=\"dropdown-item\" href=\"\">Types d'utilisateurs</a></li>
-                </ul>
-            </li>
-            <hr class=\"sidebar-divider d-none d-md-block\"> #}
-
-        
             <li class=\"nav-item\">
                 <a class=\"nav-link\" href=\"{{ path('admin_logout') }}\"><span>Déconnexion</span></a>
             </li>

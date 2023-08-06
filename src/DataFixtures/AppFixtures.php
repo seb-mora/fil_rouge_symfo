@@ -61,7 +61,7 @@ class AppFixtures extends Fixture
                 $user[$i],
                 'password'
             );
-            $user[$i]->setEmail('user' . $i . '@users.com');
+            $user[$i]->setEmail('user' . $i . '@user.com');
             $user[$i]->setRoles(['ROLE_VISITOR']);
             $user[$i]->setPassword($hashedPassword);
             $user[$i]->setNom($this->faker->lastName());
